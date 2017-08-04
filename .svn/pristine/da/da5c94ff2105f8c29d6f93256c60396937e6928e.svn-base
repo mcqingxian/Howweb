@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.bse.server.dao.BigEventMapper">
+	<resultMap type="com.hoau.how.module.bse.api.shared.domain.BigEventEntity" 
+		id="eventsByYearResultMap">
+		<result property="year" column="YEAR" jdbcType="INTEGER"/>
+		<result property="month" column="MONTH" jdbcType="INTEGER"/>
+		<result property="description" column="DESCRIPTION" jdbcType="VARCHAR"/>
+	</resultMap>
+		
+	<select id="selectBigEventByYear" resultMap="eventsByYearResultMap" parameterType="int">
+		SELECT YEAR,MONTH,DESCRIPTION FROM HOAU_ABOUT_BIGEVENT
+		WHERE YEAR = #{year,jdbcType=INTEGER}
+		ORDER BY MONTH DESC
+	</select>
+
+	<select id="selectAllYear" resultType="int">
+		SELECT YEAR FROM HOAU_ABOUT_BIGEVENT
+		GROUP BY YEAR
+		ORDER BY YEAR DESC;
+	</select>
+</mapper>

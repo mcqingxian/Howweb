@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/how-bse" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/how-bse-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/how-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/how-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/how-itf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/how-job" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/how-obh" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/how-util" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mhow-bse" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mhow-bse-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mhow-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mhow-invokews" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mhow-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mhow-wechat" charset="UTF-8" />
+  </component>
+</project>

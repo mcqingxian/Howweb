@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hoau.how.module.obh.server.dao.CustomerClaimDao" >
+
+  <resultMap id="BaseResultMap" type="com.hoau.how.module.obh.shared.domain.ClaimSubmitEntity" >
+    <result column="id" property="id" jdbcType="NUMERIC" />
+    <result column="ebccId" property="ebccId" jdbcType="NUMERIC" />
+    <result column="billNo" property="billNo" jdbcType="VARCHAR" />
+    <result column="billTel" property="billTel" jdbcType="VARCHAR" />
+    <result column="claimCompanyAddr" property="claimCompanyAddr" jdbcType="VARCHAR" />
+    <result column="contactName" property="contactName" jdbcType="VARCHAR" />
+    <result column="contactTel" property="contactTel" jdbcType="VARCHAR" />
+    <result column="contactMail" property="contactMail" jdbcType="VARCHAR" />
+    <result column="claimsAmount" property="claimsAmount" jdbcType="NUMERIC" />
+    <result column="cargoType" property="cargoType" jdbcType="VARCHAR" />
+    <result column="exceptionCount" property="exceptionCount" jdbcType="NUMERIC" />
+    <result column="accidentType" property="accidentType" jdbcType="VARCHAR" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="imgMapString" property="imgMapString" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifyTime" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <sql id="query_claim_sql">
+	        id,    	  
+	        ebccId,    	  
+	        billNo,    	  
+	        billTel,    	  
+	        claimCompanyAddr,    	  
+	        contactName,
+	        contactTel,    	  
+	        contactMail,    	  
+	        claimsAmount,    	  
+	        cargoType,
+	        exceptionCount,    	  
+	        accidentType,    	  
+	        reason,
+	        status,    	  
+	        imgMapString,
+	        createTime,	 
+	        modifyTime 
+  </sql>
+
+	<sql id="query_calim_param">
+	
+	    <if test="ebccId != null and ebccId != 0">
+			and ebccId = #{ebccId,jdbcType=VARCHAR}
+		</if>
+
+		<if test="billNo != null and billNo != ''">
+			and billNo = #{billNo,jdbcType=VARCHAR}
+		</if>
+		<if test="status != null and status != ''">
+			and status = #{status,jdbcType=VARCHAR}
+		</if>
+
+	</sql>
+
+	<!-- 查询理赔明细明细 -->
+	<select id="queryClaims"
+		parameterType="com.hoau.how.module.obh.shared.domain.ClaimSubmitEntity"
+		resultMap="BaseResultMap">
+		SELECT /** 查询理赔明细明细  **/
+		<include refid="query_claim_sql"></include>
+		from ei_customer_claim 
+		<trim prefix="WHERE" prefixOverrides="AND | OR">
+			<include refid="query_calim_param"></include>
+		</trim>		
+		and status='un_submit'
+	</select>
+	
+	<insert id="saveClaim" parameterType="com.hoau.how.module.obh.shared.domain.ClaimSubmitEntity">
+		insert into ei_customer_claim ( /** 保存理赔明细明细  **/
+			ebccId,
+			billNo,
+			billTel,
+			claimCompanyAddr,
+			contactName,
+			contactTel,
+			contactMail,
+			claimsAmount,
+			cargoType,
+			exceptionCount,
+			accidentType,
+			reason,
+			status,
+			imgMapString,
+			createTime
+		)values(
+			#{ebccId,jdbcType=VARCHAR},
+			#{billNo,jdbcType=VARCHAR},
+			#{billTel,jdbcType=VARCHAR},
+			#{claimCompanyAddr,jdbcType=VARCHAR},
+			#{contactName,jdbcType=VARCHAR},
+			#{contactTel,jdbcType=VARCHAR},
+			#{contactMail,jdbcType=VARCHAR},
+			#{claimsAmount,jdbcType=NUMERIC},
+			#{cargoType,jdbcType=VARCHAR},
+			#{exceptionCount,jdbcType=NUMERIC},
+			#{accidentType,jdbcType=VARCHAR},
+			#{reason,jdbcType=VARCHAR},
+			#{status,jdbcType=VARCHAR},
+			#{imgMapString,jdbcType=VARCHAR},
+			now()
+		)
+	</insert>
+	<!--修改理赔明细明细 -->
+	 <update id="modifyClaim" parameterType="com.hoau.how.module.obh.shared.domain.ClaimSubmitEntity">
+	    update  
+	         ei_customer_claim  set 	      	    	  
+	        billTel = #{billTel,jdbcType=VARCHAR},	  
+	        claimCompanyAddr = #{claimCompanyAddr,jdbcType=VARCHAR},    	  
+	        contactName = #{contactName,jdbcType=VARCHAR},
+	        contactTel = #{contactTel,jdbcType=VARCHAR},    	  
+	        contactMail = #{contactMail,jdbcType=VARCHAR},    	  
+	        claimsAmount = #{claimsAmount,jdbcType=NUMERIC},    	  
+	        cargoType = #{cargoType,jdbcType=VARCHAR},
+	        exceptionCount = #{exceptionCount,jdbcType=NUMERIC},    	  
+	        accidentType = #{accidentType,jdbcType=VARCHAR},    	  
+	        reason = #{reason,jdbcType=VARCHAR},
+	        status = #{status,jdbcType=VARCHAR},    	  
+	        imgMapString = #{imgMapString,jdbcType=VARCHAR}, 
+	        modifyTime =  now()
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+		    <if test="ebccId != null and ebccId != 0">
+				and ebccId = #{ebccId,jdbcType=VARCHAR}
+			</if>
+		
+			<if test="billNo != null and billNo != ''">
+				and billNo = #{billNo,jdbcType=VARCHAR}
+			</if>
+			
+			<if test="status != null and status != ''">
+				and status = #{status,jdbcType=VARCHAR}
+			</if>
+		</trim>	
+	</update>	
+	
+	<!--修改理赔明细明细 -->
+	<!-- <update id="modifyClaim" parameterType="com.hoau.how.module.obh.shared.domain.ClaimSubmitEntity">
+	    update  ei_customer_claim  set 	      	    	  
+	        billTel = #{billTel,jdbcType=VARCHAR},	  
+	        claimCompanyAddr = #{claimCompanyAddr,jdbcType=VARCHAR},    	  
+	        contactName = #{contactName,jdbcType=VARCHAR},
+	        contactTel = #{contactTel,jdbcType=VARCHAR},    	  
+	        contactMail = #{contactMail,jdbcType=VARCHAR},    	  
+	        claimsAmount = #{claimsAmount,jdbcType=NUMERIC},    	  
+	        cargoType = #{cargoType,jdbcType=VARCHAR},
+	        exceptionCount = #{exceptionCount,jdbcType=NUMERIC},    	  
+	        accidentType = #{accidentType,jdbcType=VARCHAR},    	  
+	        reason = #{reason,jdbcType=VARCHAR},
+	        status = #{status,jdbcType=VARCHAR},    	  
+	        imgMapString = #{imgMapString,jdbcType=VARCHAR}, 
+	        modifyTime =  now()
+             where 
+				billNo = #{billNo,jdbcType=VARCHAR}
+				and status=#{status,jdbcType=VARCHAR}
+	</update> -->
+	
+	<select id="queryClaimCount" resultType="int" parameterType="java.lang.String">
+	    select /** 查询理赔明细条数  **/ count(0) from ei_customer_claim 
+	    where
+	        billNo = #{billNo,jdbcType=VARCHAR}
+	        and status='un_submit'
+	</select>
+	
+	<update id="updateStatus">
+		update /** 删除理赔明细条数  **/
+		ei_customer_claim  set 
+		status = #{status,jdbcType=VARCHAR}
+		where billNo = #{waybill,jdbcType=VARCHAR}
+	</update>
+</mapper>

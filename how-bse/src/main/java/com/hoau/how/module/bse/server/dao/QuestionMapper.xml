@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.bse.server.dao.QuestionMapper">
+	<resultMap type="com.hoau.how.module.bse.api.shared.domain.QuestionEntity" 
+		id="quesionsResultMap">
+		<id property="questionId" column="ID" jdbcType="INTEGER"/>
+		<result property="type" column="type" jdbcType="INTEGER"/>
+		<result property="question" column="question" jdbcType="VARCHAR"/>
+		<result property="answer" column="answer" jdbcType="VARCHAR"/>
+	</resultMap>
+		
+	<select id="selectQuestionsByKey" resultMap="quesionsResultMap" parameterType="string">
+		select id,type,question,answer from hoau_common_question
+		<where>
+			IS_ADOPT = 1
+			<if test="_parameter!=null and _parameter!=''">
+				AND (question LIKE #{key,jdbcType=VARCHAR} OR answer LIKE #{key,jdbcType=VARCHAR})
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectAllQuestions" resultMap="quesionsResultMap">
+		select id,type,question,answer from hoau_common_question where IS_ADOPT = 1;
+	</select>
+</mapper>

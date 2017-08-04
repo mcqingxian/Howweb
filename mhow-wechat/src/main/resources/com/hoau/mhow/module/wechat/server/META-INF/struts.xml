@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="wechat" namespace="/" extends="how-default">
+		<!-- <interceptors>
+			<interceptor name="error"
+				class="com.hoau.wechat.interceptor.ExceptionInterceptor" />
+			<interceptor-stack name="wechatStack">
+				<interceptor-ref name="json" />
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="error" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="wechatStack" /> -->
+		<!--设置全局返回结果 -->
+		<!-- <global-results>
+			<result name="error">error.jsp</result>
+			<result name="sessioninvalid">sessioninvalid.jsp</result>
+		</global-results> -->
+		<!--定义要捕获的异常 -->
+		<!-- <global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings> -->
+		
+		<!-- 已调试开始 -->
+		<action name="toGoodsTracePage" class="goodsTraceAction" method="toPage">
+			<result name="success">goods_trace.jsp</result>
+		</action>
+		<!-- 货物追踪 -->
+		<action name="goodsTrace" class="goodsTraceAction">
+			<result name="success" type="json" />
+		</action>
+		
+		<!-- 价格时效查询 -->
+		<action name="priceTime" class="effectivePriceAction">
+			<result name="success">price_time.jsp</result>
+		</action>
+		<action name="appPriceTime" class="effectivePriceAppAction">
+			<result name="success">price_time_app.jsp</result>
+		</action>
+		<action name="getRegion" class="effectivePriceAction" method="queryProvince">
+			<result name="success" type="json" />
+		</action>
+		<action name="queryCity" class="effectivePriceAction" method="queryCity">
+			<result name="success" type="json" />
+		</action>
+		<action name="queryPricingByCity" class="effectivePriceAction"
+			method="queryPricingByCity">
+			<result name="success" type="json" />
+		</action>
+		<action name="queryCounty" class="effectivePriceAction" method="queryCounty">
+			<result name="success" type="json" />
+		</action>
+		<action name="countFreight" class="effectivePriceAction"
+			method="countFreight">
+			<result name="success" type="json" />
+		</action>
+		<!-- 新的价格时间查询 -->
+		<action name="queryPriceTime" class="districtInfoAction" method="queryPriceTime">
+			<result name="success" type="json" />
+		</action>
+		<action name="priceCalc" class="districtInfoAction" method="priceCalc">
+			<result name="success" type="json" />
+		</action>
+		
+		<!-- 新的省市区 -->
+		<action name="queryProvinceInfo" class="districtInfoAction" method="queryProvinceInfo">
+			<result name="success" type="json" />
+		</action>
+		<action name="queryCityInfo" class="districtInfoAction" method="queryCityInfo">
+			<result name="success" type="json" />
+		</action>
+		<action name="queryCountyInfo" class="districtInfoAction" method="queryCountyInfo">
+			<result name="success" type="json" />
+		</action>
+		<action name="queryCountyInfoByProvinceCity" class="districtInfoAction" method="queryCountyInfoByProvinceCity">
+			<result name="success" type="json" />
+		</action>
+		
+		<!-- 网点查询 -->
+		<action name="companyMatchAction" class="companyMatchAction">
+			<result name="queryProvinceCountJson" type="json"></result>
+			<result name="queryCityCountJson" type="json"></result>
+			<result name="queryCounty" type="json"></result>
+			<result name="queryCountyCountJson" type="json"></result>
+			<result name="queryDeptByDistrictNameJson" type="json"></result>
+			<result name="queryDeptByDistrictName">department_list.jsp</result>
+			<result name="queryHotCityJson" type="json"></result>
+		</action>
+		
+		<!-- 进入网点查询页面 -->
+		<action name="toDpartQueryPage" class="departmentListAction"
+			method="toDpartQueryPage">
+			<result name="success">department_query.jsp</result>
+		</action>
+		<!-- <action name="queryDistrictProvince" class="districtAction" method="queryProvince">
+			<result name="success" type="json" />
+		</action>
+		<action name="queryDistrictCity" class="districtAction" method="queryCity">
+			<result name="success" type="json" />
+		</action>
+		<action name="queryDistrictCounty" class="districtAction" method="queryCounty">
+			<result name="success" type="json" />
+		</action> -->
+		<!-- 通过位置信息获取网点列表 -->
+		<!-- <action name="getListByAddress" class="departmentListAction" method="getListByAddress">
+			<result name="success">department_list.jsp</result>
+		</action> -->
+		
+		<!-- 下单 -->
+		<action name="order" class="orderManagerAction">
+			<result name="success">place_order.jsp</result>
+		</action>
+		<action name="submitOrder" class="orderManagerAction" method="submitOrder">
+			<result type="json">
+				<param name="root">orderResult</param>
+			</result>
+		</action>
+		
+		<!-- 地址簿管理 -->
+		<action name="addressMgtAction" class="addressMgtAction">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action>
+		
+		<!-- 地址簿管理列表界面-->
+		<action name="addressBookManage" class="addressMgtAction" method="addressBookManage">
+			<result name="success">contacts_manage.jsp</result>
+		</action>
+		
+ 		<!-- 地址簿管理  修改联系人界面 -->
+		<action name="contactOperate" class="addressMgtAction" method="toContactOperatePage">
+			<result name="success">contacts_curd.jsp</result>
+            <result name="exit" type="redirectAction">../mhow/bse/index.action</result>
+		</action>
+		
+		
+		<!-- 京东家装节活动 -->
+		<action name="jdActiveAction" class="jdActiveAction">
+		    <result name="success">jd_active.jsp</result>
+		</action>
+		<!-- 统计转发文章数量 -->
+		<action name="recordShared" class="campusArticleAction" method="recordShared">
+		    <result name="success" type="json">
+		        <param name="root">respMsg</param>
+		    </result>
+		</action>
+		<action name="toCompusArticle" class="campusArticleAction">
+		    <result name="success">article/campus_article.jsp</result>
+		</action>
+		
+		<!-- 二十周年活动抽奖 -->
+		<action name="anniversaryActivityAction" class="anniversaryActivityAction">
+		    <result name="success">anniversaryActivity.jsp</result>
+		</action>
+		<!-- to article page -->
+		<action name="toArticle" class="articleForwardAction">
+		    <result name="success">article/article_template.jsp</result>
+		</action>
+		<!-- 转发文章  送优惠券 -->
+		<action name="sendCoupons" class="articleForwardAction" method="sendCoupons">
+		    <result name="success" type="json">
+		        <param name="root">resMsg</param>
+		    </result>
+		</action>
+		<!-- 优惠券管理 -->	
+		<action name="couponManage" class="couponManageAction">
+		    <result name="success">coupon_manage.jsp</result>
+		</action>
+		<!-- 获取js签名 -->
+		<action name="signature" class="signatureAction" method="signature">
+		    <result name="success" type="json">
+				<param name="root">registInfo</param>
+			</result>
+		</action>
+		<!-- 校园托运活动  未用-->
+		<action name="campusActivity" class="compusActivityAction" method="campusActivity">
+		    <result name="success">campus_activity.jsp</result>
+		</action>
+		
+		<!--易到家抵用券 -->
+		<action name="lotteryShow" class="lotteryShowAction">
+			<result name="success">redPacket.jsp</result>
+		</action>
+		
+		<!-- 活动（7-31） -->
+		<action name="getLotteryInfo" class="activitiesAction">
+			<result name="success">luck_draw.jsp</result>
+		</action>
+		
+		<action name="shareRecord" class="activitiesAction" method="shareRecord">
+			<result type="json">
+				<param name="root">shareStatus</param>
+			</result>
+		</action>
+		
+		<action name="waybillTrace" class="goodsTraceAction" method="waybillTrace">
+			<result name="success">waybill_trace.jsp</result>
+		</action>
+		
+		<action name="departmentList" class="departmentListAction">
+			<result name="success">department_list.jsp</result>
+		</action>
+
+		<action name="departmentListJson" class="departmentListAction"
+			method="getDepartments">
+			<result type="json">
+				<param name="root">departmentListActions</param>
+			</result>
+		</action>
+		
+		
+		<!-- 通过省市区获取受理网点-->
+		<!-- <action name="getBranchesAddress" class="departmentListAction" method="getListByAddress">
+			<result type="json">
+				<param name="root">departmentListActions</param>
+			</result>
+		</action> -->
+		
+		
+		<!-- 进入地图模式页面 -->
+		<action name="toDepartMentPage" class="departmentListAction" method="toDepartMentPage">
+			<result name="success">map_pattern.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 慧聪下单界面 -->
+		<action name="hcOrder" class="orderManagerAction" method="hcOrder">
+			<result name="success">hc_place_order.jsp</result>
+			<result name="error">hc_error.jsp</result>
+		</action>
+		<!-- 慧聪提交订单 -->
+		<action name="hcSubmitOrder" class="orderManagerAction" method="hcSubmitOrder">
+			<result name="success">hc_result.jsp</result>
+		</action>
+		
+		<action name="queryOrder" class="orderManagerAction" method="queryOrder">
+			<result name="success">order_manager.jsp</result>
+		</action>
+		<action name="cancelOrder" class="orderManagerAction" method="cancelOrder">
+			<result type="json">
+				<param name="root">orderResult</param>
+			</result>
+		</action>
+
+		
+		<action name="modifyOrder" class="orderManagerAction" method="modifyOrder">
+			<result name="success">order_modify.jsp</result>
+		</action>
+		
+		<action name="modifyOrderDetail" class="orderManagerAction" method="modifyOrderDetail">
+			<result type="json">
+				<param name="root">orderResult</param>
+			</result>
+		</action>
+		<action name="queryOrderByNo" class="orderManagerAction" method="queryOrderByNo">
+			<result type="json">
+				<param name="root">orderResult</param>
+			</result>
+		</action>
+		
+		<action name="orderDetail" class="orderManagerAction" method="queryOrderDetail">
+			<result name="success">order_detail.jsp</result>
+		</action>
+
+		
+		<!-- 手机绑定 -->
+		
+		<action name="mobileBind" class="phoneBindAction">
+			<result name="success" type="json">
+				<param name="root">noticeMsg</param>
+			</result>
+		</action>
+		
+		<action name="bindSuccess" class="phoneBindAction" method="bindSuccess">
+			<result name="success">view_binding_info.jsp</result>
+		</action>
+		
+		<action name="changeBind" class="phoneBindAction" method="changeBind">
+			<result type="json">
+				<param name="root">noticeMsg</param>
+			</result>
+		</action>
+		
+		<action name="toMobileBindPage" class="phoneBindAction" method="toMobileBindPage">
+			<result name="bind_page">mobile_binding.jsp</result>
+			<result name="change_page">change_mobile_binding.jsp</result>
+		</action>
+		
+		<action name="toChangeBindPage" class="phoneBindAction" method="toChangeBindPage">
+			<result>change_mobile_binding.jsp</result>
+		</action>
+		
+		<action name="getValiteCode" class="phoneBindAction" method="getValiteCode">
+			<result type="json">
+				<param name="root">noticeMsg</param>
+			</result>
+		</action>
+		
+		<action name="surveyAction" class="surveyAction">
+		</action>
+		
+		
+	</package>
+
+</struts>

@@ -1,0 +1,4571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="HOAU">
+  <database-model serializer="dbm" rdbms="MSSQL" format-version="4.3">
+    <root id="1">
+      <ServerType>standalone</ServerType>
+    </root>
+    <database id="2" parent="1" name="HOAU">
+      <ObjectId>8</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+    </database>
+    <database id="4" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+    </database>
+    <database id="5" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+    </database>
+    <database id="6" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+    </database>
+    <database id="7" parent="1" name="ReportServer">
+      <ObjectId>5</ObjectId>
+    </database>
+    <database id="8" parent="1" name="ReportServerTempDB">
+      <ObjectId>6</ObjectId>
+    </database>
+    <database id="9" parent="1" name="OAZJ">
+      <ObjectId>7</ObjectId>
+    </database>
+    <database id="10" parent="1" name="Hoauoatest">
+      <ObjectId>9</ObjectId>
+    </database>
+    <database id="11" parent="1" name="Hoauoa">
+      <ObjectId>10</ObjectId>
+    </database>
+    <database id="12" parent="1" name="STEMLog">
+      <ObjectId>11</ObjectId>
+    </database>
+    <database id="13" parent="1" name="STEMConfig_new">
+      <ObjectId>12</ObjectId>
+    </database>
+    <database id="14" parent="1" name="STEMFriendlyName_new">
+      <ObjectId>13</ObjectId>
+    </database>
+    <database id="15" parent="1" name="STEMconfig">
+      <ObjectId>14</ObjectId>
+    </database>
+    <database id="16" parent="1" name="STEMFriendlyName">
+      <ObjectId>15</ObjectId>
+    </database>
+    <database id="17" parent="1" name="distribution">
+      <ObjectId>16</ObjectId>
+    </database>
+    <database id="18" parent="1" name="HoauoaDB">
+      <ObjectId>18</ObjectId>
+    </database>
+    <database id="19" parent="1" name="tdyhcptbk">
+      <ObjectId>19</ObjectId>
+    </database>
+    <schema id="20" parent="2" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2017-08-01.13:43:12.550</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="21" parent="2" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="22" parent="2" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="23" parent="2" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <schema id="24" parent="2" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="25" parent="2" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="26" parent="2" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="27" parent="2" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="28" parent="2" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="29" parent="2" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="30" parent="2" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="31" parent="2" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="32" parent="2" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <table id="33" parent="20" name="HOAU_JOB_LOG">
+      <ObjectId>747149707</ObjectId>
+      <CreatedTimestamp>2015-05-27.17:17:56.243</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.847</ModifiedTimestamp>
+    </table>
+    <table id="34" parent="20" name="HOAU_NEWS_BAK20150728">
+      <ObjectId>1899153811</ObjectId>
+      <CreatedTimestamp>2015-07-28.08:53:53.813</CreatedTimestamp>
+      <ModifiedTimestamp>2015-07-28.08:53:53.877</ModifiedTimestamp>
+    </table>
+    <table id="35" parent="20" name="S_City">
+      <ObjectId>802101898</ObjectId>
+      <CreatedTimestamp>2010-02-27.11:37:16.433</CreatedTimestamp>
+      <ModifiedTimestamp>2010-02-27.11:37:16.437</ModifiedTimestamp>
+    </table>
+    <table id="36" parent="20" name="S_Province">
+      <ObjectId>818101955</ObjectId>
+      <CreatedTimestamp>2010-02-27.11:37:16.467</CreatedTimestamp>
+      <ModifiedTimestamp>2010-02-27.11:37:16.470</ModifiedTimestamp>
+    </table>
+    <table id="37" parent="20" name="hoau_about_bigevent">
+      <ObjectId>923150334</ObjectId>
+      <CreatedTimestamp>2015-06-17.11:13:42.973</CreatedTimestamp>
+      <ModifiedTimestamp>2015-06-17.14:32:53.007</ModifiedTimestamp>
+    </table>
+    <table id="38" parent="20" name="hoau_bank_info">
+      <ObjectId>391672443</ObjectId>
+      <CreatedTimestamp>2016-03-28.17:36:01.057</CreatedTimestamp>
+      <ModifiedTimestamp>2016-03-28.17:36:01.103</ModifiedTimestamp>
+    </table>
+    <table id="39" parent="20" name="hoau_banner">
+      <ObjectId>875150163</ObjectId>
+      <CreatedTimestamp>2015-06-11.13:57:38.383</CreatedTimestamp>
+      <ModifiedTimestamp>2015-06-17.14:33:03.727</ModifiedTimestamp>
+    </table>
+    <table id="40" parent="20" name="hoau_basedata">
+      <ObjectId>971150505</ObjectId>
+      <CreatedTimestamp>2015-06-17.21:23:21.780</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:23.167</ModifiedTimestamp>
+    </table>
+    <table id="41" parent="20" name="hoau_branch">
+      <ObjectId>1413580074</ObjectId>
+      <CreatedTimestamp>2009-11-20.14:44:36.403</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:23.103</ModifiedTimestamp>
+    </table>
+    <table id="42" parent="20" name="hoau_category">
+      <ObjectId>453576654</ObjectId>
+      <CreatedTimestamp>2009-11-19.12:18:03.967</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.973</ModifiedTimestamp>
+    </table>
+    <table id="43" parent="20" name="hoau_china">
+      <ObjectId>1694629080</ObjectId>
+      <CreatedTimestamp>2013-05-10.17:59:54.027</CreatedTimestamp>
+      <ModifiedTimestamp>2013-05-10.17:59:54.030</ModifiedTimestamp>
+    </table>
+    <table id="44" parent="20" name="hoau_city_code">
+      <ObjectId>718625603</ObjectId>
+      <CreatedTimestamp>2012-04-20.16:30:33.317</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.910</ModifiedTimestamp>
+    </table>
+    <table id="45" parent="20" name="hoau_city_continue">
+      <ObjectId>766625774</ObjectId>
+      <CreatedTimestamp>2012-04-27.10:51:50.813</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.817</ModifiedTimestamp>
+    </table>
+    <table id="46" parent="20" name="hoau_city_continue_jj">
+      <ObjectId>1182627256</ObjectId>
+      <CreatedTimestamp>2013-03-06.14:35:11.327</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-06.14:35:11.330</ModifiedTimestamp>
+    </table>
+    <table id="47" parent="20" name="hoau_city_continue_xb">
+      <ObjectId>958626458</ObjectId>
+      <CreatedTimestamp>2013-02-21.10:11:35.777</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.743</ModifiedTimestamp>
+    </table>
+    <table id="48" parent="20" name="hoau_city_jj">
+      <ObjectId>1198627313</ObjectId>
+      <CreatedTimestamp>2013-03-06.14:35:11.470</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.667</ModifiedTimestamp>
+    </table>
+    <table id="49" parent="20" name="hoau_city_price">
+      <ObjectId>798625888</ObjectId>
+      <CreatedTimestamp>2012-08-06.10:24:49.323</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.617</ModifiedTimestamp>
+    </table>
+    <table id="50" parent="20" name="hoau_city_price_jj">
+      <ObjectId>1502628396</ObjectId>
+      <CreatedTimestamp>2013-03-13.14:29:05.607</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.507</ModifiedTimestamp>
+    </table>
+    <table id="51" parent="20" name="hoau_city_price_xb">
+      <ObjectId>1022626686</ObjectId>
+      <CreatedTimestamp>2013-02-21.10:11:35.807</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.410</ModifiedTimestamp>
+    </table>
+    <table id="52" parent="20" name="hoau_city_time_jj">
+      <ObjectId>1294627655</ObjectId>
+      <CreatedTimestamp>2013-03-07.15:43:45.147</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-07.15:43:45.150</ModifiedTimestamp>
+    </table>
+    <table id="53" parent="20" name="hoau_city_time_xb">
+      <ObjectId>1262627541</ObjectId>
+      <CreatedTimestamp>2013-03-07.15:43:45.037</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.277</ModifiedTimestamp>
+    </table>
+    <table id="54" parent="20" name="hoau_city_to_city">
+      <ObjectId>686625489</ObjectId>
+      <CreatedTimestamp>2012-04-20.16:28:47.457</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.287</ModifiedTimestamp>
+    </table>
+    <table id="55" parent="20" name="hoau_city_xb">
+      <ObjectId>990626572</ObjectId>
+      <CreatedTimestamp>2013-02-21.10:11:35.790</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.083</ModifiedTimestamp>
+    </table>
+    <table id="56" parent="20" name="hoau_comment">
+      <ObjectId>446624634</ObjectId>
+      <CreatedTimestamp>2010-07-12.16:23:34.420</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.080</ModifiedTimestamp>
+    </table>
+    <table id="57" parent="20" name="hoau_common_question">
+      <ObjectId>1851153640</ObjectId>
+      <CreatedTimestamp>2015-07-14.15:55:02.557</CreatedTimestamp>
+      <ModifiedTimestamp>2015-07-14.15:55:02.590</ModifiedTimestamp>
+    </table>
+    <table id="58" parent="20" name="hoau_company">
+      <ObjectId>626101271</ObjectId>
+      <CreatedTimestamp>2010-02-01.19:43:23</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:22.047</ModifiedTimestamp>
+    </table>
+    <table id="59" parent="20" name="hoau_contraband">
+      <ObjectId>1669580986</ObjectId>
+      <CreatedTimestamp>2009-11-24.16:07:29.950</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.767</ModifiedTimestamp>
+    </table>
+    <table id="60" parent="20" name="hoau_division">
+      <ObjectId>430624577</ObjectId>
+      <CreatedTimestamp>2010-07-07.19:18:38.813</CreatedTimestamp>
+      <ModifiedTimestamp>2010-07-07.19:18:38.817</ModifiedTimestamp>
+    </table>
+    <table id="61" parent="20" name="hoau_dkh">
+      <ObjectId>286624064</ObjectId>
+      <CreatedTimestamp>2010-03-21.15:43:50.087</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.703</ModifiedTimestamp>
+    </table>
+    <table id="62" parent="20" name="hoau_drd_price">
+      <ObjectId>494624805</ObjectId>
+      <CreatedTimestamp>2011-04-29.10:37:09.523</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.610</ModifiedTimestamp>
+    </table>
+    <table id="63" parent="20" name="hoau_drdnetstate">
+      <ObjectId>354100302</ObjectId>
+      <CreatedTimestamp>2009-12-08.16:32:48.437</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.537</ModifiedTimestamp>
+    </table>
+    <table id="64" parent="20" name="hoau_email">
+      <ObjectId>1701581100</ObjectId>
+      <CreatedTimestamp>2009-11-25.14:48:41.547</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.390</ModifiedTimestamp>
+    </table>
+    <table id="65" parent="20" name="hoau_employ">
+      <ObjectId>1733581214</ObjectId>
+      <CreatedTimestamp>2009-11-30.11:00:00.153</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.290</ModifiedTimestamp>
+    </table>
+    <table id="66" parent="20" name="hoau_empty_list_jj">
+      <ObjectId>1406628054</ObjectId>
+      <CreatedTimestamp>2013-03-13.14:29:05.590</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.177</ModifiedTimestamp>
+    </table>
+    <table id="67" parent="20" name="hoau_empty_list_xb">
+      <ObjectId>1310627712</ObjectId>
+      <CreatedTimestamp>2013-03-11.14:12:53.590</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.097</ModifiedTimestamp>
+    </table>
+    <table id="68" parent="20" name="hoau_franchise_info">
+      <ObjectId>215671816</ObjectId>
+      <CreatedTimestamp>2015-12-29.17:50:58.460</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:21.050</ModifiedTimestamp>
+    </table>
+    <table id="69" parent="20" name="hoau_information">
+      <ObjectId>1637580872</ObjectId>
+      <CreatedTimestamp>2009-11-24.14:51:25.310</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.953</ModifiedTimestamp>
+    </table>
+    <table id="70" parent="20" name="hoau_log_list">
+      <ObjectId>1534628510</ObjectId>
+      <CreatedTimestamp>2013-03-18.20:02:05.153</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.767</ModifiedTimestamp>
+    </table>
+    <table id="71" parent="20" name="hoau_log_user">
+      <ObjectId>997578592</ObjectId>
+      <CreatedTimestamp>2009-11-20.10:41:38.483</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.677</ModifiedTimestamp>
+    </table>
+    <table id="72" parent="20" name="hoau_mail_config">
+      <ObjectId>498100815</ObjectId>
+      <CreatedTimestamp>2010-01-06.15:49:21.733</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.580</ModifiedTimestamp>
+    </table>
+    <table id="73" parent="20" name="hoau_menu">
+      <ObjectId>613577224</ObjectId>
+      <CreatedTimestamp>2009-11-19.13:20:09.140</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.373</ModifiedTimestamp>
+    </table>
+    <table id="74" parent="20" name="hoau_new_city">
+      <ObjectId>834102012</ObjectId>
+      <CreatedTimestamp>2010-02-27.11:57:53.030</CreatedTimestamp>
+      <ModifiedTimestamp>2010-02-27.11:57:53.047</ModifiedTimestamp>
+    </table>
+    <table id="75" parent="20" name="hoau_new_city_oms">
+      <ObjectId>526624919</ObjectId>
+      <CreatedTimestamp>2011-06-10.15:41:29.743</CreatedTimestamp>
+      <ModifiedTimestamp>2011-06-10.15:41:29.747</ModifiedTimestamp>
+    </table>
+    <table id="76" parent="20" name="hoau_new_province">
+      <ObjectId>770101784</ObjectId>
+      <CreatedTimestamp>2010-02-27.11:37:16.373</CreatedTimestamp>
+      <ModifiedTimestamp>2010-02-27.11:37:16.377</ModifiedTimestamp>
+    </table>
+    <table id="77" parent="20" name="hoau_new_province_oms">
+      <ObjectId>542624976</ObjectId>
+      <CreatedTimestamp>2011-06-10.15:41:43.687</CreatedTimestamp>
+      <ModifiedTimestamp>2011-06-10.15:41:43.690</ModifiedTimestamp>
+    </table>
+    <table id="78" parent="20" name="hoau_news">
+      <ObjectId>318624178</ObjectId>
+      <CreatedTimestamp>2010-04-02.17:07:49.440</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.380</ModifiedTimestamp>
+    </table>
+    <table id="79" parent="20" name="hoau_position">
+      <ObjectId>350624292</ObjectId>
+      <CreatedTimestamp>2010-04-09.17:41:42.853</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.167</ModifiedTimestamp>
+    </table>
+    <table id="80" parent="20" name="hoau_pre_list_jj">
+      <ObjectId>1470628282</ObjectId>
+      <CreatedTimestamp>2013-03-13.14:29:05.607</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:20.073</ModifiedTimestamp>
+    </table>
+    <table id="81" parent="20" name="hoau_pre_list_xb">
+      <ObjectId>1374627940</ObjectId>
+      <CreatedTimestamp>2013-03-12.11:18:46.453</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.990</ModifiedTimestamp>
+    </table>
+    <table id="82" parent="20" name="hoau_problem">
+      <ObjectId>62623266</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:38:55.207</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.937</ModifiedTimestamp>
+    </table>
+    <table id="83" parent="20" name="hoau_province">
+      <ObjectId>1445580188</ObjectId>
+      <CreatedTimestamp>2009-11-20.14:49:28.950</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.843</ModifiedTimestamp>
+    </table>
+    <table id="84" parent="20" name="hoau_province2">
+      <ObjectId>434100587</ObjectId>
+      <CreatedTimestamp>2009-12-15.11:54:01.263</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.730</ModifiedTimestamp>
+    </table>
+    <table id="85" parent="20" name="hoau_question">
+      <ObjectId>94623380</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:39:42.410</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.653</ModifiedTimestamp>
+    </table>
+    <table id="86" parent="20" name="hoau_question_item">
+      <ObjectId>126623494</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:40:20.693</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.563</ModifiedTimestamp>
+    </table>
+    <table id="87" parent="20" name="hoau_question_record">
+      <ObjectId>158623608</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:40:50.663</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.477</ModifiedTimestamp>
+    </table>
+    <table id="88" parent="20" name="hoau_question_record_info">
+      <ObjectId>190623722</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:41:31.383</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.370</ModifiedTimestamp>
+    </table>
+    <table id="89" parent="20" name="hoau_redo_list_jj">
+      <ObjectId>1438628168</ObjectId>
+      <CreatedTimestamp>2013-03-13.14:29:05.590</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.287</ModifiedTimestamp>
+    </table>
+    <table id="90" parent="20" name="hoau_redo_list_xb">
+      <ObjectId>1342627826</ObjectId>
+      <CreatedTimestamp>2013-03-11.14:12:53.603</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.207</ModifiedTimestamp>
+    </table>
+    <table id="91" parent="20" name="hoau_report">
+      <ObjectId>1710629137</ObjectId>
+      <CreatedTimestamp>2013-12-31.19:18:33.723</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:19.197</ModifiedTimestamp>
+    </table>
+    <table id="92" parent="20" name="hoau_report_upload">
+      <ObjectId>1742629251</ObjectId>
+      <CreatedTimestamp>2013-12-31.19:18:33.723</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.897</ModifiedTimestamp>
+    </table>
+    <table id="93" parent="20" name="hoau_rights">
+      <ObjectId>357576312</ObjectId>
+      <CreatedTimestamp>2009-11-19.11:52:00.497</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.717</ModifiedTimestamp>
+    </table>
+    <table id="94" parent="20" name="hoau_subdivision">
+      <ObjectId>414624520</ObjectId>
+      <CreatedTimestamp>2010-07-07.19:17:18.890</CreatedTimestamp>
+      <ModifiedTimestamp>2010-07-07.19:17:18.893</ModifiedTimestamp>
+    </table>
+    <table id="95" parent="20" name="hoau_txjy_city">
+      <ObjectId>59147256</ObjectId>
+      <CreatedTimestamp>2015-05-23.16:21:09.633</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.630</ModifiedTimestamp>
+    </table>
+    <table id="96" parent="20" name="hoau_txjy_city_contact">
+      <ObjectId>267147997</ObjectId>
+      <CreatedTimestamp>2015-05-23.20:31:07.627</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.567</ModifiedTimestamp>
+    </table>
+    <table id="97" parent="20" name="hoau_txjy_contact">
+      <ObjectId>507148852</ObjectId>
+      <CreatedTimestamp>2015-05-24.21:11:57.167</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.507</ModifiedTimestamp>
+    </table>
+    <table id="98" parent="20" name="hoau_txjy_division">
+      <ObjectId>571149080</ObjectId>
+      <CreatedTimestamp>2015-05-25.20:58:37.600</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.400</ModifiedTimestamp>
+    </table>
+    <table id="99" parent="20" name="hoau_txjy_province">
+      <ObjectId>1998630163</ObjectId>
+      <CreatedTimestamp>2015-05-23.13:30:47.127</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.310</ModifiedTimestamp>
+    </table>
+    <table id="100" parent="20" name="hoau_txjy_registration">
+      <ObjectId>539148966</ObjectId>
+      <CreatedTimestamp>2015-05-25.14:50:34.860</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.317</ModifiedTimestamp>
+    </table>
+    <table id="101" parent="20" name="hoau_user">
+      <ObjectId>965578478</ObjectId>
+      <CreatedTimestamp>2009-11-19.15:06:54.217</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.127</ModifiedTimestamp>
+    </table>
+    <table id="102" parent="20" name="hoau_video">
+      <ObjectId>398624463</ObjectId>
+      <CreatedTimestamp>2010-05-21.15:26:46.240</CreatedTimestamp>
+      <ModifiedTimestamp>2010-05-21.15:26:46.427</ModifiedTimestamp>
+    </table>
+    <table id="103" parent="20" name="hoau_yd_config">
+      <ObjectId>594101157</ObjectId>
+      <CreatedTimestamp>2010-01-27.10:30:37.013</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.020</ModifiedTimestamp>
+    </table>
+    <table id="104" parent="20" name="hoau_yywd">
+      <ObjectId>1054626800</ObjectId>
+      <CreatedTimestamp>2013-02-21.15:25:19.913</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:18.163</ModifiedTimestamp>
+    </table>
+    <table id="105" parent="20" name="sysdiagrams">
+      <ObjectId>2089058478</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.747</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:17.803</ModifiedTimestamp>
+    </table>
+    <table id="106" parent="20" name="t_bse_dept">
+      <ObjectId>1179151246</ObjectId>
+      <CreatedTimestamp>2015-06-24.09:06:50.560</CreatedTimestamp>
+      <ModifiedTimestamp>2016-07-11.15:48:33.970</ModifiedTimestamp>
+    </table>
+    <table id="107" parent="20" name="t_bse_district">
+      <ObjectId>2011154210</ObjectId>
+      <CreatedTimestamp>2015-08-26.17:49:25.647</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:17.760</ModifiedTimestamp>
+    </table>
+    <table id="108" parent="20" name="t_bse_franchise">
+      <ObjectId>1915153868</ObjectId>
+      <CreatedTimestamp>2015-08-18.16:31:20.617</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:17.727</ModifiedTimestamp>
+    </table>
+    <table id="109" parent="20" name="t_bse_hot_city">
+      <ObjectId>1787153412</ObjectId>
+      <CreatedTimestamp>2015-07-03.17:18:30.380</CreatedTimestamp>
+      <ModifiedTimestamp>2015-07-03.17:18:30.383</ModifiedTimestamp>
+    </table>
+    <table id="110" parent="20" name="t_bse_out_branch">
+      <ObjectId>1947153982</ObjectId>
+      <CreatedTimestamp>2015-08-18.16:32:14.647</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:17.617</ModifiedTimestamp>
+    </table>
+    <table id="111" parent="20" name="t_log_operation">
+      <ObjectId>327672215</ObjectId>
+      <CreatedTimestamp>2015-12-30.17:50:27.863</CreatedTimestamp>
+      <ModifiedTimestamp>2016-06-24.08:54:17.393</ModifiedTimestamp>
+    </table>
+    <table id="112" parent="20" name="test">
+      <ObjectId>2023678257</ObjectId>
+      <CreatedTimestamp>2016-04-13.14:23:00.520</CreatedTimestamp>
+      <ModifiedTimestamp>2016-04-13.14:23:00.550</ModifiedTimestamp>
+    </table>
+    <view id="113" parent="20" name="department_view">
+      <ObjectId>2135678656</ObjectId>
+      <CreatedTimestamp>2016-07-11.15:56:27.757</CreatedTimestamp>
+      <ModifiedTimestamp>2016-07-11.15:56:27.757</ModifiedTimestamp>
+    </view>
+    <routine id="114" parent="20" name="fn_diagramobjects">
+      <ObjectId>85575343</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.780</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.780</ModifiedTimestamp>
+      <RoutineKind>function</RoutineKind>
+      <RoutineType>scalar-fun</RoutineType>
+    </routine>
+    <routine id="115" parent="20" name="sp_alterdiagram">
+      <ObjectId>53575229</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.763</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.763</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="116" parent="20" name="sp_creatediagram">
+      <ObjectId>21575115</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.763</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.763</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="117" parent="20" name="sp_dropdiagram">
+      <ObjectId>69575286</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.780</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.780</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="118" parent="20" name="sp_helpdiagramdefinition">
+      <ObjectId>5575058</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.763</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.763</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="119" parent="20" name="sp_helpdiagrams">
+      <ObjectId>2137058649</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.747</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.747</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="120" parent="20" name="sp_renamediagram">
+      <ObjectId>37575172</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.763</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.763</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="121" parent="20" name="sp_upgraddiagrams">
+      <ObjectId>2073058421</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.733</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.733</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <column id="122" parent="33" name="ID">
+      <Position>1</Position>
+      <DataType>numeric(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="123" parent="33" name="JOB_NAME">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="124" parent="33" name="JOB_STATUS">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="125" parent="33" name="ERROR_LOG">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="126" parent="33" name="CREATE_TIME">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="127" parent="33" name="PK__HOAU_JOB_LOG__2D7CBDC4">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="128" parent="33" name="PK__HOAU_JOB_LOG__2D7CBDC4">
+      <ObjectId>763149764</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-05-27.17:17:56.243</CreatedTimestamp>
+      <ModifiedTimestamp>2015-05-27.17:17:56.243</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>PK__HOAU_JOB_LOG__2D7CBDC4</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="129" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="130" parent="34" name="category_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="131" parent="34" name="priority">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="132" parent="34" name="click_count">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="133" parent="34" name="is_adopt">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="134" parent="34" name="keywords">
+      <Position>6</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="135" parent="34" name="title">
+      <Position>7</Position>
+      <DataType>ntext|0</DataType>
+    </column>
+    <column id="136" parent="34" name="short_title">
+      <Position>8</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="137" parent="34" name="description">
+      <Position>9</Position>
+      <DataType>ntext|0</DataType>
+    </column>
+    <column id="138" parent="34" name="news_content">
+      <Position>10</Position>
+      <DataType>ntext|0</DataType>
+    </column>
+    <column id="139" parent="34" name="created_at">
+      <Position>11</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="140" parent="34" name="publisher_id">
+      <Position>12</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="141" parent="34" name="file_name">
+      <Position>13</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="142" parent="34" name="target_url">
+      <Position>14</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="143" parent="34" name="is_photo_news">
+      <Position>15</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="144" parent="34" name="photo_src">
+      <Position>16</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="145" parent="34" name="video_photo_src">
+      <Position>17</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="146" parent="34" name="image_flag">
+      <Position>18</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="147" parent="34" name="video_flag">
+      <Position>19</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="148" parent="34" name="video_src">
+      <Position>20</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="149" parent="34" name="slt_src">
+      <Position>21</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="150" parent="34" name="guoqi">
+      <Position>22</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="151" parent="35" name="CityID">
+      <Position>1</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="152" parent="35" name="CityName">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="153" parent="35" name="ZipCode">
+      <Position>3</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="154" parent="35" name="ProvinceID">
+      <Position>4</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="155" parent="35" name="DateCreated">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="156" parent="35" name="DateUpdated">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="157" parent="36" name="ProvinceID">
+      <Position>1</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="158" parent="36" name="ProvinceName">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="159" parent="36" name="DateCreated">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="160" parent="36" name="DateUpdated">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="161" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="162" parent="37" name="year">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="163" parent="37" name="month">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="164" parent="37" name="time">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="165" parent="37" name="description">
+      <Position>5</Position>
+      <DataType>nvarchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="166" parent="37" name="create_date">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>getdate()</DefaultExpression>
+    </column>
+    <column id="167" parent="37" name="create_user">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="168" parent="37" name="modify_date">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="169" parent="37" name="modify_user">
+      <Position>9</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="170" parent="37" name="is_adopt">
+      <Position>10</Position>
+      <DataType>int|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="171" parent="38" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="172" parent="38" name="code">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="173" parent="38" name="name">
+      <Position>3</Position>
+      <DataType>varchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="174" parent="38" name="create_date">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="175" parent="38" name="create_user">
+      <Position>5</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="176" parent="38" name="modify_date">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="177" parent="38" name="modify_user">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="178" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="179" parent="39" name="pic_index">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="180" parent="39" name="pic_src">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="181" parent="39" name="link_name">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="182" parent="39" name="is_adopt">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="183" parent="39" name="create_date">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>getdate()</DefaultExpression>
+    </column>
+    <column id="184" parent="39" name="create_user">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="185" parent="39" name="modify_date">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="186" parent="39" name="modify_user">
+      <Position>9</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="187" parent="40" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="188" parent="40" name="type">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="189" parent="40" name="name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="190" parent="40" name="value">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="191" parent="40" name="remark">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="192" parent="40" name="modifyTime">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="193" parent="40" name="PK__hoau_basedata__3AD6B8E2">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="194" parent="40" name="PK__hoau_basedata__3AD6B8E2">
+      <ObjectId>987150562</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-06-17.21:23:21.797</CreatedTimestamp>
+      <ModifiedTimestamp>2015-06-17.21:23:21.797</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__hoau_basedata__3AD6B8E2</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="195" parent="41" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="196" parent="41" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="197" parent="41" name="code">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="198" parent="41" name="address">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="199" parent="41" name="phone">
+      <Position>5</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="200" parent="41" name="fax">
+      <Position>6</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="201" parent="41" name="is_adopt">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="202" parent="41" name="is_drd">
+      <Position>8</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="203" parent="41" name="province_id">
+      <Position>9</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="204" parent="41" name="PK_hoau_branch">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="205" parent="41" name="PK_hoau_branch">
+      <ObjectId>1429580131</ObjectId>
+      <CreatedTimestamp>2009-11-20.14:44:36.403</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-20.14:44:36.403</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_branch</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="206" parent="42" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="207" parent="42" name="category_type">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="208" parent="42" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="209" parent="42" name="PK_hoau_category">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="210" parent="42" name="PK_hoau_category">
+      <ObjectId>469576711</ObjectId>
+      <CreatedTimestamp>2009-11-19.12:18:03.983</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-19.12:18:03.983</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_category</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="211" parent="43" name="ID">
+      <Position>1</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="212" parent="43" name="TYPE">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="213" parent="43" name="PMC">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="214" parent="43" name="PID">
+      <Position>4</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="215" parent="44" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="216" parent="44" name="city_code">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="217" parent="44" name="city_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="218" parent="44" name="province">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="219" parent="44" name="update_time">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;数据暂未更新&apos;</DefaultExpression>
+    </column>
+    <index id="220" parent="44" name="PK_hoau_city_code">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="221" parent="44" name="PK_hoau_city_code">
+      <ObjectId>734625660</ObjectId>
+      <CreatedTimestamp>2012-04-20.16:30:33.317</CreatedTimestamp>
+      <ModifiedTimestamp>2012-04-20.16:30:33.317</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_code</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="222" parent="45" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="223" parent="45" name="restart_city_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="224" parent="45" name="over_city_id">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="225" parent="45" name="PK_hoau_city_continue">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="226" parent="45" name="PK_hoau_city_continue">
+      <ObjectId>782625831</ObjectId>
+      <CreatedTimestamp>2012-04-27.10:51:50.830</CreatedTimestamp>
+      <ModifiedTimestamp>2012-04-27.10:51:50.830</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_continue</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="227" parent="46" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="228" parent="46" name="restart_city_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="229" parent="46" name="over_city_id">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="230" parent="47" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="231" parent="47" name="restart_city_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="232" parent="47" name="over_city_id">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="233" parent="47" name="PK_hoau_city_continue_xb">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="234" parent="47" name="PK_hoau_city_continue_xb">
+      <ObjectId>974626515</ObjectId>
+      <CreatedTimestamp>2013-02-21.10:11:35.777</CreatedTimestamp>
+      <ModifiedTimestamp>2013-02-21.10:11:35.777</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_continue_xb</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="235" parent="48" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="236" parent="48" name="city">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="237" parent="48" name="province">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="238" parent="48" name="city_code">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="239" parent="48" name="PK_hoau_city_jj">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="240" parent="48" name="PK_hoau_city_jj">
+      <ObjectId>1214627370</ObjectId>
+      <CreatedTimestamp>2013-03-06.14:35:11.470</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-06.14:35:11.470</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_jj</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="241" parent="49" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="242" parent="49" name="method">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="243" parent="49" name="price">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="244" parent="49" name="time">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="245" parent="49" name="trance_price">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="246" parent="49" name="adopt">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="247" parent="49" name="leave_city">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="248" parent="49" name="arrive_city">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <index id="249" parent="49" name="PK_dbo.hoau_price">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="250" parent="49" name="PK_dbo.hoau_price">
+      <ObjectId>814625945</ObjectId>
+      <CreatedTimestamp>2012-08-06.10:24:49.323</CreatedTimestamp>
+      <ModifiedTimestamp>2012-08-06.10:24:49.323</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_dbo.hoau_price</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="251" parent="50" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="252" parent="50" name="fromcity">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="253" parent="50" name="tocity">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="254" parent="50" name="lightprice">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="255" parent="50" name="heavyprice">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="256" parent="50" name="days">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="257" parent="50" name="miles">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="258" parent="50" name="PK_hoau_city_price_jj">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="259" parent="50" name="PK_hoau_city_price_jj">
+      <ObjectId>1518628453</ObjectId>
+      <CreatedTimestamp>2013-03-13.14:29:05.607</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-13.14:29:05.607</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_price_jj</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="260" parent="51" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="261" parent="51" name="method">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="262" parent="51" name="price">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="263" parent="51" name="heavyprice">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="264" parent="51" name="lightprice">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="265" parent="51" name="tocity">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="266" parent="51" name="fromcity">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="267" parent="51" name="zttime">
+      <Position>8</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="268" parent="51" name="shsmtime">
+      <Position>9</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="269" parent="51" name="activity">
+      <Position>10</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="270" parent="51" name="PK_hoau_city_price_xb">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="271" parent="51" name="PK_hoau_city_price_xb">
+      <ObjectId>1038626743</ObjectId>
+      <CreatedTimestamp>2013-02-21.10:11:35.807</CreatedTimestamp>
+      <ModifiedTimestamp>2013-02-21.10:11:35.807</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_price_xb</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="272" parent="52" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="273" parent="52" name="time">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="274" parent="52" name="session">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="275" parent="53" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="276" parent="53" name="time">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="277" parent="53" name="session">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="278" parent="53" name="PK_hoau_city_time_xb">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="279" parent="53" name="PK_hoau_city_time_xb">
+      <ObjectId>1278627598</ObjectId>
+      <CreatedTimestamp>2013-03-07.15:43:45.037</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-07.15:43:45.037</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_time_xb</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="280" parent="54" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="281" parent="54" name="startcitycode">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="282" parent="54" name="endcitycode">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="283" parent="54" name="TransProperty">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="284" parent="54" name="LightPrice">
+      <Position>5</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="285" parent="54" name="WeightPrice">
+      <Position>6</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="286" parent="54" name="MinPrice">
+      <Position>7</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="287" parent="54" name="WorkTime">
+      <Position>8</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="288" parent="54" name="Morning">
+      <Position>9</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="289" parent="54" name="Noon">
+      <Position>10</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="290" parent="54" name="Night">
+      <Position>11</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="291" parent="54" name="Schedule">
+      <Position>12</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="292" parent="54" name="ArrDates">
+      <Position>13</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="293" parent="54" name="ArrTimePoint">
+      <Position>14</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="294" parent="54" name="SendDates">
+      <Position>15</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="295" parent="54" name="SendTimePoint">
+      <Position>16</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="296" parent="54" name="IsGetFromHome">
+      <Position>17</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="297" parent="54" name="PickUpMinPrice">
+      <Position>18</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="298" parent="54" name="startcityname">
+      <Position>19</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="299" parent="54" name="endcityname">
+      <Position>20</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="300" parent="54" name="province">
+      <Position>21</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="301" parent="54" name="PK_hoau_city_to_city">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="302" parent="54" name="PK_hoau_city_to_city">
+      <ObjectId>702625546</ObjectId>
+      <CreatedTimestamp>2012-04-20.16:28:47.490</CreatedTimestamp>
+      <ModifiedTimestamp>2012-04-20.16:28:47.490</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_to_city</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="303" parent="55" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="304" parent="55" name="city">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="305" parent="55" name="province">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="306" parent="55" name="PK_hoau_city_xb">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="307" parent="55" name="PK_hoau_city_xb">
+      <ObjectId>1006626629</ObjectId>
+      <CreatedTimestamp>2013-02-21.10:11:35.790</CreatedTimestamp>
+      <ModifiedTimestamp>2013-02-21.10:11:35.790</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_city_xb</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="308" parent="56" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="309" parent="56" name="topic">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="310" parent="56" name="wbnum">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="311" parent="56" name="name">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="312" parent="56" name="tel">
+      <Position>5</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="313" parent="56" name="message">
+      <Position>6</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="314" parent="56" name="reply">
+      <Position>7</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="315" parent="56" name="UserID">
+      <Position>8</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="316" parent="56" name="status">
+      <Position>9</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="317" parent="56" name="time">
+      <Position>10</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="318" parent="56" name="type">
+      <Position>11</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="319" parent="56" name="replytime">
+      <Position>12</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="320" parent="56" name="email">
+      <Position>13</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="321" parent="56" name="is_adopt">
+      <Position>14</Position>
+      <DataType>int|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="322" parent="56" name="ip">
+      <Position>15</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="323" parent="56" name="businesstype">
+      <Position>16</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="324" parent="56" name="company">
+      <Position>17</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="325" parent="56" name="subcompany">
+      <Position>18</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="326" parent="56" name="did">
+      <Position>19</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="327" parent="56" name="sid">
+      <Position>20</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="328" parent="56" name="feedback">
+      <Position>21</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="329" parent="56" name="note">
+      <Position>22</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="330" parent="56" name="customer_type">
+      <Position>23</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="331" parent="56" name="PK_hoau_comment">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="332" parent="56" name="IX_hoau_comment">
+      <Position>2</Position>
+      <ColNames>replytime</ColNames>
+    </index>
+    <key id="333" parent="56" name="PK_hoau_comment">
+      <ObjectId>478624748</ObjectId>
+      <CreatedTimestamp>2010-07-12.16:23:34.793</CreatedTimestamp>
+      <ModifiedTimestamp>2010-07-12.16:23:34.793</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_comment</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="334" parent="57" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="335" parent="57" name="type">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="336" parent="57" name="question">
+      <Position>3</Position>
+      <DataType>nvarchar(500)|0</DataType>
+    </column>
+    <column id="337" parent="57" name="answer">
+      <Position>4</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="338" parent="57" name="is_adopt">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="339" parent="57" name="create_date">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>getdate()</DefaultExpression>
+    </column>
+    <column id="340" parent="57" name="create_user">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="341" parent="57" name="modify_date">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="342" parent="57" name="modify_user">
+      <Position>9</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="343" parent="58" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="344" parent="58" name="area">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="345" parent="58" name="code">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="346" parent="58" name="short_name">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="347" parent="58" name="standard_code">
+      <Position>5</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="348" parent="58" name="extension_code">
+      <Position>6</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="349" parent="58" name="is_effective">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="350" parent="58" name="is_controlled">
+      <Position>8</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="351" parent="58" name="is_drd">
+      <Position>9</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="352" parent="58" name="company_type">
+      <Position>10</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="353" parent="58" name="belongs_company">
+      <Position>11</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="354" parent="58" name="parent_company">
+      <Position>12</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="355" parent="58" name="distance_logo">
+      <Position>13</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="356" parent="58" name="is_virtual">
+      <Position>14</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="357" parent="58" name="name">
+      <Position>15</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="358" parent="58" name="name_code">
+      <Position>16</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="359" parent="58" name="legal_representative">
+      <Position>17</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="360" parent="58" name="business_scope">
+      <Position>18</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="361" parent="58" name="business_type">
+      <Position>19</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="362" parent="58" name="license_copies_number">
+      <Position>20</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="363" parent="58" name="operation_mode">
+      <Position>21</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="364" parent="58" name="operation_limit">
+      <Position>22</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="365" parent="58" name="province">
+      <Position>23</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="366" parent="58" name="city">
+      <Position>24</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="367" parent="58" name="district">
+      <Position>25</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="368" parent="58" name="street">
+      <Position>26</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="369" parent="58" name="address">
+      <Position>27</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="370" parent="58" name="phone">
+      <Position>28</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="371" parent="58" name="fax">
+      <Position>29</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="372" parent="58" name="zip">
+      <Position>30</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="373" parent="58" name="registered_capital">
+      <Position>31</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="374" parent="58" name="test_company">
+      <Position>32</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="375" parent="58" name="point_x">
+      <Position>33</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="376" parent="58" name="point_y">
+      <Position>34</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="377" parent="58" name="contactor">
+      <Position>35</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="378" parent="58" name="PK_hoau_company">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="379" parent="58" name="IX_hoau_company">
+      <Position>2</Position>
+      <ColNames>name</ColNames>
+    </index>
+    <key id="380" parent="58" name="PK_hoau_company">
+      <ObjectId>642101328</ObjectId>
+      <CreatedTimestamp>2010-02-01.19:43:23.327</CreatedTimestamp>
+      <ModifiedTimestamp>2010-02-01.19:43:23.327</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_company</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="381" parent="59" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="382" parent="59" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="383" parent="59" name="description">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="384" parent="59" name="created_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="385" parent="59" name="is_adopt">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="386" parent="59" name="PK_hoau_contraband">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="387" parent="59" name="PK_hoau_contraband">
+      <ObjectId>1685581043</ObjectId>
+      <CreatedTimestamp>2009-11-24.16:07:29.983</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-24.16:07:29.983</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_contraband</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="388" parent="60" name="DID">
+      <Position>1</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="389" parent="60" name="DNAME">
+      <Position>2</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="390" parent="60" name="id">
+      <Position>3</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="391" parent="61" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="392" parent="61" name="userName">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="393" parent="61" name="password">
+      <Position>3</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="394" parent="61" name="companyName">
+      <Position>4</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="395" parent="61" name="companyId">
+      <Position>5</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="396" parent="61" name="isadmin">
+      <Position>6</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="397" parent="61" name="gps_flag">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="398" parent="61" name="PK_hoau_dkh">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="399" parent="61" name="PK_hoau_dkh">
+      <ObjectId>302624121</ObjectId>
+      <CreatedTimestamp>2010-03-21.15:43:50.117</CreatedTimestamp>
+      <ModifiedTimestamp>2010-03-21.15:43:50.117</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_dkh</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="400" parent="62" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="401" parent="62" name="startprovince">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="402" parent="62" name="endprovince">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="403" parent="62" name="startcity">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="404" parent="62" name="endcity">
+      <Position>5</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="405" parent="62" name="timeinterval">
+      <Position>6</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="406" parent="62" name="pickday">
+      <Position>7</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="407" parent="62" name="deliverday">
+      <Position>8</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="408" parent="62" name="initialprice">
+      <Position>9</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="409" parent="62" name="lightprice">
+      <Position>10</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="410" parent="62" name="heavyprice">
+      <Position>11</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="411" parent="62" name="opendate">
+      <Position>12</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="412" parent="62" name="PK_hoau_drd_price">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="413" parent="62" name="PK_hoau_drd_price">
+      <ObjectId>510624862</ObjectId>
+      <CreatedTimestamp>2011-04-29.10:37:11.947</CreatedTimestamp>
+      <ModifiedTimestamp>2011-04-29.10:37:11.947</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_drd_price</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="414" parent="63" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="415" parent="63" name="netstateid">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="416" parent="63" name="type">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="417" parent="63" name="name">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="418" parent="63" name="province">
+      <Position>5</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="419" parent="63" name="city">
+      <Position>6</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="420" parent="63" name="region">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="421" parent="63" name="contactor">
+      <Position>8</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="422" parent="63" name="address">
+      <Position>9</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="423" parent="63" name="teregioncode">
+      <Position>10</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="424" parent="63" name="tel">
+      <Position>11</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="425" parent="63" name="fax">
+      <Position>12</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="426" parent="63" name="memo">
+      <Position>13</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="427" parent="63" name="level1code">
+      <Position>14</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="428" parent="63" name="level2code">
+      <Position>15</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="429" parent="63" name="area">
+      <Position>16</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="430" parent="63" name="isdrd">
+      <Position>17</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="431" parent="63" name="PK_hoau_drdnetstate">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="432" parent="63" name="PK_hoau_drdnetstate">
+      <ObjectId>370100359</ObjectId>
+      <CreatedTimestamp>2009-12-08.16:32:48.700</CreatedTimestamp>
+      <ModifiedTimestamp>2009-12-08.16:32:48.700</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_drdnetstate</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="433" parent="64" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="434" parent="64" name="title">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="435" parent="64" name="connent">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="436" parent="64" name="address">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="437" parent="64" name="created_at">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="438" parent="64" name="is_adopt">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="439" parent="64" name="name">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="440" parent="64" name="PK_hoau_email">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="441" parent="64" name="PK_hoau_email">
+      <ObjectId>1717581157</ObjectId>
+      <CreatedTimestamp>2009-11-25.14:48:41.560</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-25.14:48:41.560</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_email</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="442" parent="65" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="443" parent="65" name="city_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="444" parent="65" name="date">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="445" parent="65" name="position_id">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="446" parent="65" name="is_read">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="447" parent="65" name="url">
+      <Position>6</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="448" parent="65" name="PK_hoau_employ">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="449" parent="65" name="PK_hoau_employ">
+      <ObjectId>1749581271</ObjectId>
+      <CreatedTimestamp>2009-11-30.11:00:00.170</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-30.11:00:00.170</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_employ</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="450" parent="66" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="451" parent="66" name="fromcity">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="452" parent="66" name="createtime">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="453" parent="66" name="PK_hoau_empty_list_jj">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="454" parent="66" name="PK_hoau_empty_list_jj">
+      <ObjectId>1422628111</ObjectId>
+      <CreatedTimestamp>2013-03-13.14:29:05.590</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-13.14:29:05.590</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_empty_list_jj</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="455" parent="67" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="456" parent="67" name="fromcity">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="457" parent="67" name="createtime">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="458" parent="67" name="PK_hoau_empty_list_xb">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="459" parent="67" name="PK_hoau_empty_list_xb">
+      <ObjectId>1326627769</ObjectId>
+      <CreatedTimestamp>2013-03-11.14:12:53.590</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-11.14:12:53.590</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_empty_list_xb</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="460" parent="68" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="461" parent="68" name="province">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="462" parent="68" name="city">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="463" parent="68" name="contacts">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="464" parent="68" name="phone">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="465" parent="68" name="email">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="466" parent="68" name="create_user">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="467" parent="68" name="create_date">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="468" parent="68" name="modify_user">
+      <Position>9</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="469" parent="68" name="modify_date">
+      <Position>10</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="470" parent="68" name="PK__hoau_franchise_i__0DCF0841">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="471" parent="68" name="PK__hoau_franchise_i__0DCF0841">
+      <ObjectId>231671873</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-12-29.17:50:58.473</CreatedTimestamp>
+      <ModifiedTimestamp>2015-12-29.17:50:58.473</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__hoau_franchise_i__0DCF0841</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="472" parent="69" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="473" parent="69" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="474" parent="69" name="created_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="475" parent="69" name="url">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="476" parent="69" name="category_id">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="477" parent="69" name="is_adopt">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="478" parent="69" name="click_count">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="479" parent="69" name="PK_hoau_infromation">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="480" parent="69" name="PK_hoau_infromation">
+      <ObjectId>1653580929</ObjectId>
+      <CreatedTimestamp>2009-11-24.14:51:25.310</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-24.14:51:25.310</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_infromation</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="481" parent="70" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="482" parent="70" name="type">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="483" parent="70" name="status">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="484" parent="70" name="filename">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="485" parent="70" name="createtime">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="486" parent="70" name="PK_hoau_log_list">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="487" parent="70" name="PK_hoau_log_list">
+      <ObjectId>1550628567</ObjectId>
+      <CreatedTimestamp>2013-03-18.20:02:05.153</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-18.20:02:05.153</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_log_list</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="488" parent="71" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="489" parent="71" name="userid">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="490" parent="71" name="logindatetime">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="491" parent="71" name="PK_hoau_log_user">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="492" parent="71" name="PK_hoau_log_user">
+      <ObjectId>1013578649</ObjectId>
+      <CreatedTimestamp>2009-11-20.10:41:38.733</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-20.10:41:38.733</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_log_user</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="493" parent="72" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="494" parent="72" name="stmp_user">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="495" parent="72" name="stmp_password">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="496" parent="72" name="stmp_host">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="497" parent="72" name="mail_from">
+      <Position>5</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="498" parent="72" name="PK_hoau_mail_config">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="499" parent="72" name="PK_hoau_mail_config">
+      <ObjectId>514100872</ObjectId>
+      <CreatedTimestamp>2010-01-06.15:49:21.857</CreatedTimestamp>
+      <ModifiedTimestamp>2010-01-06.15:49:21.857</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_mail_config</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="500" parent="73" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="501" parent="73" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="502" parent="73" name="href">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="503" parent="73" name="parent_id">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="504" parent="73" name="description">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="505" parent="73" name="priority">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="506" parent="73" name="target">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="507" parent="73" name="PK_hoau_menu">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="508" parent="73" name="PK_hoau_menu">
+      <ObjectId>629577281</ObjectId>
+      <CreatedTimestamp>2009-11-19.13:20:09.140</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-19.13:20:09.140</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_menu</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="509" parent="74" name="CITYID">
+      <Position>1</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="510" parent="74" name="PID">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="511" parent="74" name="CITYNAME">
+      <Position>3</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="512" parent="74" name="id">
+      <Position>4</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="513" parent="75" name="CITYID">
+      <Position>1</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="514" parent="75" name="PID">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="515" parent="75" name="CITYNAME">
+      <Position>3</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="516" parent="75" name="id">
+      <Position>4</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="517" parent="76" name="PID">
+      <Position>1</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="518" parent="76" name="PMC">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="519" parent="76" name="id">
+      <Position>3</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="520" parent="77" name="PID">
+      <Position>1</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="521" parent="77" name="PMC">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="522" parent="77" name="id">
+      <Position>3</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="523" parent="78" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="524" parent="78" name="category_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="525" parent="78" name="priority">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="526" parent="78" name="click_count">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="527" parent="78" name="is_adopt">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="528" parent="78" name="keywords">
+      <Position>6</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="529" parent="78" name="title">
+      <Position>7</Position>
+      <DataType>ntext|0</DataType>
+    </column>
+    <column id="530" parent="78" name="short_title">
+      <Position>8</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="531" parent="78" name="description">
+      <Position>9</Position>
+      <DataType>ntext|0</DataType>
+    </column>
+    <column id="532" parent="78" name="news_content">
+      <Position>10</Position>
+      <DataType>ntext|0</DataType>
+    </column>
+    <column id="533" parent="78" name="created_at">
+      <Position>11</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="534" parent="78" name="publisher_id">
+      <Position>12</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="535" parent="78" name="file_name">
+      <Position>13</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="536" parent="78" name="target_url">
+      <Position>14</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="537" parent="78" name="is_photo_news">
+      <Position>15</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="538" parent="78" name="photo_src">
+      <Position>16</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="539" parent="78" name="video_photo_src">
+      <Position>17</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="540" parent="78" name="image_flag">
+      <Position>18</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="541" parent="78" name="video_flag">
+      <Position>19</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="542" parent="78" name="video_src">
+      <Position>20</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="543" parent="78" name="slt_src">
+      <Position>21</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="544" parent="78" name="guoqi">
+      <Position>22</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="545" parent="78" name="PK_hoau_news">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="546" parent="78" name="PK_hoau_news">
+      <ObjectId>334624235</ObjectId>
+      <CreatedTimestamp>2010-04-02.17:07:49.877</CreatedTimestamp>
+      <ModifiedTimestamp>2010-04-02.17:07:49.877</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_news</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="547" parent="79" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="548" parent="79" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="549" parent="79" name="priority">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="550" parent="79" name="jieshao">
+      <Position>4</Position>
+      <DataType>ntext|0</DataType>
+    </column>
+    <index id="551" parent="79" name="PK_hoau_position">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="552" parent="79" name="PK_hoau_position">
+      <ObjectId>366624349</ObjectId>
+      <CreatedTimestamp>2010-04-09.17:41:42.997</CreatedTimestamp>
+      <ModifiedTimestamp>2010-04-09.17:41:42.997</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_position</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="553" parent="80" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="554" parent="80" name="fromcity">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="555" parent="80" name="tocity">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="556" parent="80" name="PK_hoau_pre_list_jj">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="557" parent="80" name="PK_hoau_pre_list_jj">
+      <ObjectId>1486628339</ObjectId>
+      <CreatedTimestamp>2013-03-13.14:29:05.607</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-13.14:29:05.607</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_pre_list_jj</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="558" parent="81" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="559" parent="81" name="fromcity">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="560" parent="81" name="tocity">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="561" parent="81" name="PK_hoau_pre_list_xb">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="562" parent="81" name="PK_hoau_pre_list_xb">
+      <ObjectId>1390627997</ObjectId>
+      <CreatedTimestamp>2013-03-12.11:18:46.453</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-12.11:18:46.453</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_pre_list_xb</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="563" parent="82" name="name">
+      <Position>1</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="564" parent="82" name="create_time">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="565" parent="82" name="is_adopt">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="566" parent="82" name="click_count">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="567" parent="82" name="priority">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="568" parent="82" name="id">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="569" parent="82" name="starttime">
+      <Position>7</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="570" parent="82" name="endtime">
+      <Position>8</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="571" parent="82" name="href">
+      <Position>9</Position>
+      <DataType>nchar(255)|0</DataType>
+    </column>
+    <index id="572" parent="82" name="PK_hoau_problem">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="573" parent="82" name="PK_hoau_problem">
+      <ObjectId>78623323</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:38:55.317</CreatedTimestamp>
+      <ModifiedTimestamp>2010-03-10.15:38:55.317</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_problem</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="574" parent="83" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="575" parent="83" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="576" parent="83" name="priority">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="577" parent="83" name="parent_id">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="578" parent="83" name="is_drd">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="579" parent="83" name="is_drd_price">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="580" parent="83" name="is_company">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="581" parent="83" name="PK_hoau_province">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="582" parent="83" name="PK_hoau_province">
+      <ObjectId>1461580245</ObjectId>
+      <CreatedTimestamp>2009-11-20.14:49:28.950</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-20.14:49:28.950</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_province</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="583" parent="84" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="584" parent="84" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="585" parent="84" name="pinyin">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="586" parent="84" name="PK_hoau_province2">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="587" parent="84" name="PK_hoau_province2">
+      <ObjectId>450100644</ObjectId>
+      <CreatedTimestamp>2009-12-15.11:54:01.280</CreatedTimestamp>
+      <ModifiedTimestamp>2009-12-15.11:54:01.280</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_province2</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="588" parent="85" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="589" parent="85" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="590" parent="85" name="problem_id">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="591" parent="85" name="priority">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="592" parent="85" name="PK_hoau_question">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="593" parent="85" name="PK_hoau_question">
+      <ObjectId>110623437</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:39:42.427</CreatedTimestamp>
+      <ModifiedTimestamp>2010-03-10.15:39:42.427</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_question</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="594" parent="86" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="595" parent="86" name="question_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="596" parent="86" name="name">
+      <Position>3</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="597" parent="86" name="attribute">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="598" parent="86" name="PK_hoau_question_item">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="599" parent="86" name="PK_hoau_question_item">
+      <ObjectId>142623551</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:40:20.693</CreatedTimestamp>
+      <ModifiedTimestamp>2010-03-10.15:40:20.693</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_question_item</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="600" parent="87" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="601" parent="87" name="nick_name">
+      <Position>2</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="602" parent="87" name="phone">
+      <Position>3</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="603" parent="87" name="created_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="604" parent="87" name="email">
+      <Position>5</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="605" parent="87" name="problem_id">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="606" parent="87" name="PK_hoau_question_record">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="607" parent="87" name="PK_hoau_question_record">
+      <ObjectId>174623665</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:40:50.680</CreatedTimestamp>
+      <ModifiedTimestamp>2010-03-10.15:40:50.680</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_question_record</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="608" parent="88" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="609" parent="88" name="record_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="610" parent="88" name="question_id">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="611" parent="88" name="item_id">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="612" parent="88" name="PK_hoau_question_record_info">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="613" parent="88" name="PK_hoau_question_record_info">
+      <ObjectId>206623779</ObjectId>
+      <CreatedTimestamp>2010-03-10.15:41:31.383</CreatedTimestamp>
+      <ModifiedTimestamp>2010-03-10.15:41:31.383</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_question_record_info</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="614" parent="89" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="615" parent="89" name="fromcity">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="616" parent="89" name="tocity">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="617" parent="89" name="PK_hoau_redo_list_jj">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="618" parent="89" name="PK_hoau_redo_list_jj">
+      <ObjectId>1454628225</ObjectId>
+      <CreatedTimestamp>2013-03-13.14:29:05.590</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-13.14:29:05.590</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_redo_list_jj</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="619" parent="90" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="620" parent="90" name="fromcity">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="621" parent="90" name="tocity">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="622" parent="90" name="PK_hoau_redo_list_xb">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="623" parent="90" name="PK_hoau_redo_list_xb">
+      <ObjectId>1358627883</ObjectId>
+      <CreatedTimestamp>2013-03-11.14:12:53.603</CreatedTimestamp>
+      <ModifiedTimestamp>2013-03-11.14:12:53.603</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_redo_list_xb</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="624" parent="91" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="625" parent="91" name="date">
+      <Position>2</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="626" parent="91" name="name">
+      <Position>3</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="627" parent="91" name="mobile">
+      <Position>4</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="628" parent="91" name="telephone">
+      <Position>5</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="629" parent="91" name="email">
+      <Position>6</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="630" parent="91" name="status">
+      <Position>7</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="631" parent="91" name="be_name">
+      <Position>8</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="632" parent="91" name="be_telephone">
+      <Position>9</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="633" parent="91" name="be_area">
+      <Position>10</Position>
+      <DataType>nvarchar(100)|0</DataType>
+    </column>
+    <column id="634" parent="91" name="be_department">
+      <Position>11</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="635" parent="91" name="be_position">
+      <Position>12</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="636" parent="91" name="type">
+      <Position>13</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="637" parent="91" name="title">
+      <Position>14</Position>
+      <DataType>nvarchar(100)|0</DataType>
+    </column>
+    <column id="638" parent="91" name="report_content">
+      <Position>15</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="639" parent="91" name="ip">
+      <Position>16</Position>
+      <DataType>nvarchar(100)|0</DataType>
+    </column>
+    <column id="640" parent="91" name="area">
+      <Position>17</Position>
+      <DataType>nvarchar(100)|0</DataType>
+    </column>
+    <column id="641" parent="91" name="number">
+      <Position>18</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <index id="642" parent="91" name="PK__hoau_report__66EA454A">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="643" parent="91" name="PK__hoau_report__66EA454A">
+      <ObjectId>1726629194</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2013-12-31.19:18:33.723</CreatedTimestamp>
+      <ModifiedTimestamp>2013-12-31.19:18:33.723</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__hoau_report__66EA454A</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="644" parent="92" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="645" parent="92" name="report_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="646" parent="92" name="url">
+      <Position>3</Position>
+      <DataType>nvarchar(100)|0</DataType>
+    </column>
+    <index id="647" parent="92" name="PK__hoau_report_uplo__68D28DBC">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="648" parent="92" name="PK__hoau_report_uplo__68D28DBC">
+      <ObjectId>1758629308</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2013-12-31.19:18:33.723</CreatedTimestamp>
+      <ModifiedTimestamp>2013-12-31.19:18:33.723</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__hoau_report_uplo__68D28DBC</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="649" parent="93" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="650" parent="93" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="651" parent="93" name="PK_hoau_rights">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="652" parent="93" name="PK_hoau_rights">
+      <ObjectId>373576369</ObjectId>
+      <CreatedTimestamp>2009-11-19.11:52:00.497</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-19.11:52:00.497</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_rights</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="653" parent="94" name="SID">
+      <Position>1</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="654" parent="94" name="DID">
+      <Position>2</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="655" parent="94" name="SNAME">
+      <Position>3</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="656" parent="94" name="id">
+      <Position>4</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="657" parent="95" name="cid">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="658" parent="95" name="cmc">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="659" parent="95" name="pid">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="660" parent="95" name="PK__hoau_txjy_city_c__047AA831">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cid</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="661" parent="95" name="PK__hoau_txjy_city_c__047AA831">
+      <ObjectId>75147313</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-05-23.16:21:09.633</CreatedTimestamp>
+      <ModifiedTimestamp>2015-05-23.16:21:09.633</ModifiedTimestamp>
+      <ColNames>cid</ColNames>
+      <UnderlyingIndexName>PK__hoau_txjy_city_c__047AA831</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="662" parent="96" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="663" parent="96" name="cid">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="664" parent="96" name="contactid">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="665" parent="96" name="PK__hoau_txjy_city_c__10E07F16">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="666" parent="96" name="PK__hoau_txjy_city_c__10E07F16">
+      <ObjectId>283148054</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-05-23.20:31:07.627</CreatedTimestamp>
+      <ModifiedTimestamp>2015-05-23.20:31:07.627</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__hoau_txjy_city_c__10E07F16</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="667" parent="97" name="id">
+      <Position>1</Position>
+      <DataType>numeric(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="668" parent="97" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="669" parent="97" name="tel">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="670" parent="97" name="email">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="671" parent="97" name="iscommon">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="672" parent="97" name="create_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="673" parent="97" name="divisionid">
+      <Position>8</Position>
+      <DataType>numeric(20)|0</DataType>
+    </column>
+    <index id="674" parent="97" name="PK__hoau_txjy_contac__1F2E9E6D">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="675" parent="97" name="PK__hoau_txjy_contac__1F2E9E6D">
+      <ObjectId>523148909</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-05-24.21:11:57.167</CreatedTimestamp>
+      <ModifiedTimestamp>2015-05-24.21:11:57.167</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__hoau_txjy_contac__1F2E9E6D</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="676" parent="98" name="id">
+      <Position>1</Position>
+      <DataType>numeric(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="677" parent="98" name="divisionmc">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="678" parent="98" name="create_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="679" parent="98" name="PK__hoau_txjy_divisi__22FF2F51">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="680" parent="98" name="PK__hoau_txjy_divisi__22FF2F51">
+      <ObjectId>587149137</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-05-25.20:58:37.600</CreatedTimestamp>
+      <ModifiedTimestamp>2015-05-25.20:58:37.600</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__hoau_txjy_divisi__22FF2F51</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="681" parent="99" name="pid">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="682" parent="99" name="pmc">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="683" parent="99" name="PK__hoau_txjy_provin__7814D14C">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="684" parent="99" name="PK__hoau_txjy_provin__7814D14C">
+      <ObjectId>2014630220</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-05-23.13:30:47.140</CreatedTimestamp>
+      <ModifiedTimestamp>2015-05-23.13:30:47.140</ModifiedTimestamp>
+      <ColNames>pid</ColNames>
+      <UnderlyingIndexName>PK__hoau_txjy_provin__7814D14C</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="685" parent="100" name="id">
+      <Position>1</Position>
+      <DataType>numeric(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="686" parent="100" name="pid">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="687" parent="100" name="cid">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="688" parent="100" name="district">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="689" parent="100" name="name">
+      <Position>5</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="690" parent="100" name="address">
+      <Position>6</Position>
+      <DataType>nvarchar(500)|0</DataType>
+    </column>
+    <column id="691" parent="100" name="money">
+      <Position>7</Position>
+      <DataType>decimal(18,2)|0</DataType>
+    </column>
+    <column id="692" parent="100" name="employeeno">
+      <Position>8</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="693" parent="100" name="contacts">
+      <Position>9</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="694" parent="100" name="tel">
+      <Position>10</Position>
+      <DataType>nvarchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="695" parent="100" name="email">
+      <Position>11</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="696" parent="100" name="area">
+      <Position>12</Position>
+      <DataType>numeric(18,2)|0</DataType>
+    </column>
+    <column id="697" parent="100" name="car">
+      <Position>13</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="698" parent="100" name="message">
+      <Position>14</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="699" parent="100" name="recode_time">
+      <Position>15</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="700" parent="100" name="ip">
+      <Position>16</Position>
+      <DataType>nvarchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="701" parent="100" name="PK__hoau_txjy_regist__2B947552">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tel
+recode_time
+ip</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="702" parent="100" name="PK__hoau_txjy_regist__2B947552">
+      <ObjectId>731149650</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-05-27.14:59:15.773</CreatedTimestamp>
+      <ModifiedTimestamp>2015-05-27.14:59:15.773</ModifiedTimestamp>
+      <ColNames>tel
+recode_time
+ip</ColNames>
+      <UnderlyingIndexName>PK__hoau_txjy_regist__2B947552</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="703" parent="101" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="704" parent="101" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="705" parent="101" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="706" parent="101" name="rights">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="707" parent="101" name="regdatetime">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="708" parent="101" name="PK_hoau_user">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="709" parent="101" name="PK_hoau_user">
+      <ObjectId>981578535</ObjectId>
+      <CreatedTimestamp>2009-11-19.15:06:54.233</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-19.15:06:54.233</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_user</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="710" parent="102" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="711" parent="102" name="created_at">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="712" parent="102" name="is_adopt">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="713" parent="102" name="photo_url">
+      <Position>4</Position>
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <column id="714" parent="102" name="video_url">
+      <Position>5</Position>
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <column id="715" parent="102" name="click_count">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="716" parent="102" name="priority">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="717" parent="102" name="title">
+      <Position>8</Position>
+      <DataType>nvarchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="718" parent="102" name="description">
+      <Position>9</Position>
+      <DataType>ntext|0</DataType>
+    </column>
+    <column id="719" parent="103" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="720" parent="103" name="type">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="721" parent="103" name="rights">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="722" parent="103" name="PK_hoau_yd_config">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="723" parent="103" name="PK_hoau_yd_config">
+      <ObjectId>610101214</ObjectId>
+      <CreatedTimestamp>2010-01-27.10:30:37.013</CreatedTimestamp>
+      <ModifiedTimestamp>2010-01-27.10:30:37.013</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_yd_config</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="724" parent="104" name="QYBH">
+      <Position>1</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="725" parent="104" name="GSBH">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="726" parent="104" name="SJGSBH">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="727" parent="104" name="GSJC">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="728" parent="104" name="GSLX">
+      <Position>5</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="729" parent="104" name="QYMC">
+      <Position>6</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="730" parent="104" name="MCHZBH">
+      <Position>7</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="731" parent="104" name="FDDBR">
+      <Position>8</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="732" parent="104" name="JYFW">
+      <Position>9</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="733" parent="104" name="QYLX">
+      <Position>10</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="734" parent="104" name="ZZFBS">
+      <Position>11</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="735" parent="104" name="JYFS">
+      <Position>12</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="736" parent="104" name="JYQX">
+      <Position>13</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="737" parent="104" name="QH">
+      <Position>14</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="738" parent="104" name="JD">
+      <Position>15</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="739" parent="104" name="ZS">
+      <Position>16</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="740" parent="104" name="DH">
+      <Position>17</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="741" parent="104" name="CZ">
+      <Position>18</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="742" parent="104" name="YB">
+      <Position>19</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="743" parent="104" name="ZCZB">
+      <Position>20</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="744" parent="104" name="YZDW">
+      <Position>21</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="745" parent="104" name="SFXNGS">
+      <Position>22</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="746" parent="104" name="SSYJGS">
+      <Position>23</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="747" parent="104" name="BZ">
+      <Position>24</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="748" parent="104" name="SFYX">
+      <Position>25</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="749" parent="104" name="SFSK">
+      <Position>26</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="750" parent="104" name="GZDM">
+      <Position>27</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="751" parent="104" name="KZDM">
+      <Position>28</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="752" parent="104" name="SF">
+      <Position>29</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="753" parent="104" name="CS">
+      <Position>30</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="754" parent="104" name="JLBS">
+      <Position>31</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="755" parent="104" name="SFTGDRDFW">
+      <Position>32</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="756" parent="104" name="id">
+      <Position>33</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="757" parent="104" name="is_new">
+      <Position>34</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="758" parent="104" name="PTLXBH">
+      <Position>35</Position>
+      <DataType>nvarchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0001&apos;</DefaultExpression>
+    </column>
+    <column id="759" parent="104" name="YTGS_KHZT">
+      <Position>36</Position>
+      <DataType>int|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="760" parent="104" name="YTGS_SHSM">
+      <Position>37</Position>
+      <DataType>int|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="761" parent="104" name="SFPYWD">
+      <Position>38</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="762" parent="104" name="JLYF">
+      <Position>39</Position>
+      <DataType>nvarchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="763" parent="104" name="SSLQ">
+      <Position>40</Position>
+      <DataType>nvarchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="764" parent="104" name="AREA_CODE">
+      <Position>41</Position>
+      <DataType>nvarchar(5)|0</DataType>
+    </column>
+    <column id="765" parent="104" name="FWFS">
+      <Position>42</Position>
+      <DataType>nvarchar(20)|0</DataType>
+    </column>
+    <index id="766" parent="104" name="PK_hoau_yywd">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="767" parent="104" name="PK_hoau_yywd">
+      <ObjectId>1070626857</ObjectId>
+      <CreatedTimestamp>2013-02-21.15:25:19.913</CreatedTimestamp>
+      <ModifiedTimestamp>2013-02-21.15:25:19.913</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_hoau_yywd</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="768" parent="105" name="name">
+      <Position>1</Position>
+      <DataType>sysname|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="769" parent="105" name="principal_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="770" parent="105" name="diagram_id">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="771" parent="105" name="version">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="772" parent="105" name="definition">
+      <Position>5</Position>
+      <DataType>varbinary(max)|0</DataType>
+    </column>
+    <index id="773" parent="105" name="PK__sysdiagrams__7D78A4E7">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>diagram_id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="774" parent="105" name="UK_principal_name">
+      <Position>2</Position>
+      <ColNames>principal_id
+name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="775" parent="105" name="PK__sysdiagrams__7D78A4E7">
+      <ObjectId>2105058535</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2009-11-18.12:46:16.747</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.747</ModifiedTimestamp>
+      <ColNames>diagram_id</ColNames>
+      <UnderlyingIndexName>PK__sysdiagrams__7D78A4E7</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="776" parent="105" name="UK_principal_name">
+      <ObjectId>2121058592</ObjectId>
+      <CreatedTimestamp>2009-11-18.12:46:16.747</CreatedTimestamp>
+      <ModifiedTimestamp>2009-11-18.12:46:16.747</ModifiedTimestamp>
+      <ColNames>principal_id
+name</ColNames>
+      <UnderlyingIndexName>UK_principal_name</UnderlyingIndexName>
+    </key>
+    <column id="777" parent="106" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="778" parent="106" name="DEPT_CODE">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="779" parent="106" name="DEPT_NAME">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="780" parent="106" name="PARENT_DEPT_CODE">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="781" parent="106" name="PARENT_DEPT_NAME">
+      <Position>5</Position>
+      <DataType>varchar(200)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="782" parent="106" name="DEPT_NATURE">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="783" parent="106" name="LOGIST_CODE">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="784" parent="106" name="MANAGER_CODE">
+      <Position>8</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="785" parent="106" name="MANAGER_NAME">
+      <Position>9</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="786" parent="106" name="PROVINCE">
+      <Position>10</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="787" parent="106" name="PROVINCE_CODE">
+      <Position>11</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="788" parent="106" name="CITY">
+      <Position>12</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="789" parent="106" name="CITY_CODE">
+      <Position>13</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="790" parent="106" name="COUNTY">
+      <Position>14</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="791" parent="106" name="COUNTY_CODE">
+      <Position>15</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="792" parent="106" name="AREA_CODE">
+      <Position>16</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="793" parent="106" name="PHONE">
+      <Position>17</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="794" parent="106" name="FAX">
+      <Position>18</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="795" parent="106" name="ADDRESS_DETAIL">
+      <Position>19</Position>
+      <DataType>varchar(200)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="796" parent="106" name="LNG">
+      <Position>20</Position>
+      <DataType>float|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="797" parent="106" name="LAT">
+      <Position>21</Position>
+      <DataType>float|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="798" parent="106" name="IS_SPECIFIED_TIME">
+      <Position>22</Position>
+      <DataType>char(1)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="799" parent="106" name="IS_SHIPMENT">
+      <Position>23</Position>
+      <DataType>char(1)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="800" parent="106" name="IS_DELIVERY">
+      <Position>24</Position>
+      <DataType>char(1)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="801" parent="106" name="IS_PICK_UP">
+      <Position>25</Position>
+      <DataType>char(1)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="802" parent="106" name="ACTIVE">
+      <Position>26</Position>
+      <DataType>char(1)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="803" parent="106" name="CREATE_TIME">
+      <Position>27</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="804" parent="106" name="CREATE_USER_CODE">
+      <Position>28</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="805" parent="106" name="MODIFY_TIME">
+      <Position>29</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="806" parent="106" name="MODIFY_USER_CODE">
+      <Position>30</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="807" parent="106" name="VERSION_NO">
+      <Position>31</Position>
+      <DataType>bigint|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="808" parent="106" name="take_Self_Depend_Logist_Code">
+      <Position>32</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="809" parent="106" name="AUTH_CODE">
+      <Position>33</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="810" parent="106" name="FRANCHISE_COMPANY_NAME">
+      <Position>34</Position>
+      <DataType>varchar(400)|0</DataType>
+    </column>
+    <column id="811" parent="107" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="812" parent="107" name="DISTRICT_CODE">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="813" parent="107" name="DISTRICT_NAME">
+      <Position>3</Position>
+      <DataType>varchar(1024)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="814" parent="107" name="DISTRICT_TYPE">
+      <Position>4</Position>
+      <DataType>varchar(80)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="815" parent="107" name="PINYIN">
+      <Position>5</Position>
+      <DataType>varchar(60)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="816" parent="107" name="VERSION_NO">
+      <Position>6</Position>
+      <DataType>bigint|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="817" parent="107" name="PARENT_DISTRICT_CODE">
+      <Position>7</Position>
+      <DataType>varchar(60)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="818" parent="107" name="CREATE_TIME">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="819" parent="107" name="CREATE_USER_CODE">
+      <Position>9</Position>
+      <DataType>varchar(40)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="820" parent="107" name="MODIFY_TIME">
+      <Position>10</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="821" parent="107" name="MODIFY_USER_CODE">
+      <Position>11</Position>
+      <DataType>varchar(40)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="822" parent="107" name="HOT_CITY_NUM">
+      <Position>12</Position>
+      <DataType>bigint|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="823" parent="107" name="HOT_CITY_UPDATE_TIME">
+      <Position>13</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>getdate()</DefaultExpression>
+    </column>
+    <index id="824" parent="107" name="PK__t_bse_district__78D3EB5B">
+      <Position>2</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>DISTRICT_CODE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="825" parent="107" name="PK__t_bse_district__78D3EB5B">
+      <ObjectId>2027154267</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-08-26.17:49:25.660</CreatedTimestamp>
+      <ModifiedTimestamp>2015-08-26.17:49:25.660</ModifiedTimestamp>
+      <ColNames>DISTRICT_CODE</ColNames>
+      <UnderlyingIndexName>PK__t_bse_district__78D3EB5B</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="826" parent="108" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="827" parent="108" name="CODE">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="828" parent="108" name="NAME">
+      <Position>3</Position>
+      <DataType>nvarchar(200)|0</DataType>
+    </column>
+    <column id="829" parent="108" name="LOGIST_CODE">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="830" parent="108" name="PROVINCE">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="831" parent="108" name="PROVINCE_CODE">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="832" parent="108" name="CITY">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="833" parent="108" name="CITY_CODE">
+      <Position>8</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="834" parent="108" name="COUNTY">
+      <Position>9</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="835" parent="108" name="COUNTY_CODE">
+      <Position>10</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="836" parent="108" name="AREA_CODE">
+      <Position>11</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="837" parent="108" name="PHONE">
+      <Position>12</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="838" parent="108" name="FAX">
+      <Position>13</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="839" parent="108" name="ADDRESS_DETAIL">
+      <Position>14</Position>
+      <DataType>varchar(1024)|0</DataType>
+    </column>
+    <column id="840" parent="108" name="LNG">
+      <Position>15</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="841" parent="108" name="LAT">
+      <Position>16</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="842" parent="108" name="IS_SPECIFIED_TIME">
+      <Position>17</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="843" parent="108" name="IS_SHIPMENT">
+      <Position>18</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="844" parent="108" name="IS_DELIVERY">
+      <Position>19</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="845" parent="108" name="IS_PICK_UP">
+      <Position>20</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="846" parent="108" name="ACTIVE">
+      <Position>21</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="847" parent="108" name="CREATE_TIME">
+      <Position>22</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="848" parent="108" name="CREATE_USER_CODE">
+      <Position>23</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="849" parent="108" name="MODIFY_TIME">
+      <Position>24</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="850" parent="108" name="MODIFY_USER_CODE">
+      <Position>25</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="851" parent="108" name="VERSION_NO">
+      <Position>26</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <column id="852" parent="108" name="take_Self_Depend_Logist_Code">
+      <Position>27</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="853" parent="108" name="PK__t_bse_franchise__731B1205">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="854" parent="108" name="PK__t_bse_franchise__731B1205">
+      <ObjectId>1931153925</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-08-18.16:31:20.663</CreatedTimestamp>
+      <ModifiedTimestamp>2015-08-18.16:31:20.663</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>PK__t_bse_franchise__731B1205</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="855" parent="109" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="856" parent="109" name="DISTRICT_CODE">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="857" parent="109" name="DISTRICT_NAME">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="858" parent="109" name="DISTRICT_TYPE">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="859" parent="109" name="PINYIN">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="860" parent="109" name="VERSION_NO">
+      <Position>6</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <column id="861" parent="109" name="PARENT_DISTRICT_CODE">
+      <Position>7</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="862" parent="109" name="CREATE_TIME">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="863" parent="109" name="CREATE_USER_CODE">
+      <Position>9</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="864" parent="109" name="MODIFY_TIME">
+      <Position>10</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="865" parent="109" name="MODIFY_USER_CODE">
+      <Position>11</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="866" parent="110" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="867" parent="110" name="CODE">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="868" parent="110" name="NAME">
+      <Position>3</Position>
+      <DataType>nvarchar(200)|0</DataType>
+    </column>
+    <column id="869" parent="110" name="LOGIST_CODE">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="870" parent="110" name="PROVINCE">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="871" parent="110" name="PROVINCE_CODE">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="872" parent="110" name="CITY">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="873" parent="110" name="CITY_CODE">
+      <Position>8</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="874" parent="110" name="COUNTY">
+      <Position>9</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="875" parent="110" name="COUNTY_CODE">
+      <Position>10</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="876" parent="110" name="AREA_CODE">
+      <Position>11</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="877" parent="110" name="PHONE">
+      <Position>12</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="878" parent="110" name="FAX">
+      <Position>13</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="879" parent="110" name="ADDRESS_DETAIL">
+      <Position>14</Position>
+      <DataType>varchar(1024)|0</DataType>
+    </column>
+    <column id="880" parent="110" name="LNG">
+      <Position>15</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="881" parent="110" name="LAT">
+      <Position>16</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="882" parent="110" name="IS_SPECIFIED_TIME">
+      <Position>17</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="883" parent="110" name="IS_SHIPMENT">
+      <Position>18</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="884" parent="110" name="IS_DELIVERY">
+      <Position>19</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="885" parent="110" name="IS_PICK_UP">
+      <Position>20</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="886" parent="110" name="ACTIVE">
+      <Position>21</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="887" parent="110" name="CREATE_TIME">
+      <Position>22</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="888" parent="110" name="CREATE_USER_CODE">
+      <Position>23</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="889" parent="110" name="MODIFY_TIME">
+      <Position>24</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="890" parent="110" name="MODIFY_USER_CODE">
+      <Position>25</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="891" parent="110" name="VERSION_NO">
+      <Position>26</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <column id="892" parent="110" name="take_Self_Depend_Logist_Code">
+      <Position>27</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="893" parent="110" name="PK__t_bse_out_branch__75035A77">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="894" parent="110" name="PK__t_bse_out_branch__75035A77">
+      <ObjectId>1963154039</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-08-18.16:32:14.647</CreatedTimestamp>
+      <ModifiedTimestamp>2015-08-18.16:32:14.647</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>PK__t_bse_out_branch__75035A77</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="895" parent="111" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="896" parent="111" name="operation_type">
+      <Position>2</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="897" parent="111" name="login_user">
+      <Position>3</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="898" parent="111" name="login_type">
+      <Position>4</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="899" parent="111" name="orderId">
+      <Position>5</Position>
+      <DataType>decimal(12)|0</DataType>
+    </column>
+    <column id="900" parent="111" name="ebsaId">
+      <Position>6</Position>
+      <DataType>decimal(12)|0</DataType>
+    </column>
+    <column id="901" parent="111" name="operation_time">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="902" parent="111" name="operation_ip">
+      <Position>8</Position>
+      <DataType>nvarchar(100)|0</DataType>
+    </column>
+    <column id="903" parent="111" name="create_user">
+      <Position>9</Position>
+      <DataType>nvarchar(36)|0</DataType>
+    </column>
+    <column id="904" parent="111" name="create_date">
+      <Position>10</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="905" parent="111" name="modify_user">
+      <Position>11</Position>
+      <DataType>nvarchar(36)|0</DataType>
+    </column>
+    <column id="906" parent="111" name="modify_date">
+      <Position>12</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="907" parent="111" name="active">
+      <Position>13</Position>
+      <DataType>nvarchar(2)|0</DataType>
+    </column>
+    <column id="908" parent="111" name="how_type">
+      <Position>14</Position>
+      <DataType>nvarchar(100)|0</DataType>
+    </column>
+    <index id="909" parent="111" name="PK__t_log_operation__147C05D0">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="910" parent="111" name="PK__t_log_operation__147C05D0">
+      <ObjectId>343672272</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2015-12-30.17:50:27.863</CreatedTimestamp>
+      <ModifiedTimestamp>2015-12-30.17:50:27.863</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__t_log_operation__147C05D0</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="911" parent="112" name="name">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="912" parent="112" name="mobile">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="913" parent="112" name="email">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="914" parent="112" name="area">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="915" parent="113" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="916" parent="113" name="DEPT_CODE">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="917" parent="113" name="DEPT_NAME">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="918" parent="113" name="PARENT_DEPT_CODE">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="919" parent="113" name="PARENT_DEPT_NAME">
+      <Position>5</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="920" parent="113" name="DEPT_NATURE">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="921" parent="113" name="LOGIST_CODE">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="922" parent="113" name="MANAGER_CODE">
+      <Position>8</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="923" parent="113" name="MANAGER_NAME">
+      <Position>9</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="924" parent="113" name="PROVINCE">
+      <Position>10</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="925" parent="113" name="PROVINCE_CODE">
+      <Position>11</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="926" parent="113" name="CITY">
+      <Position>12</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="927" parent="113" name="CITY_CODE">
+      <Position>13</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="928" parent="113" name="COUNTY">
+      <Position>14</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="929" parent="113" name="COUNTY_CODE">
+      <Position>15</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="930" parent="113" name="AREA_CODE">
+      <Position>16</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="931" parent="113" name="PHONE">
+      <Position>17</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="932" parent="113" name="FAX">
+      <Position>18</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="933" parent="113" name="ADDRESS_DETAIL">
+      <Position>19</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="934" parent="113" name="LNG">
+      <Position>20</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="935" parent="113" name="LAT">
+      <Position>21</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="936" parent="113" name="IS_SPECIFIED_TIME">
+      <Position>22</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="937" parent="113" name="IS_SHIPMENT">
+      <Position>23</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="938" parent="113" name="IS_DELIVERY">
+      <Position>24</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="939" parent="113" name="IS_PICK_UP">
+      <Position>25</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="940" parent="113" name="VERSION_NO">
+      <Position>26</Position>
+      <DataType>bigint|0</DataType>
+    </column>
+    <column id="941" parent="113" name="ACTIVE">
+      <Position>27</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="942" parent="113" name="CREATE_TIME">
+      <Position>28</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="943" parent="113" name="CREATE_USER_CODE">
+      <Position>29</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="944" parent="113" name="MODIFY_TIME">
+      <Position>30</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="945" parent="113" name="MODIFY_USER_CODE">
+      <Position>31</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="946" parent="113" name="TAKE_SELF_DEPEND_LOGIST_CODE">
+      <Position>32</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="947" parent="113" name="AUTH_CODE">
+      <Position>33</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="948" parent="113" name="FRANCHISE_COMPANY_NAME">
+      <Position>34</Position>
+      <DataType>varchar(400)|0</DataType>
+    </column>
+    <argument id="949" parent="114">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="950" parent="115" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="951" parent="115" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="952" parent="115" name="@version">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="953" parent="115" name="@definition">
+      <DataType>varbinary(max)|0</DataType>
+    </argument>
+    <argument id="954" parent="116" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="955" parent="116" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="956" parent="116" name="@version">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="957" parent="116" name="@definition">
+      <DataType>varbinary(max)|0</DataType>
+    </argument>
+    <argument id="958" parent="117" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="959" parent="117" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="960" parent="118" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="961" parent="118" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="962" parent="119" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="963" parent="119" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="964" parent="120" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="965" parent="120" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="966" parent="120" name="@new_diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>

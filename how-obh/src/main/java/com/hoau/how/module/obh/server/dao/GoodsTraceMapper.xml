@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.obh.server.dao.GoodsTraceMapper">
+	<select id="queryOrderInfo" resultType="com.hoau.how.module.obh.shared.domain.NetOrderEntity" parameterType="java.util.List">
+		SELECT 
+		eino_contract_no as einoContractNo,
+		eino_shipper_ebpl_name_cn as einoShipperEbplNameCn,
+		eino_consignee_ebpl_name_cn as einoConsigneeEbplNameCn,
+		eino_status as einoStatus
+		FROM EI_NET_ORDER
+		WHERE eino_contract_no in        
+		 <foreach collection="list" item="contractNo" index="index" open="(" close=")" separator=",">
+		 	#{contractNo}
+		 </foreach>
+	</select>
+</mapper>

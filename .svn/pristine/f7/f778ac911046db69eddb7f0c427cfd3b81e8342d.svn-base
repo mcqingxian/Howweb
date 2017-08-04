@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.obh.server.dao.CustomerDao">
+	<insert id="insertCustomer" parameterType="com.hoau.how.module.obh.shared.domain.CustomerEntity" keyProperty="ebcuId" useGeneratedKeys="true">
+		INSERT into eb_customer(ebcu_customer_no,ebcu_name_cn,ebcu_invited_status,create_time,creator,modify_time,modifier) 
+		VALUES(#{ebcuCustomerNo,jdbcType=VARCHAR},#{ebcuNameCn,jdbcType=VARCHAR},'0',now(),'admin',now(),'admin');
+	</insert>
+</mapper>

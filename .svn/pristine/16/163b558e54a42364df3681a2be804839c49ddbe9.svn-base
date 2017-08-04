@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<!-- %m:消息本身 
+		%p:消息的级别INFO，WARN，ERROR。。。 
+		%r:从程序开始执行到当前日志产生时的时间间隔（微秒） 
+		%c:输出当前日志动作所在的category名称。例如：如果category名称是"a.b.c","%c{2}"将会输出"b.c". 
+		{2}意谓着输出“以点分隔开的category名称的后两个组件”,如果 {n}没有，将会输出整个category名称. 
+		%t:输出当前线程的名称 
+		%x:输出和当前线程相关联的NDC,尤其用到像java servlets这样的多客户多线程的应用中。 
+		%n:输出平台相关的换行符。 
+		%%:输出一个"%"字符 
+		%d:输出日志产生时候的日期，当然可以对日期的格式进行定制。例如：%d{HH:mm:ss,SSSS}或者是%d{dd MMM yyyy HH:mm:ss,SSSS},
+		如果没有指定后面的格式，将会输出ISO8601的格式。 
+		%l:输出位置信息，相当于%C.%M(%F:%L)的组合。 
+		%C:输出日志消息产生时所在的类名，如果类名是“test.page.Class1”%C{1}表示输出类名"Class1",%C{2}输出"page.Class1",
+		而%C则输出"test.page.Class1"。 
+		%M:输出日志消息产生时的方法名称 
+		%F:输出日志消息产生时所在的文件名称 
+		%L:输出代码中的行号 
+		·可以在%与模式字符之间加上修饰符来控制其最小宽度、最大宽度、和文本的对齐方式。如： 
+		1)%20c：指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，默认的情况下右对齐。 
+		2)%-20c:指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，"-"号指定左对齐。 
+		3)%.30c:指定输出category的名称，最大的宽度是30，如果category的名称大于30的话，就会将左边多出的字符截掉，但小于30的话也不会有空格。 
+		4)%20.30c:如果category的名称小于20就补空格，并且右对齐，如果其名称长于30字符，就从左边交远销出的字符截掉。 -->
+
+	<appender name="myConsole" class="org.apache.log4j.ConsoleAppender">  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"     
+                value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] %c{4\} - %m%n" />  
+        </layout>  
+        <!--过滤器设置输出的级别-->  
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+            <param name="levelMin" value="debug" />  
+            <param name="levelMax" value="warn" />  
+            <param name="AcceptOnMatch" value="true" />  
+        </filter>  
+    </appender>  
+    
+  	<!-- 设置日志输出文件名 -->  
+    <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->  
+  	<!--  
+    <appender name="myFile" class="org.apache.log4j.RollingFileAppender">     
+        <param name="File" value="D:/output.log" />
+        <param name="Append" value="true" />  
+        <param name="MaxBackupIndex" value="10" />  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern" value="%p (%c:%L)- %m%n" />  
+        </layout>  
+    </appender> 
+    -->
+    <!--
+    <appender name="activexAppender" class="org.apache.log4j.DailyRollingFileAppender">  
+        <param name="File" value="E:/activex.log" />    
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />    
+        <layout class="org.apache.log4j.PatternLayout">  
+         <param name="ConversionPattern"    
+            value="[%d{MMdd HH:mm:ss SSS\} %-5p] [%t] %c{3\} - %m%n" />  
+        </layout>    
+    </appender>
+    -->
+     
+    <!-- 指定logger的设置，additivity指示是否遵循缺省的继承机制-->  
+    <!--
+    <logger name="org.springframework" additivity="false">  
+        <priority value ="debug"/>    
+        <appender-ref ref="activexAppender" />    
+    </logger>  
+    -->
+  
+    <category name="org.apache.ibatis">
+    	<priority value="debug" />
+    	<appender-ref ref="myConsole" />
+    </category>
+    <category name="org.mybatis">
+    	<priority value="debug" />
+    	<appender-ref ref="myConsole" />
+    </category>
+  
+    <!-- 根logger的设置-->  
+    <root>  
+        <priority value ="info"/>  
+        <appender-ref ref="myConsole"/>  
+    </root>
+</log4j:configuration>

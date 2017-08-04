@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.hoau.how</groupId>
+		<artifactId>how</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>mhow-invokews</artifactId>
+	<name>mhow_invokews</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<httpclient-version>4.3</httpclient-version>
+	</properties>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- 图片地址 -->
+				<news.img.src>https://www.hoau.net:9080/download/</news.img.src>
+				<!-- 下单（网厅，老） -->
+				<!-- <oms.url>http://testoms.hoau.net/HOAU_OL/services/MobileService?wsdl</oms.url> -->
+				<!-- 下单（网厅） -->
+				<oms.order.url>http://testoms.hoau.net/services/CustomerService?wsdl</oms.order.url>
+				<!-- 短信 -->
+				<sms.url>http://10.39.109.39/IWsms/sms.asmx</sms.url>
+				<!-- 货物跟踪ttq -->
+				<ttq.url>http://10.39.109.20:9080/tnt/services/tntServices?wsdl</ttq.url>
+				<!-- 老的货物跟踪(废弃) -->
+				<!-- <server.url>http://10.39.59.157/</server.url> -->
+				<!-- 查询时效价，先查DC，如果为空，则再查TTQ -->
+				<dc.price.url>http://10.39.109.29:8080/services/HowPriceAndTimeQueryServices?wsdl</dc.price.url>
+				<ttq.price.url>http://ttq.hoau.net:9080/PriceQuery?ebProductTypeId=</ttq.price.url>
+				<!-- 网点查询（网厅） -->
+				<!-- <wt.url>http://online.hoau.net/THOMS/services/DistrictService?wsdl</wt.url> -->
+				<!-- DC运单数据查询 -->
+				<dc.waybill.info.url>http://10.39.109.29:8080/services/WptServices?wsdl</dc.waybill.info.url>
+			</properties>
+		</profile>	
+
+		<profile>
+			<id>product</id>
+			<properties>
+				<!-- 图片地址 -->
+				<news.img.src>https://www.hoau.net:9080/download/</news.img.src>
+				<!-- 下单（网厅，老） -->
+				<!-- <oms.url>http://online.hoau.net/THOMS/services/MobileService?wsdl</oms.url> -->
+				<!-- 下单（网厅） -->
+				<oms.order.url>http://oms.hoau.net/services/CustomerService?wsdl</oms.order.url>
+				<!-- 短信 -->
+				<sms.url>http://10.39.109.39/IWsms/sms.asmx</sms.url>
+				<!-- 货物跟踪ttq -->
+				<ttq.url>http://10.39.109.20:9080/tnt/services/tntServices?wsdl</ttq.url>
+				<!-- 老的货物跟踪(废弃) -->
+				<!-- <server.url>http://10.39.59.157/</server.url> -->
+				<!-- 查询时效价，先查DC，如果为空，则再查TTQ -->
+				<dc.price.url>http://10.39.109.29:8080/services/HowPriceAndTimeQueryServices?wsdl</dc.price.url>
+				<ttq.price.url>http://ttq.hoau.net:9080/PriceQuery?ebProductTypeId=</ttq.price.url>
+				<!-- 网点查询（网厅） -->
+				<!-- <wt.url>http://online.hoau.net/THOMS/services/DistrictService?wsdl</wt.url> -->
+				<!-- DC运单数据查询 -->
+				<dc.waybill.info.url>http://10.39.109.29:8080/services/WptServices?wsdl</dc.waybill.info.url>
+			</properties>
+		</profile>
+	</profiles>
+	<dependencies>
+		<dependency>
+			<groupId>com.hoau.how</groupId>
+			<artifactId>mhow-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>2.7.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>2.7.8</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.hoau.activemq</groupId>
+		  <artifactId>activemq</artifactId>
+		  <version>5.1.0</version>
+		</dependency>
+		
+		<!-- http client -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient-cache</artifactId>
+			<version>${httpclient-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>${httpclient-version}</version>
+		</dependency>
+		<!-- http client end -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+</project>

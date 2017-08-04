@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.bse.server.dao.FranchiseMapper">
+	<resultMap type="com.hoau.how.module.bse.api.shared.domain.FranchiseProvinceEntity" 
+	id="provinceReslutMapp">
+		<id property="pid" column="PID" jdbcType="INTEGER"/>
+		<result property="pname" column="PMC" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<resultMap type="com.hoau.how.module.bse.api.shared.domain.FranchiseCityEntity" 
+	id="cityReslutMapp">
+		<id property="cid" column="CID" jdbcType="INTEGER"/>
+		<result property="cname" column="CMC" jdbcType="VARCHAR"/>
+		<result property="pid" column="PID" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	
+	<select id="selectAllProvince" resultMap="provinceReslutMapp">
+		SELECT PID,PMC FROM HOAU_TXJY_PROVINCE
+	</select>
+	
+	<select id="selectCitysByPid" resultMap="cityReslutMapp" parameterType="int">
+		SELECT CID,CMC,PID FROM HOAU_TXJY_CITY WHERE PID=#{pid,jdbcType=INTEGER}
+	</select>
+	
+	<select id="queryFranchiseInfo" parameterType="com.hoau.how.module.bse.api.shared.domain.FranchiseInfoEntity" resultType="com.hoau.how.module.bse.api.shared.domain.FranchiseInfoEntity">
+		SELECT 
+		PROVINCE as province,
+		CITY as city,
+		CONTACTS as contacts,
+		PHONE as phone,
+		EMAIL as email
+		FROM hoau_franchise_info
+		WHERE 1=1
+		 <if test="province != null and province != ''">
+			 AND province=#{province,jdbcType=VARCHAR}
+		 </if>
+		 <if test="city != null and city != ''">
+			 AND city=#{city,jdbcType=VARCHAR}
+		 </if>
+	</select>
+	
+	<select id="queryFranchiseProvince" resultType="com.hoau.how.module.bse.api.shared.domain.FranchiseProvinceEntity">
+		SELECT PROVINCE AS pname FROM hoau_franchise_info GROUP BY PROVINCE
+	</select>
+	<select id="queryFranchiseCity" parameterType="java.lang.String" resultType="com.hoau.how.module.bse.api.shared.domain.FranchiseCityEntity">
+		SELECT city AS cname FROM hoau_franchise_info where province = #{province,jdbcType=VARCHAR}
+	</select>
+	<!-- 查询联系邮件 -->
+	<select id="selectEmailsByCid" resultType="string" parameterType="int">
+		select distinct B.email
+		from  hoau_txjy_city_contact A
+		left join hoau_txjy_contact B on A.contactid =B.id
+		where A.cid=#{cid,jdbcType=INTEGER}
+		union 
+		select distinct email from hoau_txjy_contact  where iscommon=1 
+	</select>
+	
+	<insert id="insertFranchiseInfo" parameterType="com.hoau.how.module.bse.api.shared.vo.FranchiseRegistrationVo">
+		insert into hoau_txjy_registration(
+		pid,cid,district,name,address,money,employeeno,contacts,
+		tel,email,area,car,message,recode_time,ip
+		) values(
+		#{pid,jdbcType=INTEGER},
+		#{cid,jdbcType=INTEGER},
+		#{district,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR},
+		#{address,jdbcType=VARCHAR},
+		#{money,jdbcType=NUMERIC},
+		#{employeeno,jdbcType=NUMERIC},
+		#{contacts,jdbcType=VARCHAR},
+		#{tel,jdbcType=VARCHAR},
+		#{email,jdbcType=VARCHAR},
+		#{area,jdbcType=NUMERIC},
+		#{car,jdbcType=NUMERIC},
+		#{message,jdbcType=VARCHAR},
+		GETDATE(),
+		#{ip,jdbcType=VARCHAR}
+		)
+	</insert>
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="how-bse" />
+        <module name="how-bse-api" />
+        <module name="how-common" />
+        <module name="how-config" />
+        <module name="how-itf" />
+        <module name="how-job" />
+        <module name="how-obh" />
+        <module name="how-util" />
+        <module name="how-web" />
+        <module name="mhow-bse" />
+        <module name="mhow-bse-api" />
+        <module name="mhow-common" />
+        <module name="mhow-invokews" />
+        <module name="mhow-web" />
+        <module name="mhow-wechat" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="how" target="1.5" />
+      <module name="how-bse" target="1.6" />
+      <module name="how-bse-api" target="1.6" />
+      <module name="how-common" target="1.6" />
+      <module name="how-config" target="1.6" />
+      <module name="how-itf" target="1.6" />
+      <module name="how-job" target="1.6" />
+      <module name="how-obh" target="1.6" />
+      <module name="how-util" target="1.6" />
+      <module name="how-web" target="1.6" />
+      <module name="mhow-bse" target="1.6" />
+      <module name="mhow-bse-api" target="1.6" />
+      <module name="mhow-common" target="1.6" />
+      <module name="mhow-invokews" target="1.6" />
+      <module name="mhow-web" target="1.6" />
+      <module name="mhow-wechat" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

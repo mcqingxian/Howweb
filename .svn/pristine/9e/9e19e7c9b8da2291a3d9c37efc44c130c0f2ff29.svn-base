@@ -1,0 +1,20 @@
+#-------------------------  \u70ed\u95e8\u57ce\u5e02\u914d\u7f6e     --------------------------
+HOT_CITY_SOCKET_URL=127.0.0.1
+HOT_CITY_SOCKET_PORT=50000
+
+#-------------------------  \u56fe\u7247\u6839\u5730\u5740   ---------------------------
+IMAGE_SRC=https://10.39.109.45/
+
+##
+HOW_PATH=http://localhost:8080/how-web/bse/
+
+#-------------------------  \u7406\u8d54\u56fe\u7247   ---------------------------
+#\u7406\u8d54\u56fe\u7247\u76ee\u5f55
+#CLAIM_IMG_DIR=D:/hoau_workspace/learn/how/how-web/src/main/webapp/upload/
+CLAIM_IMG_DIR=D:/opt/how/claim.war/
+#\u7406\u8d54\u56fe\u7247\u67e5\u770b\u5730\u5740
+CLAIM_IMG_PATH=http://localhost:8080/claim/
+
+MDM_PROVINCE=http://qytest.hoau.net:8280/ewechat-rest-web/rs/district/all?type=PROVINCE
+MDM_CITY=http://qytest.hoau.net:8280/ewechat-rest-web/rs/district/all?type=CITY
+MDM_AREA=http://qytest.hoau.net:8280/ewechat-rest-web/rs/district/all?type=AREA

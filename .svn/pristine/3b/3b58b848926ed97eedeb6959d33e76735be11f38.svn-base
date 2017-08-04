@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>微信</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/default.min-1.css" />
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="../themes/jquery.mobile.structure-1.4.2.min.css" />
+    <link rel="stylesheet" href="../themes/hoau-icon.css" />
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>运单状态</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+            <div class="ui-body ui-body-a ui-corner-all custom-corners" data-theme="c">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <h4>最近查询</h4>
+                    </div>
+                    <div class="ui-block-b">
+                        <select name="historyQuery" id="historyQuery" data-mini="true">
+                            <option value="19520367">19520367</option>
+                            <option value="19520367">19520367</option>
+                            <option value="19520367">19520367</option>
+                            <option value="19520367">19520367</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <h4>运单编号</h4>
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="text" name="trackID" id="trackID" placeholder="运单编号" data-mini="true">
+                    </div>
+                    <div class="ui-block-c">
+                        <input type="button" data-icon="search" data-iconpos="notext">
+                    </div>
+                </div>
+
+                <ul data-role="listview" data-split-icon="phone" data-mini="true" data-split-theme="a" data-inset="true" class="ui-corner-none ui-alt-icon">
+                    <li data-theme="b">
+                        <a href="#">
+                            <h2>用户已签收</h2>
+                            <p style="white-space:normal">在玉溪分公司办理提货，收货人已签收</p>
+                            <p class="ui-li-aside">
+                                <strong>2014年5月4日<br>16点25分</strong>
+                            </p>
+                        </a>
+                        <a href="#" data-theme="b">拨打电话</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h2>中转</h2>
+                            <p style="white-space:normal">离开武汉，前往昆明</p>
+                            <p class="ui-li-aside">
+                                <strong>2014年5月2日<br>8点50分</strong>
+                            </p>
+                        </a>
+                        <a href="#">拨打电话</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h2>客户发货</h2>
+                            <p style="white-space:normal">在桐庐市分公司进行录单</p>
+                            <p class="ui-li-aside">
+                                <strong>2014年5月1日<br>17点30分</strong>
+                            </p>
+                        </a>
+                        <a href="#">拨打电话</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

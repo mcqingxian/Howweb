@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.hoau.how.module.bse.server.dao.NewsMapper">
+	<!-- 查询新闻列表返回值 -->
+	<resultMap id="newsListReslutMapp" 
+	 type="com.hoau.how.module.bse.api.shared.domain.NewsEntity">
+		<id property="newsId" column="NEWS_ID" jdbcType="INTEGER"/>
+		<result property="shortTitile" column="NEWS_SHORTTITLE" jdbcType="VARCHAR"/>
+		<result property="createdAt" column="NEWS_CREATEDAT" javaType="Date"
+			jdbcType="TIMESTAMP"/>
+		<result property="title" column="NEWS_TITLE" jdbcType="VARCHAR"/>
+		<result property="sltSrc" column="NEWS_SLT_SRC" jdbcType="VARCHAR"/>
+		<result property="disableTime" column="NEWS_GUOQI" javaType="Date"
+			jdbcType="TIMESTAMP"/>
+		<result property="description" column="NEWS_DESCRIPTION" jdbcType="VARCHAR"/>
+		<result property="clickCount" column="NEWS_CLICKCOUNT" jdbcType="INTEGER"/>
+		<result property="categoryId" column="CATEGORY_ID" jdbcType="INTEGER"/>
+		<result property="categoryName" column="CATEGORY_NAME" jdbcType="VARCHAR"/>
+		<result property="rowNum" column="ROWNUM" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<!-- 查询首页带图宣传新闻返回值 -->
+	<resultMap id="newsPropagandaList" 
+		type="com.hoau.how.module.bse.api.shared.vo.PropagandaNewsIndexVo">
+		<id property="id" column="NEWS_ID" jdbcType="INTEGER"/>
+		<result property="shortTitile"  column="NEWS_SHORTTITLE" jdbcType="VARCHAR"/>
+		<result property="sltSrc" column="NEWS_SLT_SRC" jdbcType="VARCHAR"/>
+		<result property="categoryId" column="CATEGORY_ID" jdbcType="INTEGER"/>
+		<result property="categoryName" column="CATEGORY_NAME" jdbcType="VARCHAR"/>
+		<result property="rowNum" column="ROWNUM" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<!-- 查询新闻详细内容返回值 -->
+	<resultMap id="newsDetailReslutMapp" 
+	 type="com.hoau.how.module.bse.api.shared.domain.NewsEntity">
+		<id property="newsId" column="NEWS_ID" jdbcType="INTEGER"/>
+		<result property="title" column="NEWS_TITLE" jdbcType="VARCHAR"/>
+		<result property="shortTitile" column="NEWS_SHORTTITLE" jdbcType="VARCHAR"/>
+		<result property="createdAt" column="NEWS_CREATEDAT" javaType="Date"
+			jdbcType="TIMESTAMP"/>
+		<result property="content" column="NEWS_NEWSCONTENT" jdbcType="VARCHAR"/>
+		<result property="clickCount" column="NEWS_CLICKCOUNT" jdbcType="INTEGER"/>
+		<result property="categoryId" column="CATEGORY_ID" jdbcType="INTEGER"/>
+		<result property="categoryName" column="CATEGORY_NAME" jdbcType="VARCHAR"/>
+		<result property="rowNum" column="ROWNUM" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<!-- 查询首页展示带图促销活动 -->
+	<select id="queryIndexMarketNewsList" resultMap="newsListReslutMapp" parameterType="map">
+		SELECT TOP ${showNumber} 
+		NEWS.ID AS NEWS_ID,NEWS.SHORT_TITLE AS NEWS_SHORTTITLE,NEWS.SLT_SRC AS NEWS_SLT_SRC,
+		NEWS.CREATED_AT AS NEWS_CREATEDAT, NEWS.GUOQI AS NEWS_GUOQI,NEWS.TITLE AS NEWS_TITLE,
+		CATEGORY.ID AS CATEGORY_ID,CATEGORY.NAME AS CATEGORY_NAME,
+		ROW_NUMBER() OVER(ORDER BY NEWS.PRIORITY ASC,NEWS.GUOQI DESC) AS ROWNUM
+		FROM HOAU_NEWS NEWS JOIN HOAU_CATEGORY CATEGORY ON NEWS.CATEGORY_ID=CATEGORY.ID 
+		WHERE NEWS.IS_ADOPT=1 AND NEWS.SLT_SRC IS NOT NULL
+		 <if test="categoryName != null and categoryName != ''">
+			 AND CATEGORY.NAME=#{categoryName,jdbcType=VARCHAR}
+		 </if>
+		 <if test="filterTime != null and filterTime != '' ">
+		    <![CDATA[
+				AND NEWS.CREATED_AT>#{filterTime}
+			]]>
+		</if>
+  	   ORDER BY NEWS.PRIORITY ASC,NEWS.GUOQI DESC
+	</select>
+	
+	<!-- 查询首页展示新闻 -->
+	<select id="queryIndexNewsList" resultMap="newsListReslutMapp" parameterType="map">
+		SELECT TOP ${showNumber} 
+		NEWS.ID AS NEWS_ID,NEWS.SHORT_TITLE AS NEWS_SHORTTITLE,NEWS.SLT_SRC AS NEWS_SLT_SRC,
+		NEWS.CREATED_AT AS NEWS_CREATEDAT,NEWS.TITLE AS NEWS_TITLE,
+		CATEGORY.ID AS CATEGORY_ID,CATEGORY.NAME AS CATEGORY_NAME,
+		ROW_NUMBER() OVER(ORDER BY NEWS.PRIORITY ASC,NEWS.CREATED_AT DESC) AS ROWNUM
+		FROM HOAU_NEWS NEWS JOIN HOAU_CATEGORY CATEGORY ON NEWS.CATEGORY_ID=CATEGORY.ID 
+		WHERE NEWS.IS_ADOPT=1 
+		<if test="categoryNamesArray!=null">
+             AND CATEGORY.NAME IN 
+             <foreach collection="categoryNamesArray" item="categoryName"
+                 index="index" open="(" close=")" separator=",">
+                 #{categoryName,jdbcType=VARCHAR}
+             </foreach>
+	   </if>	
+  	   ORDER BY NEWS.PRIORITY ASC,NEWS.CREATED_AT DESC
+	</select>
+	
+	<!-- 查询首页带图宣传新闻 -->
+	<select id="queryIndexProNewsList" resultMap="newsPropagandaList" parameterType="map">
+		SELECT TOP ${showNumber}
+		NEWS.ID AS NEWS_ID,
+		NEWS.SHORT_TITLE AS NEWS_SHORTTITLE,
+		NEWS.SLT_SRC AS NEWS_SLT_SRC,
+		CATEGORY.ID AS CATEGORY_ID,CATEGORY.NAME AS CATEGORY_NAME,
+		ROW_NUMBER() OVER(ORDER BY NEWS.PRIORITY ASC,NEWS.CREATED_AT DESC) AS ROWNUM
+		FROM HOAU_NEWS NEWS JOIN HOAU_CATEGORY CATEGORY ON NEWS.CATEGORY_ID=CATEGORY.ID 
+		WHERE NEWS.IS_ADOPT=1  AND NEWS.SLT_SRC IS NOT NULL
+		<if test="categoryNamesArray!=null">
+             AND CATEGORY.NAME IN 
+             <foreach collection="categoryNamesArray" item="categoryName"
+                 index="index" open="(" close=")" separator=",">
+                 #{categoryName,jdbcType=VARCHAR}
+             </foreach>
+	   </if>	
+  	   ORDER BY NEWS.PRIORITY ASC,NEWS.CREATED_AT DESC
+	</select>
+	
+	<!-- 自定义分页查询新闻列表 -->
+	<select id="queryNewsList" resultMap="newsListReslutMapp" parameterType="java.util.Map">
+		SELECT NEWS_ID,NEWS_SHORTTITLE,NEWS_CREATEDAT,NEWS_TITLE,NEWS_SLT_SRC,NEWS_GUOQI,NEWS_DESCRIPTION,NEWS_clickCount,CATEGORY_ID,CATEGORY_NAME,ROWNUM
+		FROM (
+		SELECT ROW_NUMBER() OVER(ORDER BY PRIORITY ASC,
+		<if test="categoryName == '市场推广'">
+		     GUOQI DESC
+		 </if>
+		 <if test="categoryName != '市场推广'">
+		     CREATED_AT DESC
+		 </if>
+		) AS ROWNUM,
+		NEWS.ID AS NEWS_ID,NEWS.SHORT_TITLE AS NEWS_SHORTTITLE,NEWS.CREATED_AT AS NEWS_CREATEDAT,
+		NEWS.TITLE AS NEWS_TITLE,NEWS.SLT_SRC AS NEWS_SLT_SRC, NEWS.GUOQI AS NEWS_GUOQI,
+		NEWS.DESCRIPTION AS NEWS_DESCRIPTION,NEWS.CLICK_COUNT AS NEWS_CLICKCOUNT,CATEGORY.id as CATEGORY_ID,CATEGORY.name as CATEGORY_NAME
+		FROM HOAU_NEWS NEWS JOIN HOAU_CATEGORY CATEGORY ON NEWS.CATEGORY_ID=CATEGORY.ID 
+		<where>
+			NEWS.IS_ADOPT=1 
+			<if test="filterTime != null and filterTime != '' ">
+			    <![CDATA[
+					AND NEWS.CREATED_AT>#{filterTime}
+				]]>
+			</if>
+			<if test="categoryName != null and categoryName != ''">
+			 AND CATEGORY.NAME=#{categoryName,jdbcType=VARCHAR}
+			 </if>
+		</where>
+		 ) AS D
+		 <where>
+		 	<if test="pageStart != null and pageStart != '' and pageEnd != null and pageEnd != ''">
+				D.ROWNUM BETWEEN #{pageStart,jdbcType=NUMERIC}
+				AND #{pageEnd,jdbcType=NUMERIC}  
+			</if>
+		 </where>
+		
+	</select>
+	
+	
+	<!-- 某类目新闻总数 -->
+ 	<select id="countNews" resultType="java.lang.Long" parameterType="java.util.Map">
+		SELECT COUNT(1) A FROM HOAU_NEWS NEWS
+		JOIN HOAU_CATEGORY CATEGORY ON NEWS.CATEGORY_ID=CATEGORY.ID
+		WHERE NEWS.IS_ADOPT=1	
+		<if test="filterTime != null and filterTime != '' ">
+		    <![CDATA[
+				AND NEWS.CREATED_AT>#{filterTime}
+			]]>
+		</if>
+		AND CATEGORY.NAME=#{categoryName,jdbcType=VARCHAR}
+	</select>
+	
+ 	<select id="getNewsDetailForJump" resultMap="newsDetailReslutMapp" parameterType="java.util.Map">
+ 	    SELECT NEWS_TITLE,NEWS_SHORTTITLE,NEWS_CREATEDAT,NEWS_NEWSCONTENT,NEWS_CLICKCOUNT,CATEGORY_ID,CATEGORY_NAME,ROWNUM
+		FROM (
+		SELECT ROW_NUMBER() OVER(ORDER BY PRIORITY ASC,
+		<if test="categoryName == '市场推广'">
+		     GUOQI DESC
+		 </if>
+		 <if test="categoryName != '市场推广'">
+		     CREATED_AT DESC
+		 </if>
+		) AS ROWNUM,
+		NEWS.TITLE AS NEWS_TITLE,NEWS.SHORT_TITLE AS NEWS_SHORTTITLE,NEWS.CREATED_AT AS NEWS_CREATEDAT, 
+		NEWS.NEWS_CONTENT AS NEWS_NEWSCONTENT,NEWS.CLICK_COUNT AS NEWS_CLICKCOUNT,
+		CATEGORY.ID AS CATEGORY_ID,CATEGORY.NAME AS CATEGORY_NAME
+		FROM HOAU_NEWS NEWS JOIN HOAU_CATEGORY CATEGORY ON NEWS.CATEGORY_ID=CATEGORY.ID  
+		<where>
+			NEWS.IS_ADOPT=1
+			<if test="categoryName != null and categoryName != ''">
+			 AND CATEGORY.NAME=#{categoryName,jdbcType=VARCHAR}
+			 </if>
+			 <if test="filterTime != null and filterTime != '' ">
+		    <![CDATA[
+				AND NEWS.CREATED_AT>#{filterTime}
+			]]>
+		</if>
+		</where>
+		 ) AS D WHERE D.ROWNUM = #{rowNum,jdbcType=INTEGER} 
+ 	</select>
+	
+	
+	<!-- 查询新闻具体内容 -->
+	<select id="getNewsDetail" resultMap="newsDetailReslutMapp" parameterType="java.lang.String">
+		SELECT NEWS.TITLE AS NEWS_TITLE,NEWS.SHORT_TITLE AS NEWS_SHORTTITLE,NEWS.CREATED_AT AS NEWS_CREATEDAT, 
+		NEWS.NEWS_CONTENT AS NEWS_NEWSCONTENT,NEWS.CLICK_COUNT AS NEWS_CLICKCOUNT,
+		CATEGORY.ID AS CATEGORY_ID,CATEGORY.NAME AS CATEGORY_NAME
+		FROM HOAU_NEWS NEWS JOIN HOAU_CATEGORY CATEGORY ON NEWS.CATEGORY_ID=CATEGORY.ID 
+		WHERE NEWS.ID=#{newsId,jdbcType=VARCHAR} 
+	</select>
+	
+	<!-- 更新点击数量 -->
+	<update id="updateClickCount"  parameterType="java.lang.String" >
+		UPDATE HOAU_NEWS SET CLICK_COUNT = CLICK_COUNT+1 
+		WHERE ID=#{newsId,jdbcType=VARCHAR}
+	</update>
+	
+</mapper>

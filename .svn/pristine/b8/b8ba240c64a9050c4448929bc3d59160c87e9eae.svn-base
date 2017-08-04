@@ -1,0 +1,27 @@
+#oms url
+OMS_URL=${oms.url}
+
+OMS_ORDER_URL=${oms.order.url}
+
+SMS_URL=${sms.url}
+
+SERVER_URL=${server.url}
+
+DC_PRICE_URL=${dc.price.url}
+
+TTQ_PRICE_URL=${ttq.price.url}
+
+TTQ_URL=${ttq.url}
+
+SMS_TEMPLATE=\u5FAE\u4FE1\u624B\u673A\u7ED1\u5B9A\u9A8C\u8BC1\u7801\u4E3A%s
+
+HC_URL=www.hc360.com
+
+WT_URL=${wt.url}
+
+NEWS_IMG_SRC=${news.img.src}
+
+DC_WAYBILL_INFO_URL=${dc.waybill.info.url}
+
+##PMS_URL=https://pmstest.hoau.net:8280/miser-api-web/rs/howApp/priceCity/v1/queryStandardPrice
+PMS_URL=http://pms.hoau.net/miser-api-web/rs/howApp/price/v1/queryStandardPrice

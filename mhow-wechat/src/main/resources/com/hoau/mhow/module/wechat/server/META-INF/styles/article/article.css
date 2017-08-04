@@ -1,0 +1,23 @@
+.easyDialog_wrapper {
+	color: #444;
+	display: none;
+}
+
+.easyDialog_wrapper .easyDialog_content {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #fff;
+	max-width: 320px;
+	min-width:120px;
+}
+
+.easyDialog_wrapper .easyDialog_text {
+	padding: 20px 10px;
+	font-size: 1.2rem;
+	line-height: 22px;
+}
+
+#pop-content{
+	text-align: center;
+}

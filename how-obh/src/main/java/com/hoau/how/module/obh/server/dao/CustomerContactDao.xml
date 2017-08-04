@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.obh.server.dao.CustomerContactDao">
+	<resultMap id="BaseResultMap" type="com.hoau.how.module.obh.shared.domain.CustomerContactEntity" >
+		<id column="ebcc_id" property="ebccId" jdbcType="NUMERIC" />
+		<result column="ebcc_ebcu_id" property="ebccEbcuId" jdbcType="NUMERIC" />
+		<result column="ebcc_contact_name" property="ebccContactName" jdbcType="VARCHAR" />
+		<result column="ebcc_mobile" property="ebccMobile" jdbcType="VARCHAR" />
+		<result column="ebcc_tel" property="ebccTel" jdbcType="VARCHAR" />
+		<result column="ebcc_email" property="ebccEmail" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="creator" property="creator" jdbcType="VARCHAR" />
+		<result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+		<result column="modifier" property="modifier" jdbcType="VARCHAR" />
+		<result column="ebcc_net_login" property="ebccNetLogin" jdbcType="VARCHAR" />
+		<result column="ebcc_net_password" property="ebccNetPassword" jdbcType="VARCHAR" />
+		<result column="ebcc_address" property="ebccAddress" jdbcType="VARCHAR" />
+		<result column="ebcc_company" property="ebccCompany" jdbcType="VARCHAR" />
+		<result column="ebcc_sex" property="ebccSex" jdbcType="VARCHAR" />
+		<result column="ebcc_district" property="ebccDistrict" jdbcType="VARCHAR" />
+		<result column="ebcc_remark" property="ebccRemark" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="findCustomerById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		SELECT 
+	    EBCC_ID,
+	    EBCC_EBCU_ID,
+	    EBCC_MOBILE,
+	    EBCC_EMAIL,
+	    EBCC_NET_LOGIN,
+	    MODIFY_TIME,
+	    EBCC_CONTACT_NAME,
+	    EBCC_SEX,
+	    EBCC_COMPANY,
+	    EBCC_TEL,
+	    EBCC_ADDRESS,
+	    EBCC_DISTRICT,
+	    EBCC_REMARK,
+	    EBCC_NET_PASSWORD
+	    FROM EB_CUSTOMER_CONTACT 
+	    WHERE EBCC_ID = #{ebccId,jdbcType=VARCHAR}
+		ORDER BY EBCC_ID DESC
+	</select>
+	<select id="findCustomer" parameterType="com.hoau.how.module.obh.shared.domain.CustomerContactEntity" resultMap="BaseResultMap">
+	    SELECT 
+	    EBCC_ID,
+	    EBCC_EBCU_ID,
+	    EBCC_MOBILE,
+	    EBCC_EMAIL,
+	    EBCC_NET_LOGIN,
+	    EBCC_CONTACT_NAME,
+	    EBCC_NET_PASSWORD,
+	    MODIFY_TIME
+	    FROM EB_CUSTOMER_CONTACT WHERE 1 = 1
+	    <if test="ebccMobile != null and ebccMobile != ''">
+			AND EBCC_MOBILE = #{ebccMobile,jdbcType=VARCHAR}
+		</if>
+		<if test="ebccEmail != null and ebccEmail != ''">
+			AND EBCC_EMAIL = #{ebccEmail,jdbcType=VARCHAR}
+		</if>
+		<if test="ebccNetLogin != null and ebccNetLogin != ''">
+			AND EBCC_NET_LOGIN = #{ebccNetLogin,jdbcType=VARCHAR}
+		</if>
+		<if test="ebccNetPassword != null and ebccNetPassword != ''">
+			AND EBCC_NET_PASSWORD = #{ebccNetPassword,jdbcType=VARCHAR}
+		</if>
+		<if test="ebccId != null">
+			AND EBCC_ID = #{ebccId,jdbcType=VARCHAR}
+		</if>
+		ORDER BY EBCC_ID DESC
+	</select>
+	<select id="countCustomer" parameterType="com.hoau.how.module.obh.shared.domain.CustomerContactEntity" resultType="java.lang.Integer">
+	    SELECT 
+	    count(1) as total
+	    FROM EB_CUSTOMER_CONTACT WHERE 1 = 1
+	    <if test="ebccMobile != null and ebccMobile != ''">
+			AND EBCC_MOBILE = #{ebccMobile,jdbcType=VARCHAR}
+		</if>
+		<if test="ebccEmail != null and ebccEmail != ''">
+			AND EBCC_EMAIL = #{ebccEmail,jdbcType=VARCHAR}
+		</if>
+		<if test="ebccNetLogin != null and ebccNetLogin != ''">
+			AND EBCC_NET_LOGIN = #{ebccNetLogin,jdbcType=VARCHAR}
+		</if>
+		<if test="ebccNetPassword != null and ebccNetPassword != ''">
+			AND EBCC_NET_PASSWORD = #{ebccNetPassword,jdbcType=VARCHAR}
+		</if>
+		<if test="ebccId != null">
+			AND EBCC_ID = #{ebccId,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<update id="modifyCustomerPwdById" parameterType="com.hoau.how.module.obh.shared.domain.CustomerContactEntity">
+		UPDATE EB_CUSTOMER_CONTACT
+		SET EBCC_NET_PASSWORD = #{ebccNetPassword,jdbcType=VARCHAR},
+		MODIFY_TIME = now(),
+		MODIFIER = 'admin'
+		WHERE EBCC_ID = #{ebccId,jdbcType=VARCHAR}
+	</update>
+	<update id="modifyCustomerTimeById" parameterType="com.hoau.how.module.obh.shared.domain.CustomerContactEntity">
+		UPDATE EB_CUSTOMER_CONTACT
+		SET 
+		MODIFY_TIME = now(),
+		MODIFIER = 'admin'
+		WHERE EBCC_ID = #{ebccId,jdbcType=VARCHAR}
+	</update>
+	<update id="modifyCustomerInfoById" parameterType="com.hoau.how.module.obh.shared.domain.CustomerContactEntity">
+		UPDATE EB_CUSTOMER_CONTACT
+		SET 
+		EBCC_MOBILE = #{ebccMobile,jdbcType=VARCHAR},
+	    EBCC_EMAIL = #{ebccEmail,jdbcType=VARCHAR},
+	    EBCC_NET_LOGIN = #{ebccNetLogin,jdbcType=VARCHAR},
+	    EBCC_CONTACT_NAME = #{ebccContactName,jdbcType=VARCHAR},
+	    EBCC_SEX = #{ebccSex,jdbcType=VARCHAR},
+	    EBCC_COMPANY = #{ebccCompany,jdbcType=VARCHAR},
+	    EBCC_TEL = #{ebccTel,jdbcType=VARCHAR},
+	    EBCC_ADDRESS = #{ebccAddress,jdbcType=VARCHAR},
+	    EBCC_DISTRICT = #{ebccDistrict,jdbcType=VARCHAR},
+	    EBCC_REMARK = #{ebccRemark,jdbcType=VARCHAR},
+		MODIFY_TIME = now(),
+		MODIFIER = 'admin'
+		WHERE EBCC_ID = #{ebccId,jdbcType=VARCHAR}
+	</update>
+	<insert id="insertCustomerContact" 
+	    parameterType="com.hoau.how.module.obh.shared.domain.CustomerContactEntity">
+		INSERT INTO EB_CUSTOMER_CONTACT(EBCC_EBCU_ID,EBCC_MOBILE,EBCC_EMAIL,EBCC_NET_LOGIN,EBCC_NET_PASSWORD,CREATE_TIME,CREATOR,modify_time,modifier) 
+		VALUES(#{ebccEbcuId,jdbcType=VARCHAR},#{ebccMobile,jdbcType=VARCHAR},#{ebccEmail,jdbcType=VARCHAR},#{ebccNetLogin,jdbcType=VARCHAR},#{ebccNetPassword,jdbcType=VARCHAR},now(),'admin',now(),'admin');
+	</insert>
+</mapper>

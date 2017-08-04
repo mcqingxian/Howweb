@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.mhow.module.bse.server.dao.CompanyMatchMapper">
+    <resultMap type="com.hoau.mhow.module.bse.api.shared.domain.DepartmentEntity" id="departmentResultMap">
+        <result property="id" column="ID"  jdbcType="VARCHAR" />
+        <result column="DEPT_CODE" property="deptCode"  jdbcType="VARCHAR" />
+        <result column="DEPT_NAME" property="deptName"  jdbcType="VARCHAR" />
+        <result column="PARENT_DEPT_CODE" property="parentDeptCode"  jdbcType="VARCHAR" />
+        <result column="PARENT_DEPT_NAME" property="parentDeptName"  jdbcType="VARCHAR" />
+        <result column="DEPT_NATURE" property="deptNature"  jdbcType="VARCHAR" />
+        <result column="LOGIST_CODE" property="logistCode"  jdbcType="VARCHAR" />
+        <result column="MANAGER_CODE" property="managerCode"  jdbcType="VARCHAR" />
+        <result column="MANAGER_NAME" property="managerName"  jdbcType="VARCHAR" />
+        <result column="PROVINCE" property="province"  jdbcType="VARCHAR" />
+        <result column="PROVINCE_CODE" property="provinceCode"  jdbcType="VARCHAR" />
+        <result column="CITY" property="city"  jdbcType="VARCHAR" />
+        <result column="CITY_CODE" property="cityCode"  jdbcType="VARCHAR" />
+        <result column="AREA_CODE" property="areaCode"  jdbcType="VARCHAR" />
+        <result column="PHONE" property="phone"  jdbcType="VARCHAR" />
+        <result column="FAX" property="fax"  jdbcType="VARCHAR" />
+        <result column="ADDRESS_DETAIL" property="addressDetail"  jdbcType="VARCHAR" />
+        <result column="LAT" property="lat"  jdbcType="NUMERIC" />
+        <result column="LNG" property="lng"  jdbcType="NUMERIC" />
+        <result column="IS_SPECIFIED_TIME" property="isSpecifiedTime"  jdbcType="VARCHAR" />
+        <result column="IS_SHIPMENT" property="isShipment"  jdbcType="VARCHAR" />
+        <result column="IS_PICK_UP" property="isPickUp"  jdbcType="VARCHAR" />
+        <result column="IS_DELIVERY" property="isDelivery"  jdbcType="VARCHAR" />
+        <result column="VERSION_NO" property="versionNo"  jdbcType="NUMERIC" />
+        <result column="ACTIVE" property="active"  jdbcType="VARCHAR" />
+        <result column="CREATE_TIME" property="createDate"  jdbcType="TIMESTAMP" />
+        <result column="CREATE_USER_CODE" property="createUser"  jdbcType="VARCHAR" />
+        <result column="MODIFY_TIME" property="modifyDate"  jdbcType="TIMESTAMP" />
+        <result column="MODIFY_USER_CODE" property="modifyUser"  jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <select id="queryProvinceCount" resultType="com.hoau.mhow.module.bse.api.shared.vo.DistrictVo">
+    	<![CDATA[
+	    	SELECT 
+		    	TBDI.DISTRICT_CODE as districtCode,
+		    	TBDI.DISTRICT_NAME as districtName,
+		    	COUNT(1) AS total 
+	    	FROM T_BSE_DISTRICT TBDI INNER JOIN DEPARTMENT_VIEW TBDE ON(TBDI.DISTRICT_CODE=TBDE.PROVINCE_CODE)
+	    	WHERE 1&TBDE.DEPT_NATURE = 1 
+			GROUP BY TBDI.DISTRICT_CODE,TBDI.DISTRICT_NAME
+		]]>
+    </select>
+    <select id="queryCityCount" parameterType="java.util.Map" resultType="com.hoau.mhow.module.bse.api.shared.vo.DistrictVo">
+    	<![CDATA[
+	    	SELECT 
+		    	TBDI.DISTRICT_CODE as districtCode,
+		    	TBDI.DISTRICT_NAME as districtName,
+		    	COUNT(1) AS total 
+	    	FROM T_BSE_DISTRICT TBDI INNER JOIN DEPARTMENT_VIEW TBDE ON(TBDI.DISTRICT_CODE=TBDE.CITY_CODE)
+			WHERE TBDE.ACTIVE = 'Y' AND 1&TBDE.DEPT_NATURE = 1
+		]]>
+		<if test="pinyin != null and pinyin != ''">
+			AND PINYIN LIKE #{pinyin,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="districtCode != null and districtCode != ''">
+			AND PARENT_DISTRICT_CODE  = #{districtCode,jdbcType=VARCHAR}
+		</if>
+		GROUP BY TBDI.DISTRICT_CODE,TBDI.DISTRICT_NAME
+    </select>
+    <select id="queryCountyCount" parameterType="java.lang.String" resultType="com.hoau.mhow.module.bse.api.shared.vo.DistrictVo">
+    	<![CDATA[
+	    	SELECT 
+		    	TBDI.DISTRICT_CODE as districtCode,
+		    	TBDI.DISTRICT_NAME as districtName,
+		    	COUNT(1) AS total 
+	    	FROM T_BSE_DISTRICT TBDI INNER JOIN DEPARTMENT_VIEW TBDE ON(TBDI.DISTRICT_CODE=TBDE.COUNTY_CODE)
+			WHERE 
+			TBDE.ACTIVE = 'Y' 
+			AND 1&TBDE.DEPT_NATURE = 1
+			AND PARENT_DISTRICT_CODE  = #{districtCode,jdbcType=VARCHAR}
+			GROUP BY TBDI.DISTRICT_CODE,TBDI.DISTRICT_NAME
+		]]>
+    </select>
+    <select id="queryCounty" parameterType="java.util.Map" resultType="com.hoau.mhow.module.bse.api.shared.vo.DepartmentVo">
+    	<![CDATA[
+	    	SELECT ROW_NUMBER() OVER (ORDER BY ID ) AS rownumber,
+				ID as id,
+				DEPT_NAME as deptName,
+				ADDRESS_DETAIL as addressDetail,
+				AREA_CODE as areaCode,
+				PHONE as phone,
+				IS_SPECIFIED_TIME as isSpecifiedTime,
+				IS_SHIPMENT as isShipment,
+				IS_DELIVERY as isDelivery,
+				IS_PICK_UP as isPickUp,
+				LOGIST_CODE as logistCode,
+			    LNG as lng,
+			    LAT as lat
+			FROM DEPARTMENT_VIEW 
+			WHERE ACTIVE = 'Y'
+			AND 1&DEPT_NATURE = 1
+		]]>
+		<if test="cityCode != null and cityCode != ''">
+			AND CITY_CODE = #{cityCode,jdbcType=VARCHAR}
+		</if>
+		<if test="countyCode != null and countyCode != ''">
+			AND COUNTY_CODE  = #{countyCode,jdbcType=VARCHAR}
+		</if>
+    </select>
+    <select id="queryDeptByDistrictName" parameterType="java.util.Map" resultType="com.hoau.mhow.module.bse.api.shared.vo.DepartmentVo">
+    	<![CDATA[
+	    	SELECT ROW_NUMBER() OVER (ORDER BY ID ) AS rownumber,
+				ID as id,
+				DEPT_NAME as deptName,
+				PROVINCE_CODE as provinceCode,
+				CITY_CODE as cityCode,
+				COUNTY_CODE as countyCode,
+				ADDRESS_DETAIL as addressDetail,
+				AREA_CODE as areaCode,
+				PHONE as phone,
+				IS_SPECIFIED_TIME as isSpecifiedTime,
+				IS_SHIPMENT as isShipment,
+				IS_DELIVERY as isDelivery,
+				IS_PICK_UP as isPickUp,
+				LOGIST_CODE as logistCode,
+			    LNG as lng,
+			    LAT as lat
+			FROM DEPARTMENT_VIEW 
+			WHERE ACTIVE = 'Y'
+			AND 1&DEPT_NATURE = 1
+		]]>
+		<if test="city != null and city != ''">
+			AND CITY  = #{city,jdbcType=VARCHAR}
+		</if>
+		<if test="county != null and county != ''">
+			AND COUNTY  = #{county,jdbcType=VARCHAR}
+		</if>
+    </select>
+    
+    <select id="queryHotCity" resultType="com.hoau.mhow.module.bse.api.shared.vo.DistrictVo">
+    	SELECT 
+	    	TOP 16
+	    	DISTRICT_CODE as districtCode,
+			DISTRICT_NAME as districtName
+		FROM T_BSE_DISTRICT WHERE DISTRICT_TYPE = 'CITY'
+	  	ORDER BY HOT_CITY_NUM DESC
+    </select>
+</mapper>

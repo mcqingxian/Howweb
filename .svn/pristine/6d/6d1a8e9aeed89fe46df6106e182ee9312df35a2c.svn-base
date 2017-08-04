@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.bse.server.dao.company.CompanyScreenMapper">
+	<resultMap type="com.hoau.how.module.bse.shared.vo.DepartmentVo" id="departmentResultMap">
+        <result property="id" column="ID"  jdbcType="VARCHAR" />
+        <result column="DEPT_CODE" property="deptCode"  jdbcType="VARCHAR" />
+        <result column="DEPT_NAME" property="deptName"  jdbcType="VARCHAR" />
+        <result column="PARENT_DEPT_CODE" property="parentDeptCode"  jdbcType="VARCHAR" />
+        <result column="PARENT_DEPT_NAME" property="parentDeptName"  jdbcType="VARCHAR" />
+        <result column="DEPT_NATURE" property="deptNature"  jdbcType="VARCHAR" />
+        <result column="LOGIST_CODE" property="logistCode"  jdbcType="VARCHAR" />
+        <result column="MANAGER_CODE" property="managerCode"  jdbcType="VARCHAR" />
+        <result column="MANAGER_NAME" property="managerName"  jdbcType="VARCHAR" />
+        <result column="PROVINCE" property="province"  jdbcType="VARCHAR" />
+        <result column="PROVINCE_CODE" property="provinceCode"  jdbcType="VARCHAR" />
+        <result column="CITY" property="city"  jdbcType="VARCHAR" />
+        <result column="CITY_CODE" property="cityCode"  jdbcType="VARCHAR" />
+        <result column="AREA_CODE" property="areaCode"  jdbcType="VARCHAR" />
+        <result column="PHONE" property="phone"  jdbcType="VARCHAR" />
+        <result column="FAX" property="fax"  jdbcType="VARCHAR" />
+        <result column="ADDRESS_DETAIL" property="addressDetail"  jdbcType="VARCHAR" />
+        <result column="LAT" property="lat"  jdbcType="NUMERIC" />
+        <result column="LNG" property="lng"  jdbcType="NUMERIC" />
+        <result column="IS_SPECIFIED_TIME" property="isSpecifiedTime"  jdbcType="VARCHAR" />
+        <result column="IS_SHIPMENT" property="isShipment"  jdbcType="VARCHAR" />
+        <result column="IS_PICK_UP" property="isPickUp"  jdbcType="VARCHAR" />
+        <result column="IS_DELIVERY" property="isDelivery"  jdbcType="VARCHAR" />
+        <result column="VERSION_NO" property="versionNo"  jdbcType="NUMERIC" />
+        <result column="ACTIVE" property="active"  jdbcType="VARCHAR" />
+        <result column="CREATE_TIME" property="createDate"  jdbcType="TIMESTAMP" />
+        <result column="CREATE_USER_CODE" property="createUser"  jdbcType="VARCHAR" />
+        <result column="MODIFY_TIME" property="modifyDate"  jdbcType="TIMESTAMP" />
+        <result column="MODIFY_USER_CODE" property="modifyUser"  jdbcType="VARCHAR" />
+        <result column="TAKE_SELF_DEPEND_LOGIST_CODE" property="takeSelfDependLogistCode" jdbcType="VARCHAR" />
+        <result column="AUTH_CODE" property="authCode" jdbcType="VARCHAR" />
+        <result column="FRANCHISE_COMPANY_NAME" property="franchiseCompanyName" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <select id="queryPinYin" resultType="java.lang.String">
+    	<![CDATA[
+	    	SELECT SUBSTRING(PINYIN,1,1) as pinYin FROM T_BSE_DISTRICT WHERE DISTRICT_TYPE = 'CITY' 
+			GROUP BY SUBSTRING(PINYIN,1,1) ORDER BY SUBSTRING(PINYIN,1,1)
+		]]>
+    </select>
+    
+    <select id="queryDistrict" parameterType="com.hoau.how.module.itf.shared.domain.DistrictEntity" resultType="com.hoau.how.module.bse.shared.vo.DistrictVo">
+    	<![CDATA[
+	    	SELECT 
+		    	DISTRICT_CODE as districtCode,
+				DISTRICT_NAME as districtName,
+				PINYIN	as pinyin
+	    	FROM T_BSE_DISTRICT WHERE DISTRICT_TYPE = 'CITY' AND PINYIN LIKE #{pinyin,jdbcType=VARCHAR}+'%'  ORDER BY PINYIN
+    	]]>
+    </select>
+    
+    <select id="queryDeptList" parameterType="java.util.Map" resultMap="departmentResultMap">
+    	<![CDATA[
+	    	select rownumber,ID,CITY_CODE,DEPT_NAME,LOGIST_CODE,ADDRESS_DETAIL,AREA_CODE,PHONE,IS_SPECIFIED_TIME,IS_SHIPMENT,IS_DELIVERY,IS_PICK_UP,TAKE_SELF_DEPEND_LOGIST_CODE,AUTH_CODE,FRANCHISE_COMPANY_NAME
+			from 
+			(
+			 select row_number() over(order by CREATE_TIME DESC) as rownumber,
+			 ID,CITY_CODE,DEPT_NAME,LOGIST_CODE,ADDRESS_DETAIL,AREA_CODE,PHONE,IS_SPECIFIED_TIME,IS_SHIPMENT,IS_DELIVERY,IS_PICK_UP,TAKE_SELF_DEPEND_LOGIST_CODE,AUTH_CODE,FRANCHISE_COMPANY_NAME
+			  from DEPARTMENT_VIEW where ACTIVE = 'Y' AND (1&DEPT_NATURE =1 or 2&DEPT_NATURE = 2 )
+		]]>
+		<if test="phone != null and phone != ''">
+			AND PHONE LIKE '%'+#{phone,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="deptName != null and deptName != ''">
+			AND DEPT_NAME LIKE '%'+#{deptName,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="addressDetail != null and addressDetail != ''">
+			AND ADDRESS_DETAIL LIKE '%'+#{addressDetail,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="logistCode != null and logistCode != ''">
+			AND LOGIST_CODE LIKE '%'+#{logistCode,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="cityCode != null and cityCode != ''">
+			AND CITY_CODE  = #{cityCode,jdbcType=VARCHAR}
+		</if>
+
+		AND DEPT_NAME not like '%客户%'
+		) B WHERE B.rownumber BETWEEN #{pageStart,jdbcType=VARCHAR} AND #{pageEnd,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="countDeptList" parameterType="java.util.Map" resultType="java.lang.Integer">
+    	<![CDATA[
+	    	select count(1) as num
+			from DEPARTMENT_VIEW WHERE ACTIVE = 'Y' AND (1&DEPT_NATURE =1 or 2&DEPT_NATURE = 2 )
+		]]>
+		<if test="phone != null and phone != ''">
+			AND PHONE LIKE '%'+#{phone,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="deptName != null and deptName != ''">
+			AND DEPT_NAME LIKE '%'+#{deptName,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="addressDetail != null and addressDetail != ''">
+			AND ADDRESS_DETAIL LIKE '%'+#{addressDetail,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="logistCode != null and logistCode != ''">
+			AND LOGIST_CODE LIKE '%'+#{logistCode,jdbcType=VARCHAR}+'%'
+		</if>
+		<if test="cityCode != null and cityCode != ''">
+			AND CITY_CODE  = #{cityCode,jdbcType=VARCHAR}
+		</if>
+			AND DEPT_NAME  NOT LIKE '%客户%'
+    </select>
+    
+    <select id="queryCompanyDetail" parameterType="java.lang.String" resultMap="departmentResultMap">
+    	<![CDATA[
+	    	SELECT 
+				ID,DEPT_NAME,LOGIST_CODE,ADDRESS_DETAIL,AREA_CODE,PHONE,
+				CASE FAX
+			     WHEN '' THEN '无'
+			     ELSE FAX
+			    END AS FAX,
+				PROVINCE,CITY,
+				IS_SPECIFIED_TIME,IS_SHIPMENT,IS_DELIVERY,IS_PICK_UP,
+			    LNG,LAT,TAKE_SELF_DEPEND_LOGIST_CODE,AUTH_CODE,
+			    FRANCHISE_COMPANY_NAME
+			FROM DEPARTMENT_VIEW WHERE ACTIVE = 'Y' AND LOGIST_CODE = #{code,jdbcType=VARCHAR}
+		]]>
+    </select>
+</mapper>

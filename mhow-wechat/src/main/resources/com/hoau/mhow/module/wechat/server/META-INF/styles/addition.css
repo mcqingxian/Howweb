@@ -1,0 +1,105 @@
+@charset "utf-8";
+@media screen and (min-width:600px) {
+	.grid-nav .ui-navbar a {
+		padding: 1.2em 0;
+	}
+	.grid-nav .ui-navbar .ui-ico {
+		height: 43px;
+		width: 43px;
+		margin-bottom: .5em;
+	}
+	.service-promotion li a i{
+		width:170px !important;
+		height:170px !important;
+	}	
+}
+@media screen and (min-width: 400px) and (max-width: 600px) {}
+@media screen and (max-width: 320px){
+	.header h1.innertitle {
+		font-size: 1.25em;
+	}
+	.header .btn-topl,.btn-topr {top:12px;}
+	.header .ui-ico {
+	    height:26px;
+	    width:28px;
+	}
+	.btn-topr .link-user, .btn-topr .link-home {
+	    margin-right: 10px;
+	}
+}
+
+/********************/
+.fm-list li .ui-input-text{margin:0;border-width:0;}
+.location_icon{margin-top: -14px;right: 10px;position: absolute;top: 50%;z-index: 9;}
+.ui-content .ui-listview-inset, .ui-panel-inner>.ui-listview-inset {margin: 1em;}
+.ui-input-text, .ui-input-search {
+   margin:5px 0;
+}
+.price_cal_result .ui-bar-inherit{background-color: #bdbdbd;border-color: #cacccb;color: #000;}
+.price_cal_result .ui-body-inherit{border-color: #cacccb;}
+.order_manager_tab{background:#fff;border-bottom:1px solid #cacccb;}
+.order_manager_tab li{text-align: center;}
+.order_manager_tab li .ui-btn {
+	color:#5a5a5a; 
+	padding:0.7em 0;
+	margin:0 0.5em;
+	font-size: 1em;
+}
+.order_manager_tab li .ui-btn.ui-btn-active,.order_manager_tab li .ui-btn:hover{
+	border-bottom:3px solid #f0572c;
+	color:#f0572c;
+	background:none;
+}
+.order_manager_list{	
+	color:#494949;
+	margin-bottom: 1em;
+	border-top:1px solid #cdcdcd;
+	border-bottom:1px solid #cdcdcd;
+	background: #fff;
+	   
+}
+.order_manager_list_info{padding:0.5em 1em;}
+.order_manager_list_info p{line-height:1.875em; font-size:1.125em;}
+.order_manager_list_btn{
+	border-top:1px solid #cdcdcd;
+	padding: 0.5em 0;
+}
+.order_manager_list_btn a{
+	border:2px solid #f0572c;
+	color:#f0572e;
+	display: inline-block;
+	padding:0.25em 1.5em;
+	-webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
+    margin: 0 5px;
+    font-size:1.125em;
+}
+.hwzz_search .ui-input-text input{padding:0;}
+.ui-icon-delete:after {
+    background:url(../../images/wechat/close_icon01.png) no-repeat 50% 50%;
+    background-size:20px 20px;
+	display:inline-block;
+}
+.consignee_info .ui-btn:hover{background-color: #fff;color: #1D242C;}
+.order_box_manager .ui-collapsible-content{padding:0 !important;}
+/*.order_box_manager .ui-collapsible-heading-toggle{ background:#f0572c;}
+.order_box_manager .ui-icon-minus:after{
+	background:url(../../images/wechat/ico_toggle_white02.png) no-repeat 50% 50%;
+    background-size:20px 20px;
+}*/
+.ui-icon-minus:after {background:url(../../images/wechat/ico_toggle_white02_1.png) no-repeat 50% 50%;
+	background-size:14px 14px;
+	display:inline-block;
+}
+.ui-icon-plus:after {background:url(../../images/wechat/ico_toggle_white01_1.png) no-repeat 50% 50%;
+	background-size:14px 14px;
+	display:inline-block;
+}
+.order_box_manager h4 a.ui-btn:hover.ui-icon-minus:after{
+	background:url(../../images/wechat/ico_toggle_white02.png) no-repeat 50% 50% !important;
+	background-size:14px 14px !important;
+}
+.order_box_manager h4 a.ui-btn:hover.ui-icon-plus:after{
+	background:url(../../images/wechat/ico_toggle_white01.png) no-repeat 50% 50% !important;
+	background-size:14px 14px !important;
+}

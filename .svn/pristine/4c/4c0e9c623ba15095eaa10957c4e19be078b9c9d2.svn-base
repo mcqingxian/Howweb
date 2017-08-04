@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.bse.server.dao.DownLoadMapper">
+
+	<resultMap type="com.hoau.how.module.bse.api.shared.domain.DownLoadEntity" id="allDownLoadResultMap">
+		<id property="infoId" column="ID" jdbcType="INTEGER"/>
+		<result property="name" column="name" jdbcType="VARCHAR"/>
+		<result property="url" column="url" jdbcType="VARCHAR"/>
+		<result property="createdAt" column="created_at" javaType="Date"
+			jdbcType="TIMESTAMP"/>
+		<result property="click_count" column="click_count" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<select id="selectAllDownLoadRes" resultMap="allDownLoadResultMap">
+		SELECT ID,NAME,URL,CREATED_AT,CLICK_COUNT FROM HOAU_INFORMATION 
+		WHERE IS_ADOPT=1 
+		ORDER BY CREATED_AT DESC
+	</select>
+
+</mapper>

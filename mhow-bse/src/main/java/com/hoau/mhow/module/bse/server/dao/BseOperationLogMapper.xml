@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+	<mapper namespace="com.hoau.mhow.module.bse.server.dao.BseOperationLogMapper" >
+		<insert id="insertOperationLog" parameterType="com.hoau.mhow.module.bse.api.shared.domain.BseOperationLogEntity" >
+		    <![CDATA[
+		    	INSERT INTO t_log_operation( 
+		    		operation_type,login_user,login_type,orderId,ebsaId,operation_time,operation_ip,create_user,create_date,how_type
+		    	)VALUES(
+		    		#{operationType,jdbcType=VARCHAR},#{loginUser,jdbcType=VARCHAR},#{loginType,jdbcType=VARCHAR},
+		    		#{orderId,jdbcType=DECIMAL},#{ebsaId,jdbcType=DECIMAL},GETDATE(),#{operationIp,jdbcType=VARCHAR},'admin',GETDATE(),#{howType}
+		    	)
+		    ]]>
+		</insert>
+	</mapper>

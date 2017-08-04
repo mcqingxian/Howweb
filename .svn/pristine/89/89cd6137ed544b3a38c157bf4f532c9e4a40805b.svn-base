@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.itf.server.dao.deptquery.OutBranchDao">
+	<resultMap id="outBranchResultMap" type="com.hoau.how.module.itf.shared.domain.OutBranchEntity" >
+		<id column="ID" property="id" jdbcType="VARCHAR" />
+		<result column="CODE" property="code" jdbcType="VARCHAR" />
+		<result column="NAME" property="name" jdbcType="VARCHAR" />
+		<result column="LOGIST_CODE" property="logistCode" jdbcType="VARCHAR" />
+		<result column="PROVINCE" property="province" jdbcType="VARCHAR" />
+		<result column="PROVINCE_CODE" property="provinceCode" jdbcType="VARCHAR" />
+		<result column="CITY" property="city" jdbcType="VARCHAR" />
+		<result column="CITY_CODE" property="cityCode" jdbcType="VARCHAR" />
+		<result column="COUNTY" property="county" jdbcType="VARCHAR" />
+		<result column="COUNTY_CODE" property="countyCode" jdbcType="VARCHAR" />
+		<result column="AREA_CODE" property="areaCode" jdbcType="VARCHAR" />
+		<result column="PHONE" property="phone" jdbcType="VARCHAR" />
+		<result column="FAX" property="fax" jdbcType="VARCHAR" />
+		<result column="ADDRESS_DETAIL" property="addressDetail" jdbcType="VARCHAR" />
+		<result column="LNG" property="lng" jdbcType="FLOAT" />
+		<result column="LAT" property="lat" jdbcType="FLOAT" />
+		<result column="IS_SPECIFIED_TIME" property="isSpecifiedTime" jdbcType="CHAR" />
+		<result column="IS_SHIPMENT" property="isShipment" jdbcType="CHAR" />
+		<result column="IS_DELIVERY" property="isDelivery" jdbcType="CHAR" />
+		<result column="IS_PICK_UP" property="isPickUp" jdbcType="CHAR" />
+		<result column="ACTIVE" property="active" jdbcType="CHAR" />
+		<result column="CREATE_TIME" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="CREATE_USER_CODE" property="createUser" jdbcType="VARCHAR" />
+		<result column="MODIFY_TIME" property="modifyDate" jdbcType="TIMESTAMP" />
+		<result column="MODIFY_USER_CODE" property="modifyUser" jdbcType="VARCHAR" />
+		<result column="VERSION_NO" property="versionNo" jdbcType="BIGINT" />
+		<result column="TAKE_SELF_DEPEND_LOGIST_CODE" property="takeSelfDependLogistCode" jdbcType="VARCHAR" />
+	</resultMap>
+	<!-- 批量插入部门 -->
+	<insert id="addBranchs" parameterType="com.hoau.how.module.itf.shared.domain.OutBranchEntity">
+		INSERT INTO T_BSE_OUT_BRANCH 
+		(
+		ID, 
+		CODE, 
+		NAME, 
+		LOGIST_CODE, 
+		PROVINCE, 
+		PROVINCE_CODE, 
+		CITY, 
+		CITY_CODE, 
+		COUNTY, 
+		COUNTY_CODE, 
+		AREA_CODE, 
+		PHONE, 
+		FAX, 
+		ADDRESS_DETAIL, 
+		LNG, 
+		LAT, 
+		IS_SPECIFIED_TIME, 
+		IS_SHIPMENT, 
+		IS_DELIVERY, 
+		IS_PICK_UP, 
+		ACTIVE, 
+		CREATE_TIME, 
+		CREATE_USER_CODE, 
+		MODIFY_TIME, 
+		MODIFY_USER_CODE, 
+		VERSION_NO,
+		TAKE_SELF_DEPEND_LOGIST_CODE
+		)
+		VALUES 
+		(
+		#{id,jdbcType=VARCHAR},
+		#{code,jdbcType=VARCHAR}, 
+		#{name,jdbcType=VARCHAR}, 
+		#{logistCode,jdbcType=VARCHAR}, 
+		#{province,jdbcType=VARCHAR}, 
+		#{provinceCode,jdbcType=VARCHAR}, 
+		#{city,jdbcType=VARCHAR}, 
+		#{cityCode,jdbcType=VARCHAR}, 
+		#{county,jdbcType=VARCHAR}, 
+		#{countyCode,jdbcType=VARCHAR}, 
+		#{areaCode,jdbcType=VARCHAR}, 
+		#{phone,jdbcType=VARCHAR}, 
+		#{fax,jdbcType=VARCHAR}, 
+		#{addressDetail,jdbcType=VARCHAR}, 
+		#{lng,jdbcType=FLOAT}, 
+		#{lat,jdbcType=FLOAT}, 
+		#{isSpecifiedTime,jdbcType=CHAR}, 
+		#{isShipment,jdbcType=CHAR}, 
+		#{isDelivery,jdbcType=CHAR}, 
+		#{isPickUp,jdbcType=CHAR}, 
+		#{active,jdbcType=CHAR}, 
+		getdate(), 
+		'admin', 
+		getdate(), 
+		'admin', 
+		#{versionNo,jdbcType=BIGINT},
+		#{takeSelfDependLogistCode,jdbcType=VARCHAR}
+		)
+	</insert>
+	<sql id="query_outBranch_param">
+    	ID, 
+    	CODE, 
+    	NAME, 
+    	LOGIST_CODE, 
+    	PROVINCE, 
+    	PROVINCE_CODE, 
+    	CITY, 
+    	CITY_CODE, 
+    	COUNTY, 
+    	COUNTY_CODE, 
+	    AREA_CODE, 
+	    PHONE, 
+	    FAX, 
+	    ADDRESS_DETAIL, 
+	    LNG, 
+	    LAT, 
+	    IS_SPECIFIED_TIME, 
+	    IS_SHIPMENT, 
+	    IS_DELIVERY, 
+	    IS_PICK_UP, 
+	    ACTIVE, 
+	    CREATE_TIME, 
+	    CREATE_USER_CODE, 
+	    MODIFY_TIME, 
+	    MODIFY_USER_CODE, 
+	    VERSION_NO,
+	    TAKE_SELF_DEPEND_LOGIST_CODE
+	</sql>
+	<select id="queryDeptsByVersion" resultMap="outBranchResultMap" parameterType="long">
+	    SELECT  
+	    <include refid="query_outBranch_param"></include>
+	    FROM T_BSE_OUT_BRANCH
+	    WHERE VERSION_NO > #{versionNo,jdbcType=NUMERIC}
+	</select>
+	<delete id="deleteAllBranch">
+        delete from T_BSE_OUT_BRANCH
+    </delete>  
+	<select id="getLastVersionNo" resultType="long">
+	    SELECT 
+	    	isnull(max(VERSION_NO),0) as version_no
+	    FROM 
+	    T_BSE_OUT_BRANCH
+	</select>
+	<select id="queryOutBranchByCode" parameterType="string" resultMap="outBranchResultMap">
+	    SELECT 
+	    	<include refid="query_outBranch_param"></include>
+	    FROM 
+	    T_BSE_OUT_BRANCH 
+	    WHERE 
+	    CODE = #{code}
+	</select>
+	<update id="updateOutBranch" parameterType="com.hoau.how.module.itf.shared.domain.OutBranchEntity">  
+        UPDATE T_BSE_OUT_BRANCH
+	    <set >
+	      <if test="code != null" >
+	        CODE = #{code,jdbcType=VARCHAR},
+	      </if>
+	      <if test="name != null" >
+	        NAME = #{name,jdbcType=VARCHAR},
+	      </if>
+	      <if test="logistCode != null" >
+	        LOGIST_CODE = #{logistCode,jdbcType=VARCHAR},
+	      </if>
+	      <if test="province != null" >
+	        PROVINCE = #{province,jdbcType=VARCHAR},
+	      </if>
+	      <if test="provinceCode != null" >
+	        PROVINCE_CODE = #{provinceCode,jdbcType=VARCHAR},
+	      </if>
+	      <if test="city != null" >
+	        CITY = #{city,jdbcType=VARCHAR},
+	      </if>
+	      <if test="cityCode != null" >
+	        CITY_CODE = #{cityCode,jdbcType=VARCHAR},
+	      </if>
+	      <if test="county != null" >
+	        COUNTY = #{county,jdbcType=VARCHAR},
+	      </if>
+	      <if test="countyCode != null" >
+	        COUNTY_CODE = #{countyCode,jdbcType=VARCHAR},
+	      </if>
+	      <if test="areaCode != null" >
+	        AREA_CODE = #{areaCode,jdbcType=VARCHAR},
+	      </if>
+	      <if test="phone != null" >
+	        PHONE = #{phone,jdbcType=VARCHAR},
+	      </if>
+	      <if test="fax != null" >
+	        FAX = #{fax,jdbcType=VARCHAR},
+	      </if>
+	      <if test="addressDetail != null" >
+	        ADDRESS_DETAIL = #{addressDetail,jdbcType=VARCHAR},
+	      </if>
+	      <if test="lng != null" >
+	        LNG = #{lng,jdbcType=FLOAT},
+	      </if>
+	      <if test="lat != null" >
+	        LAT = #{lat,jdbcType=FLOAT},
+	      </if>
+	      <if test="isSpecifiedTime != null" >
+	        IS_SPECIFIED_TIME = #{isSpecifiedTime,jdbcType=CHAR},
+	      </if>
+	      <if test="isShipment != null" >
+	        IS_SHIPMENT = #{isShipment,jdbcType=CHAR},
+	      </if>
+	      <if test="isDelivery != null" >
+	        IS_DELIVERY = #{isDelivery,jdbcType=CHAR},
+	      </if>
+	      <if test="isPickUp != null" >
+	        IS_PICK_UP = #{isPickUp,jdbcType=CHAR},
+	      </if>
+	      <if test="active != null" >
+	        ACTIVE = #{active,jdbcType=CHAR},
+	      </if>
+	      <if test="versionNo != null" >
+	        VERSION_NO = #{versionNo,jdbcType=BIGINT},
+	      </if>
+	      <if test="takeSelfDependLogistCode != null" >
+	        TAKE_SELF_DEPEND_LOGIST_CODE = #{takeSelfDependLogistCode,jdbcType=VARCHAR},
+	      </if>
+			MODIFY_TIME = getdate(),
+			MODIFY_USER_CODE = 'admin',
+	    </set>
+        where CODE = #{code}
+    </update>  
+</mapper>

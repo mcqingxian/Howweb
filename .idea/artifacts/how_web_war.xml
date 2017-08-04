@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="how-web:war">
+    <output-path>$PROJECT_DIR$/how-web/target</output-path>
+    <root id="archive" name="how.war">
+      <element id="artifact" artifact-name="how-web:war exploded" />
+    </root>
+  </artifact>
+</component>

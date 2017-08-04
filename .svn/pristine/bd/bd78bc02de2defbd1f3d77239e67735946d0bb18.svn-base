@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="common" namespace="/common"
+		extends="how-default">
+<!-- 		<action name="index" class="loginAction" method="index">
+			<result name="success">common.jsp</result>
+		</action>
+		<action name="queryUser" class="loginAction" method="queryUser">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>		    
+		</action> -->
+	</package>
+</struts>

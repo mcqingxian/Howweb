@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; list-style:none; font-family:'microsoft YaHei','宋体';}
+html,body{ width:100%; height:80%;}
+body{ width:100%; height:100%; background:url(../img/ydj.jpg) no-repeat; background-size:100% 100%; position: relative; z-index: -99999;}
+#main1{width:100%; height:100%; }
+
+.back{ position:absolute; top:15px; left:15px; width:85px; height:27px; padding:5px; border:1px solid #EBEBEB; border-radius:8px; background:#D9D9D9; opacity:0.5; z-index:99; overflow: hidden;}
+.back img{ width:100%; height:100%; }
+.title{ width:100%; height:50px; line-height:100px; font-size:22px; font-weight:bold; color: white;text-align:center; margin:20% auto;}
+#code{ width:100%; height:25px; line-height:40px; font-size:20px; color: white;text-align:center;}
+#name{ width:100%; height:25px; line-height:0px; font-size:65px; font-weight:bold;color: white;text-align:center;}
+#yuan{ width:100%; height:25px; line-height:385px; font-size:20px; color: white;text-align:center;}
+.con div{ width:85%; margin:auto auto; text-align:center;}
+
+

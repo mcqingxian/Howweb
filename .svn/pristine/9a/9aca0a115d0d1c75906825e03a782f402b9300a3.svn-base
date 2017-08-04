@@ -1,0 +1,67 @@
+#---------------------------\u5916\u90e8\u7cfb\u7edf\u96c6\u6210\u5730\u5740-------------------------
+
+#-------------------------  1\u7701\u5e02\u533a\u63a5\u53e3\u5730\u5740 \u5168\u91cf  --------------------------
+DISTRICT_ALL=http://10.39.59.98:8080/mdm-itf/rs/district/v1/all
+#------------------------- 2 \u7701\u5e02\u533a\u63a5\u53e3\u5730\u5740  \u589e\u91cf--------------------------
+DISTRICT_INCREMENT=http://10.39.59.98:8080/mdm-itf/rs/district/v1/version/{versionNo}
+
+#------------------------- 3 \u70ed\u95e8\u57ce\u5e02\u914d\u7f6e    --------------------------
+OMS_ORDER_URL=http://10.39.251.105/services/CustomerService?wsdl
+#OMS_ORDER_URL=http://localhost:9080/THOMS/services/CustomerService?wsdl
+#------------------------- 4 \u4ef7\u5361\u63a5\u53e3\u5730\u5740   --------------------------
+PRICE_URL=http://10.39.251.43:8080/pdct/calculation?wsdl
+
+#-------------------------5  \u77ed\u4fe1\u63a5\u53e3\u5730\u5740  --------------------------
+SMS_URL=http://10.39.109.39/IWsms/sms.asmx
+
+#------------------------ 6 DC\u63d0\u4f9b\u7684\u8fd0\u5355\u4fe1\u606f\u67e5\u8be2\u63a5\u53e3   ------------------
+DC_WAYBILL_INFO_URL=http://10.39.251.3:8080/hoaunew/services/WptServices?wsdl
+
+
+#------------------------7  \u7406\u8d54\u63a5\u53e3   ---------- ------------------
+#CLAIM_URL=http://10.39.117.74:8080/TDHY_CLAIMS/ws-services/claimsWBService?wsdl
+CLAIM_URL=http://10.39.251.109/TDHY_CLAIMS/ws-services/claimsWBService?wsdl
+
+#------------------------ 8 \u7406\u8d54\u516c\u53f8\u67e5\u8be2 \u4ece\u8fea\u8fb0   ---------- ------------------
+CLAIM_COMPANY=http://10.39.251.3:8080/hoaunew/lp/queryCorp
+
+#------------------------ 9 \u8fd0\u5355\u8ddf\u8e2a   ---------- ------------------
+GOODS_TRACE_URL=http://10.39.109.20:9080/tnt/services/tntServices?wsdl
+
+#------------------------10  \u76f4\u8425\u95e8\u5e97\u540c\u6b65 \u5168\u91cf   ---------- ------------------
+DEPT_ALL=http://10.39.59.98:8080/mdm-itf/rs/dept/v1/all
+#------------------------11  \u76f4\u8425\u95e8\u5e97\u540c\u6b65 \u589e\u91cf   ---------- ------------------
+DEPT_INCREMENT=http://10.39.59.98:8080/mdm-itf/rs/dept/v1/version/{versionNo}
+
+#------------------------12  \u7279\u8bb8\u7ecf\u8425\u5168\u91cf   ---------- ------------------
+FRANCHISE_ALL=http://10.39.59.98:8080/mdm-itf/rs/franchise/v1/all
+#------------------------13  \u7279\u8bb8\u7ecf\u8425\u589e\u91cf   ---------- ------------------
+FRANCHISE_INCREMENT=http://10.39.59.98:8080/mdm-itf/rs/franchise/v1/version/{versionNo}
+
+#------------------------14 \u504f\u7ebf\u95e8\u5e97 \u5168\u91cf   ---------- ------------------
+OUTBRANCH_ALL=http://10.39.59.98:8080/mdm-itf/rs/outbranch/v1/all
+#------------------------15  \u504f\u7ebf\u95e8\u5e97 \u589e\u91cf   ---------- ------------------
+OUTBRANCH_INCREMENT=http://10.39.59.98:8080/mdm-itf/rs/outbranch/v1/version/{versionNo}
+
+#-------------------------16  \u8fea\u8fb0\u4ef7\u683c\u65f6\u6548-------------------------------
+DC_PRICE_URL=http://10.39.251.3:8080/hoaunew/services/HowPriceAndTimeQueryServices?wsdl
+
+#-------------------------17 TTQ  \u4ef7\u683c\u65f6\u6548---------------------------------
+TTQ_PRICE_URL=http://ttq.hoau.net:9080/PriceQuery?ebProductTypeId=&
+
+#-------------------------18 OMS \u8D27\u7269\u8FFD\u8E2A\u63A5\u53E3------------------------
+SF_OMS_TRANS_URL=http://testoms.hoau.net/net/sfOrderTraceToNetServlet
+
+#-------------------------18 HOW_DC \u5B98\u7F51\u4E0EDC\u5BF9\u63A5,\u4EE3\u6536\u8D27\u6B3E------------------------
+HOW_DC_PAYEE_ACCOUNT_URL=http://10.39.251.3:8080/hoaunew/howPayeeAccountInfoService.do?method=
+
+#-------------------------19 GIS  \u4ef7\u683c\u65f6\u6548---------------------------------
+GIS_APP_URL=http://10.39.251.80/rest/index.php
+GIS_APP_KEY=tdhyzb_admin
+GIS_APP_SECRET=c4fbda05d6e9901731e343cd01eb330f
+#-------------------------20 DC_BANK_INFO DC\u83B7\u53D6\u4EE3\u6536\u8D27\u6B3E\u94F6\u884C------------------------
+BANK_INFO_URL=http://10.39.251.3:8080/hoaunew/services/BaseAccountInfoServices?wsdl
+#-------------------------21 \u6839\u636E\u8FD0\u5355\u53F7\u67E5\u627E\u5B89\u88C5\u670D\u52A1\u4FE1\u606F---------------------------------
+ANT_TASKLIST_INFO_URL=http://10.39.251.93:8280/ant-itf-web/rs/public/v1/queryInfoByWaybill/{wayBillNo}
+#-------------------------22 PMS\u4EF7\u683C\u65F6\u6548---------------------------------
+PMS_URL=http://pms.hoau.net/miser-api-web/rs/howApp/price/v1/queryStandardPrice

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.hoau.how.module.bse.server.dao.BannerMapper">
+	<resultMap type="com.hoau.how.module.bse.api.shared.domain.BannerEntity" id="bannerListListReslutMap">
+		<result property="picIndex" column="pic_index"/>
+		<result property="picSrc" column="pic_src"/>
+		<result property="picLink" column="link_name"/>
+	</resultMap>
+
+	<select id="queryBannerList" resultMap="bannerListListReslutMap">
+		 SELECT PIC_INDEX,PIC_SRC,LINK_NAME FROM HOAU_BANNER  WHERE IS_ADOPT=1  ORDER BY PIC_INDEX;
+	</select>
+	
+</mapper>

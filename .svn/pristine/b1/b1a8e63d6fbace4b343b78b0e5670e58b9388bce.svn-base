@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.bse.server.dao.CommentMapper">
+
+	<!-- 留言信息返回值 -->
+	<resultMap id="commentResultMap"
+		type="com.hoau.how.module.bse.api.shared.domain.CommentEntity">
+		<id property="id" column="ID" />
+		<result property="topic" column="TOPIC" />
+		<result property="wbnum" column="WBNUM" />
+		<result property="name" column="NAME" />
+		<result property="tel" column="TEL" />
+		<result property="message" column="MESSAGE" />
+		<result property="reply" column="REPLY" />
+		<result property="userId" column="USERID" />
+		<result property="status" column="STATUS" />
+		<result property="time" column="TIME" />
+		<result property="type" column="TYPE" />
+		<result property="replytime" column="REPLYTIME" />
+		<result property="email" column="EMAIL" />
+		<result property="is_adopt" column="IS_ADOPT" />
+		<result property="ip" column="IP" />
+		<result property="businesstype" column="BUSINESSTYPE" />
+		<result property="company" column="COMPANY" />
+		<result property="subcompany" column="SUBCOMPANY" />
+		<result property="did" column="DID"  />
+		<result property="sid" column="SID" />
+		<result property="feedback" column="FEEDBACK"  />
+		<result property="note" column="NOTE" />
+<!-- 		<result property="customerType" column="CUSTOMER_TYPE"/> -->
+	</resultMap>
+
+	<!-- 留言信息查询字段 -->
+	<sql id="select_param">
+		NAME,WBNUM,IP,TOPIC,TYPE,TIME,STATUS,MESSAGE,REPLYTIME,REPLY  
+	</sql>
+	
+	
+	<!-- 自定义分页查询留言信息 -->
+	<select id="queryCommentList" resultMap="commentResultMap" parameterType="java.util.Map">
+		SELECT NAME,WBNUM,IP,TOPIC,TYPE,TIME,STATUS,MESSAGE,REPLYTIME,REPLY FROM (
+			SELECT ROW_NUMBER() OVER(ORDER BY TIME DESC) AS ROWNUM,ID,NAME,WBNUM,IP,TOPIC,TYPE,TIME,STATUS,MESSAGE,REPLYTIME,REPLY
+      	FROM HOAU_COMMENT	
+		<where>
+			IS_ADOPT = 1
+				<if test="type != null and type != ''">
+					AND TYPE = #{type,jdbcType=NUMERIC}
+				</if>
+				<if test="date != null and date != ''">
+					AND DateDiff(dd,time,#{date,jdbcType=TIMESTAMP})=0 
+				</if>
+				<if test="status != null and status != ''">
+					AND STATUS = #{status,jdbcType=NUMERIC}
+				</if>
+				<if test="key !=null and key !=''">
+					AND (NAME LIKE #{key,jdbcType=VARCHAR} OR WBNUM LIKE #{key,jdbcType=VARCHAR} OR TOPIC LIKE #{key,jdbcType=VARCHAR} OR MESSAGE LIKE #{key,jdbcType=VARCHAR} OR REPLY LIKE #{key,jdbcType=VARCHAR})
+				</if>
+		</where>
+		 ) AS D
+		<where>
+			<if test="pageStart != null and pageStart != '' and pageEnd != null and pageEnd != ''">
+				D.ROWNUM BETWEEN #{pageStart,jdbcType=NUMERIC}
+				AND #{pageEnd,jdbcType=NUMERIC}  
+			</if>
+		</where>
+	</select>
+	
+	 
+	<!-- 查询留言信息总数 -->
+	<select id="countComment" resultType="long" parameterType="java.util.Map">
+		<![CDATA[
+			SELECT
+			COUNT(1) A
+			FROM HOAU_COMMENT
+		]]>
+		<where>
+			IS_ADOPT = 1
+				<if test="type != null and type != ''">
+					AND TYPE = #{type,jdbcType=NUMERIC}
+				</if>
+				<if test="date != null and date != ''">
+					AND DateDiff(dd,time,#{date,jdbcType=TIMESTAMP})=0 
+				</if>
+				<if test="status != null and status != ''">
+					AND STATUS = #{status,jdbcType=NUMERIC}
+				</if>
+				<if test="key !=null and key !=''">
+					AND (NAME LIKE #{key,jdbcType=VARCHAR} OR WBNUM LIKE #{key,jdbcType=VARCHAR} OR TOPIC LIKE #{key,jdbcType=VARCHAR} OR MESSAGE LIKE #{key,jdbcType=VARCHAR} OR REPLY LIKE #{key,jdbcType=VARCHAR})
+				</if>
+		</where>
+	</select>
+
+
+	<!-- 新增客户留言信息 -->
+	<insert id="addComment" parameterType="com.hoau.how.module.bse.api.shared.domain.CommentEntity">
+		<![CDATA[
+		INSERT INTO HOAU_COMMENT(
+			TOPIC,
+			WBNUM,
+			NAME,
+			TEL,
+			MESSAGE,
+			STATUS,
+			TIME,
+			TYPE,
+			EMAIL,
+			IP,
+			CUSTOMER_TYPE
+		) values (
+			#{topic,jdbcType=VARCHAR},
+			#{wbnum,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{tel,jdbcType=VARCHAR},
+			#{message,jdbcType=VARCHAR},
+			1,
+			GETDATE(),
+			#{type,jdbcType=NUMERIC},
+			#{email,jdbcType=VARCHAR},
+			#{ip,jdbcType=VARCHAR},
+			#{customerType,jdbcType=INTEGER}
+		)
+		]]>
+	</insert>
+	
+</mapper>

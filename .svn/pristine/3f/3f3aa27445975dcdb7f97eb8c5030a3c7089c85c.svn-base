@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context 
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/jee 
+			http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+			http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+			http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+			http://www.springframework.org/schema/task
+			http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+	<context:property-placeholder location="/WEB-INF/spring-config.properties" />
+	<context:annotation-config />
+	<context:component-scan base-package="com.hoau" />
+	<task:annotation-driven/>
+	<!-- 数据源 jndi方式 -->
+	<bean id="dataSourceHowSpied" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>jdbc/howds</value>
+		</property>
+		<property name="resourceRef" value="true" />
+	</bean>
+	<bean id="dataSourceObhSpied" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>jdbc/obhds</value>
+		</property>
+		<property name="resourceRef" value="true" />
+	</bean>
+	
+ 	<bean id="dataSourceHow" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+		<constructor-arg ref="dataSourceHowSpied" />
+	</bean>
+	<bean id="dataSourceObh" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+		<constructor-arg ref="dataSourceObhSpied" />
+	</bean>		
+
+	<!-- 数据连接管理 -->
+	<bean id="transactionManagerHow"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceHow" />
+	</bean>
+	<bean id="transactionManagerObh"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceObh" />
+	</bean>
+
+	<!-- 事务注解支持-->
+	<tx:annotation-driven transaction-manager="transactionManagerHow" />
+	<tx:annotation-driven transaction-manager="transactionManagerObh" />
+	
+	<!-- myBatis文件 -->
+	<bean id="sqlSessionFactoryHow" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- <property name="configLocation" value="/WEB-INF/mybatis.xml" /> -->
+		<property name="dataSource" ref="dataSourceHow"/>
+	</bean>
+	<bean id="sqlSessionFactoryObh" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- <property name="configLocation" value="/WEB-INF/mybatis.xml" /> -->
+		<property name="dataSource" ref="dataSourceObh"/>
+	</bean>
+	
+	<!-- MyBatis Mapper文件扫描 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.hoau.how.*.bse.*.dao;com.hoau.how.*.itf.*.dao;com.hoau.how.*.job.*.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryHow" />
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.hoau.how.*.obh.*.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryObh" />
+	</bean>
+	<!-- 性能日志  -->
+	<!-- 请不要删除 -->
+	<bean id="performanceLog"
+		class="com.hoau.hbdp.framework.server.components.logger.LogBuffer">
+		<!-- <property name="enable" value="false" />默认启用
+		<property name="queueSize" value="1000" />
+		<property name="listSize" value="20" /> -->
+		<!-- <property name="threads" value="5" /> -->
+	</bean>
+</beans>

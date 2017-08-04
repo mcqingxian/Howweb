@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Microsoft YaHei', '微软雅黑';
+    height: 100%;
+}
+
+.imgBox {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 50px;
+    height: 340px;
+}
+
+.imgBox img {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.imgBox p {
+    text-align: center;
+    font-size: 16px;
+    color: #152326;
+    margin: 0;
+}
+
+.telBox {
+    width: 100%;
+    margin-top: 20px;
+    height: 90px;
+    background-color: #fff;
+}
+
+.telBox p {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    color: #326F11;
+    margin-top: 7px;
+}
+
+
+.mask {
+    position: absolute;
+    background-color: #5c5c5c;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 1000;
+}
+
+.container-mask {
+    border: 1px solid white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    height: 120px;
+    min-height: 79px;
+    width: 70%;
+    margin: 0 auto;
+    position: fixed;
+    top: 50px;
+    left: 15%;
+    margin-top: 45%;
+    border-radius: 8px;
+    background-color: white;
+    z-index: 1001;
+}
+.footer{
+	display: none;
+}
+
+.container-mask p {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.container-mask p a {
+    text-decoration: none;
+    color: #000;
+}
+@media screen and (max-width:414px) {
+    .imgBox{
+		height: 380px;
+	}
+}
+
+@media screen and (max-width:375px) {
+    .imgBox{
+		height: 340px;
+	}
+}
+@media screen and (max-width:320px) {
+    .imgBox{
+		height: 295px;
+	}
+}

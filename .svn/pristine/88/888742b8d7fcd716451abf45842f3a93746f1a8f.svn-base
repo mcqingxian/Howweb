@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>天地华宇手机壁纸下载</title>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta content="" name="Keywords">
+<meta content="" name="Description">
+<!--禁止自动识别电话号码-->
+<meta name="format-detection" content="telephone=no">
+<link href="../css/style.css" rel="stylesheet">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/wallpaper.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+
+<div class="hx_d flex-row align-center justify-center">
+  <div class="img">
+   <img src="../images/13-1.jpg"/>
+   <div class="bottomBar fix">
+	  <a>长按壁纸，保存壁纸到手机！</a>   
+   </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	var int =  self.setInterval("setHeight()",50);
+	function setHeight(){
+	    var clientHeight = document.body.clientHeight;
+		var imgHeight = $(".img img").height();
+		/*alert(imgHeight+":"+clientHeight);*/
+		if(imgHeight>clientHeight){
+		   /*$(".img img").attr("style","border: 0 none;width: auto;max-height: 100%;vertical-align: top;");*/
+		   $("html").attr("style","height:auto;");
+		   window.clearInterval(int);
+		}
+	}
+
+</script>
+</body>
+</html>

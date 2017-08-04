@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.job.server.dao.JobSyncMapper">
+  	<insert id="saveJobLog" parameterType="map">
+  	    <![CDATA[
+			INSERT
+			INTO
+			    HOAU_JOB_LOG
+			    (
+			        job_name,
+			        job_status,
+			        error_log,
+			        create_time
+			    )
+			    VALUES
+			    (
+			        #{jobName,jdbcType=VARCHAR},
+			        #{status, jdbcType=VARCHAR},
+			        #{message, jdbcType=VARCHAR},
+			        getdate()
+			    )  
+		  ]]>
+  	</insert>
+</mapper>

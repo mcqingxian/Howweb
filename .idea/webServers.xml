@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="db9ac259-7209-405e-a760-3f2a4a4dc099" name="ssh root@10.39.251.184" url="http://10.39.251.184">
+        <fileTransfer host="10.39.251.184" port="22" rootFolder="/opt/jboss" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

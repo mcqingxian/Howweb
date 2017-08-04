@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hoau.mhow.module.obh.server.dao.NetWaybillDao" >
+  <resultMap id="waybillMap" type="com.hoau.mhow.module.bse.api.shared.domain.WaybillResultEntity" >
+    <result column="EINO_CONTRACT_NO" property="orderNo" jdbcType="VARCHAR" />
+    <result column="EINO_TRANS_NO" property="transNo" jdbcType="VARCHAR" />
+    <result column="EINO_CARGO_NAME" property="goodsName" jdbcType="VARCHAR" />
+    <result column="EINO_CONSIGNEE_EBSA_CONTACT" property="consignee" jdbcType="VARCHAR" />
+    <result column="EINO_ORDER_DATE" property="orderDate" jdbcType="VARCHAR" />
+    <result column="EINO_CHARGE_TOTAL" property="chargeTotal" jdbcType="NUMERIC" />
+    <result column="EINO_NUMBER" property="pieces" jdbcType="NUMERIC" />
+    <result column="EINO_STATUS" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="query_myWaybill_sql">
+	        eo.EINO_CONTRACT_NO,    	  
+			eo.EINO_TRANS_NO,
+			eo.EINO_CARGO_NAME,
+			DATE_FORMAT(eo.EINO_ORDER_DATE,'%Y-%m-%d %H:%i:%s') as EINO_ORDER_DATE,
+			eo.EINO_CONSIGNEE_EBSA_CONTACT,
+			eo.EINO_CHARGE_TOTAL,
+			eo.EINO_NUMBER,
+			eo.EINO_STATUS	 
+  </sql>
+
+  <sql id="query_myWaybill_param">
+	    <if test="transNo != null and transNo != ''" >
+	       and eo.EINO_TRANS_NO = #{transNo,jdbcType=VARCHAR}
+	    </if>		  
+		<if test="transNo == null or transNo == ''" >
+		   and eo.EINO_TRANS_NO  is not null
+		</if>	
+		<if test="consignee != null and consignee != ''" >
+		   and eo.EINO_CONSIGNEE_EBSA_CONTACT  LIKE '%' || #{consignee,jdbcType=VARCHAR} || '%'
+		</if>
+		<if test="goodsName != null and goodsName != ''" >
+		   and eo.EINO_CARGO_NAME  LIKE '%' || #{goodsName,jdbcType=VARCHAR} || '%'
+		</if>
+		<if test="startQueryTime != null and startQueryTime != '' and endQueryTime != null and endQueryTime != ''">
+	      AND eo.EINO_ORDER_DATE > STR_TO_DATE(#{startQueryTime,jdbcType=VARCHAR},'%Y-%m-%d')
+	      AND eo.EINO_ORDER_DATE  <![CDATA[ <  ]]>DATE_ADD(STR_TO_DATE(#{endQueryTime,jdbcType=VARCHAR},'%Y-%m-%d'),INTERVAL +1 DAY)
+	    </if>
+		<if test="startQueryTime != null and startQueryTime != ''">
+		   <if test="endQueryTime == null or endQueryTime == ''">
+			    <![CDATA[
+			    	AND eo.EINO_ORDER_DATE > STR_TO_DATE(#{startQueryTime,jdbcType=VARCHAR},'%Y-%m-%d') 
+		        ]]>
+	        </if>
+		</if>
+		<if test="endQueryTime != null and endQueryTime != ''">
+		   <if test="startQueryTime == null or startQueryTime == ''">
+			    <![CDATA[
+			    	AND eo.EINO_ORDER_DATE < DATE_ADD(STR_TO_DATE(#{endQueryTime,jdbcType=VARCHAR},'%Y-%m-%d'),INTERVAL +1 DAY)
+			    	AND eo.EINO_ORDER_DATE > DATE_ADD(STR_TO_DATE(#{endQueryTime,jdbcType=VARCHAR},'%Y-%m-%d'),INTERVAL -1 MONTH)
+		        ]]>
+	        </if>
+		</if>			
+	   <if test="transNo == null and consignee == null and goodsName == null and paymentWay == null 
+	      and logisticsStatus == null and startQueryTime == null and endQueryTime == null ">
+	      <![CDATA[
+	      	AND  eo.EINO_ORDER_DATE > DATE_ADD(STR_TO_DATE(DATE_FORMAT(DATE_ADD(NOW(),INTERVAL +1 DAY),'%Y-%m-%d'),'%Y-%m-%d'),INTERVAL -1 MONTH)
+		  ]]>
+	   </if>
+	   <if test="transNo == '' and consignee == '' and goodsName == '' and paymentWay == '' 
+	      and logisticsStatus == '' and startQueryTime == '' and endQueryTime == '' ">
+	      <![CDATA[
+	      	AND  eo.EINO_ORDER_DATE > DATE_ADD(STR_TO_DATE(DATE_FORMAT(DATE_ADD(NOW(),INTERVAL +1 DAY),'%Y-%m-%d'),'%Y-%m-%d'),INTERVAL -1 MONTH)
+		  ]]>
+	   </if>
+       <if test="customerId != null and customerId != ''" >
+       	   AND eo.EINO_EBCC_ID= #{customerId,jdbcType=NUMERIC}
+       </if>
+       <if test="paymentWay != null and paymentWay != ''" >
+           AND eo.EINO_PAYMENT_METHOD= #{paymentWay,jdbcType=VARCHAR}
+       </if> 
+       <if test="logisticsStatus != null and logisticsStatus == 'UNDELIVER'" >
+           AND eo.EINO_STATUS!='DELIVER'
+           AND eo.EINO_STATUS!='SENDFAIL' 
+       </if>
+        <if test="logisticsStatus != null and logisticsStatus !='' and logisticsStatus != 'UNDELIVER'" >
+           AND eo.EINO_STATUS= #{logisticsStatus,jdbcType=VARCHAR}
+       </if>
+  </sql> 
+
+   <!-- 查询运单明细 -->
+  <select id="queryWaybillResult" parameterType="com.hoau.mhow.module.bse.api.shared.domain.QueryWaybillEntity"
+   resultMap="waybillMap">
+		SELECT	/** 查询我的运单明细 **/
+		 <include refid="query_myWaybill_sql"></include>  	 
+		from  EI_NET_ORDER  eo	
+		<trim prefix="WHERE" prefixOverrides="AND | OR">
+	          <include refid="query_myWaybill_param"></include>
+	    </trim>
+    	ORDER BY eo.EINO_ORDER_DATE desc
+       <if test="pageSize != null and offset != null">
+      	LIMIT #{pageSize,jdbcType=NUMERIC} OFFSET #{offset,jdbcType=NUMERIC}
+       </if>
+    </select>
+    
+   <!-- 查询运单数量 -->
+  <select id="queryWaybillCount" parameterType="com.hoau.mhow.module.bse.api.shared.domain.QueryWaybillEntity" resultType="Long">
+      SELECT  /** 查询我的运单总数量 **/
+        COUNT(eo.eino_id)
+      FROM EI_NET_ORDER  eo	
+      <trim prefix="WHERE" prefixOverrides="AND | OR">
+          <include refid="query_myWaybill_param"></include>
+      </trim>
+  </select>
+    
+    
+</mapper>

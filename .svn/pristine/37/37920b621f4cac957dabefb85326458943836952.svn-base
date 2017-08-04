@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hoau.how.module.bse.server.dao.DistrictMapper">
+	<resultMap type="com.hoau.how.module.itf.shared.domain.DistrictEntity" id="baseResultMap">
+		<result column="ID" property="id" />
+		<result column="CREATE_TIME" property="createDate" />
+		<result column="CREATE_USER_CODE" property="createUser" />
+		<result column="MODIFY_TIME" property="modifyDate" />
+		<result column="MODIFY_USER_CODE" property="modifyUser" />
+		<result column="DISTRICT_CODE" property="districtCode" />
+		<result column="DISTRICT_NAME" property="districtName" />
+		<result column="DISTRICT_TYPE" property="districtType" />
+		<result column="PARENT_DISTRICT_CODE" property="parentDistrictCode" />
+		<result column="PINYIN" property="pinyin" />
+		<result column="VERSION_NO" property="versionNo" />
+	</resultMap>
+	<sql id="base_query">
+		ID id,CREATE_TIME createDate,CREATE_USER_CODE createUser,MODIFY_TIME modifyDate,MODIFY_USER_CODE modifyUser,DISTRICT_CODE districtCode,DISTRICT_NAME districtName,
+		DISTRICT_TYPE districtType,PARENT_DISTRICT_CODE parentDistrictCode,PINYIN pinyin,VERSION_NO versionNo
+	</sql>
+
+	<select id="queryAreas" resultMap="baseResultMap" parameterType="String">
+	   select 
+	   <include refid="base_query"></include> 
+	   FROM T_BSE_DISTRICT where DISTRICT_TYPE=#{type}
+	</select>
+	
+	<select id="maxVersionNo" resultType="String">
+	    SELECT MAX(VERSION_NO) FROM T_BSE_DISTRICT
+	</select>
+
+</mapper>

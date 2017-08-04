@@ -1,0 +1,36 @@
+@charset "utf-8";
+.in_show{width:100%;margin-top:-440px;}
+#kinMaxShow,#newsMaxShow{
+	width:100%;
+	overflow: hidden;
+	position: relative;	
+	z-index:1;
+}
+.kinMaxShow_button{bottom:64px;}
+.newsMaxShow_button{bottom:29px;}
+.kinMaxShow_button,.newsMaxShow_button{
+		z-index:3;
+		overflow:hidden;
+		text-align:center;
+		position:absolute;
+		width:100%;
+		
+}
+.kinMaxShow_button li,.newsMaxShow_button li{
+	width:16px;
+	height:16px;
+	margin-right:20px;
+	cursor:pointer;
+	display: inline-block;
+	background: url(../../images/bse/150602_icon05.png) no-repeat;
+}
+.kinMaxShow_button li.kinMaxShow_focus,.newsMaxShow_button li.newsMaxShow_focus{
+	background: url(../../images/bse/150602_icon06.png) no-repeat;
+color:#000000;cursor:default;}
+
+.kinMaxShow_image_box,.kinMaxShow_image_item{height:440px;}
+.newsMaxShow_image_box,.newsMaxShow_image_item{height:290px;}
+.kinMaxShow_image_box,.newsMaxShow_image_box{width:100%;position:relative;z-index:1;}
+.kinMaxShow_image_item,.newsMaxShow_image_item{width:100%;position:absolute;overflow:hidden;}
+.kinMaxShow_image_item a.kinMaxShow_coverlink,.knewsMaxShow_image_item a.newsMaxShow_coverlink{width:100%;height:440px;display:block;text-decoration:none;padding:0;margin:0;background:transparent;text-indent:0;outline:none;hide-focus:expression(this.hideFocus=true);}
+

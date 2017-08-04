@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.multipart.maxSize" value="100000000"/> 
+	<package name="bse" namespace="/bse" extends="how-default">
+		<!-- 加入官网首页 -->
+		<action name="index" class="indexAction" method="index">
+			<param name="categoryName">首页</param>
+			<result name="success">index.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		<action name="showBanner" class="bannerAction" method="queryBanner">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		<!-- 网点查询 -->
+		<action name="companyMatchAction" class="companyMatchAction">
+			<param name="categoryName">网点匹配</param>
+			<result name="index">company/matching/index.jsp</result>
+			<result name="queryProvinceCountJson" type="json"></result>
+			<result name="queryCityCountJson" type="json"></result>
+			<result name="queryCounty" type="json"></result>
+			<result name="queryCountyCountJson" type="json"></result>
+			<result name="queryDeptByDistrictNameJson" type="json"></result>
+			<result name="queryHotCityJson" type="json"></result>
+		</action>
+		<action name="companyScreenAction" class="companyScreenAction">
+		    <param name="categoryName">网点筛选</param>
+			<result name="queryAll">company/screening/all.jsp</result>
+			<result name="pageQueryScreen">company/screening/list.jsp</result>
+			<result name="queryCompanyDetail">company/screening/detail.jsp</result>
+		</action>
+		<action name="companyBatchQueryAction" class="companyBatchQueryAction">
+			<param name="categoryName">批量到货网点匹配</param>
+			<result name="index">company/batchQuery/index.jsp</result>
+			<result name="queryDownLoadStatusJson" type="json"></result>
+			<result name="batchUploadCompany" type="stream">
+				<!-- 指定下载文件的文件类型 -->  
+                <param name="contentType">application/octet-stream;charset=UTF-8</param>  
+                <!-- 指定stream方法名称 -->  
+                <param name="inputName">targetFile</param>  
+                <!-- 文件下载的处理方式，包括内联(inline)和附件(attachment)两种方式，默认为直接显示文件 -->  
+                <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>  
+                <!-- 指定下载文件的缓冲大小 -->
+                <param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="companyQueryAction" class="companyQueryAction">
+			<param name="categoryName">到货网点匹配</param>
+			<result name="index">company/query/index.jsp</result>
+			<result name="queryArriveCompanyDetail">company/query/arriveDetail.jsp</result>
+		</action>
+		<!-- 生成验证码Action checkCode -->
+		<action name="genCheckCode" class="checkValidateCodeAction">
+			<param name="width">160</param>
+			<param name="height">40</param>
+			<param name="codeCount">4</param>
+			<param name="lineCount">15</param>
+			<result name="success" type="stream">
+				<param name="inputName">imageStream</param>
+			</result>
+		</action>
+		
+		<action name="codeCheck" class="checkValidateCodeAction" method="codeCheck">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 运单跟踪发送到邮箱 -->
+		<action name="sendEmail" class="ydTraceManagerAction" method="sendEmail">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<!-- add huyuzhou 发送短信验证码 -->
+		<action name="ydTraceManagerAction" class="ydTraceManagerAction">
+			<result name="sendPhoneVerCodeJson" type="json"></result>
+			<result name="checkCountDownPhoneJson" type="json"></result>
+		</action>
+		
+		
+		<!-- 验证手机短信验证码 -->
+		<action name="checkInfo" class="ydTraceManagerAction"
+			method="checkInfo">
+			<result name="checkInfo" type="json"></result>
+		</action>
+		<!-- 按运单号跟踪追踪 -->
+		<action name="traceTransByNo" class="ydTraceManagerAction"
+			method="traceTransByNo">
+			<param name="categoryName">货物追踪</param>
+			<result name="success">goodstrace.jsp</result>
+			<result name="error">goodstrace.jsp</result>
+		</action>
+		<!-- 按手机号查询运单号跟踪追踪 -->
+		<action name="tracePhoneByNo" class="ydTraceManagerAction"
+			method="tracePhoneByNo">
+			<param name="categoryName">货物追踪</param>
+			<result name="success">goodstrace.jsp</result>
+			<result name="error">goodstrace.jsp</result>
+		</action>
+		<!-- 价格时效 -->
+		<action name="showPriceTime" class="queryPriceTimeAction">
+			<param name="categoryName">价格时效</param>
+		    <result name="success">pricetime/priceTime.jsp</result>
+		</action>
+		<action name="queryPriceTime" class="queryPriceTimeAction" method="queryPriceTime">
+		    <result name="success" type="json"></result>
+			<result name="error" type="json"></result>		  
+		</action>
+		<action name="priceCalc" class="queryPriceTimeAction" method="priceCalc">
+		     <result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		<action name="queryProvinces" class="queryDistrictAction" method="queryProvinces">
+	       <result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+	    </action>
+	     <action name="queryCitys" class="queryDistrictAction" method="queryCitys">
+	       <result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+	    </action>
+	     <action name="queryCountyces" class="queryDistrictAction" method="queryCountyces">
+	        <result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+	    </action>
+	     <action name="queryProvincesFormMDM" class="queryDistrictAction" method="queryProvincesFormMDM">
+	        <result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+	    </action>
+	     <action name="queryCitysFormMDM" class="queryDistrictAction" method="queryCitysFormMDM">
+	        <result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+	    </action>
+	     <action name="queryCountycesFormMDM" class="queryDistrictAction" method="queryCountycesFormMDM">
+	        <result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+	    </action>
+		
+		<!-- 新闻详细内容 -->
+		<action name="queryNewsDetail" class="newsAction" method="queryNewsDetail">
+			<result name="社会责任">about/newsDetail.jsp</result>
+			<result name="市场推广">productservice/marketDetail.jsp</result>
+			<result name="新闻中心">about/newsDetail.jsp</result>
+			<result name="特许动态">companyservice/newsDetail.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		<!-- 增加新闻点击次数 -->
+		<action name="addClickCount" class="newsAction" method="addClickCount"> 
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 产品与服务 -->
+		<action name="drdIntroduction" class="staticPageAction" method="toPage">
+			<param name="categoryName">定日达</param>
+			<result name="success">productservice/dayArrive.jsp</result>
+		</action>
+		<action name="highway" class="staticPageAction" method="toPage">
+			<param name="categoryName">经济快运</param>
+			<result name="success">productservice/scattered.jsp</result>
+		</action>
+		<action name="vehicle" class="staticPageAction" method="toPage">
+			<param name="categoryName">专车达</param>
+			<result name="success">productservice/vehicle.jsp</result>
+		</action>
+		<action name="easyHome" class="staticPageAction" method="toPage">
+			<param name="categoryName">易到家</param>
+			<result name="success">productservice/easyHome.jsp</result>
+		</action>
+		<action name="zzfwIntroduction" class="staticPageAction" method="toPage">
+			<param name="categoryName">增值服务</param>
+			<result name="success">productservice/addService.jsp</result>
+		</action>
+		<action name="safePackaging" class="staticPageAction" method="toPage">
+			<param name="categoryName">安全包装</param>
+			<result name="success">productservice/safePackaging.jsp</result>
+		</action>
+		<action name="insuredTransport" class="staticPageAction" method="toPage">
+			<param name="categoryName">保价运输</param>
+			<result name="success">productservice/insuredTransport.jsp</result>
+		</action>
+		<action name="deliveryService" class="staticPageAction" method="toPage">
+			<param name="categoryName">送货服务</param>
+			<result name="success">productservice/deliveryService.jsp</result>
+		</action>
+		<action name="collectingMoney" class="staticPageAction" method="toPage">
+			<param name="categoryName">代收货款</param>
+			<result name="success">productservice/collectingMoney.jsp</result>
+		</action>
+		<action name="others" class="staticPageAction" method="toPage">
+			<param name="categoryName">其他</param>
+			<result name="success">productservice/others.jsp</result>
+		</action>
+		<action name="marketActivity" class="productsServicesAvtion" method="marketActivity">
+			<param name="categoryName">市场推广</param>
+			<param name="pageSize">6</param>
+			<result name="success">productservice/market.jsp</result>
+			<result name="error">productservice/market.jsp</result>
+		</action>
+		
+		<!-- 企业服务 -->
+		<action name="e-commerce" class="staticPageAction" method="toPage">
+			<param name="categoryName">电商合作</param>
+			<result name="success">companyservice/e-commerce.jsp</result>
+		</action>
+		<action name="terrace" class="staticPageAction" method="toPage">
+			<param name="categoryName">开放平台</param>
+			<result name="success">companyservice/terrace.jsp</result>
+		</action>
+		<action name="franchise" class="franchiseAction" method="index">
+			<param name="categoryName">经营资质</param>
+			<result name="success">companyservice/franchise.jsp</result>
+		</action>
+		<action name="franchiseArea" class="franchiseAction" method="franchiseArea">
+			<param name="categoryName">招商区域</param>
+			<result name="success">companyservice/franchiseArea.jsp</result>
+		</action>
+		<action name="franchiseAction" class="franchiseAction">
+			<result name="queryFranchiseInfoJson" type="json"></result>
+			<result name="queryFranchiseProvinceJson" type="json"></result>
+			<result name="queryFranchiseCityJson" type="json"></result>
+		</action>
+		<action name="franchiseRegist" class="franchiseAction" method="getAllProvice">
+			<param name="categoryName">在线报名</param>
+			<result name="success">companyservice/franchiseRegist.jsp</result>
+			<result name="error">companyservice/franchiseRegist.jsp</result>
+		</action>
+		<action name="getCity" class="franchiseAction" method="getCity">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		<action name="saveRigistInfo" class="franchiseAction" method="saveRigistInfo">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		<action name="franchiseDynamic" class="newsAction" method="queryNewsList">
+			<param name="categoryName">特许动态</param>
+			<param name="pageSize">10</param>
+			<result name="success">companyservice/franchiseDynamic.jsp</result>
+			<result name="error">companyservice/franchiseDynamic.jsp</result>
+		</action>
+		
+		<!-- 帮助与支持 -->
+		<action name="commonQuestions" class="helpAndSupportAction" method="getCommonQuestion">
+			<param name="categoryName">常见答疑</param>
+			<result name="success">help/question.jsp</result>
+			<result name="error">help/question.jsp</result>
+		</action>
+		<action name="download" class="helpAndSupportAction" method="getDownLoadRes">
+			<param name="categoryName">资料下载中心</param>
+			<result name="success">help/download.jsp</result>
+			<result name="error">help/download.jsp</result>
+		</action>
+		<action name="advisorySuggestion" class="commentAction" method="queryComment">
+			<param name="categoryName">咨询建议</param>
+			<param name="pageSize">4</param>
+			<result name="success" >help/suggestion.jsp</result>
+			<result name="error" >help/suggestion.jsp</result>
+		</action>
+		<action name="addComment" class="commentAction" method="addComment">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		<action name="complaint" class="commentAction" method="queryComment">
+			<param name="categoryName">投诉</param>
+			<param name="pageSize">4</param>
+			<result name="success">help/complaint.jsp</result>
+			<result name="error">help/complaint.jsp</result>
+		</action>
+		<action name="contraband" class="staticPageAction" method="toPage">
+			<param name="categoryName">禁运品</param>
+			<result name="success">help/contraband.jsp</result>
+		</action>
+		
+		<!-- 关于华宇 -->
+		<action name="companyProfile" class="staticPageAction" method="toPage">
+			<param name="categoryName">公司简介</param>
+			<result name="success">about/introduction.jsp</result>
+		</action>
+		<action name="companyBigEvent" class="aboatHoauAction" method="companyBigEvent">
+			<param name="categoryName">大事记</param>
+			<result name="success">about/bigEvent.jsp</result>
+			<result name="error">about/bigEvent.jsp</result>
+		</action>
+		<action name="honor" class="staticPageAction" method="toPage">
+			<param name="categoryName">资质荣誉</param>
+			<result name="success">about/honor.jsp</result>
+		</action>
+		<action name="socialResponsibility" class="newsAction" method="queryNewsList">
+			<param name="categoryName">社会责任</param>
+			<param name="pageSize">10</param>
+			<result name="success">about/responsibility.jsp</result>
+			<result name="error">about/responsibility.jsp</result>
+		</action>
+		<action name="hoauDynamic" class="newsAction" method="queryNewsList">
+			<param name="categoryName">天地华宇动态</param>
+			<param name="pageSize">10</param>
+			<result name="success">about/dynamic.jsp</result>
+			<result name="error">about/dynamic.jsp</result>
+		</action>
+		<action name="hoauNotice" class="newsAction" method="queryNewsList">
+			<param name="categoryName">华宇公告</param>
+			<param name="pageSize">10</param>
+			<result name="success">about/notice.jsp</result>
+			<result name="error">about/notice.jsp</result>
+		</action>
+		<action name="mediaReports" class="newsAction" method="queryNewsList">
+			<param name="categoryName">媒体报道</param>
+			<param name="pageSize">10</param>
+			<result name="success">about/reports.jsp</result>
+			<result name="error">about/reports.jsp</result>
+		</action>
+		<action name="logisticsInfo" class="newsAction" method="queryNewsList">
+			<param name="categoryName">物流资讯</param>
+			<param name="pageSize">10</param>
+			<result name="success">about/logisticsInfo.jsp</result>
+			<result name="error">about/logisticsInfo.jsp</result>
+		</action>
+		<action name="contactUs" class="staticPageAction" method="toPage">
+			<param name="categoryName">联系我们</param>
+			<result name="success">about/contactUs.jsp</result>
+		</action>
+		<!-- 法律声明 -->
+		<action name="statement" class="staticPageAction" method="toPage">
+			<result name="success">about/statement.jsp</result>
+		</action>
+		
+
+		<!-- **********************网厅部分开始********************* -->
+		<!-- 注册 -->
+		<action name="regist" class="staticPageAction" method="toPage">
+			<result name="success">regist.jsp</result>
+		</action>
+		<!-- 登陆 -->
+		<action name="login" class="staticPageAction" method="toPage">
+			<result name="success">login.jsp</result>
+		</action>
+		<action name="loginAction" class="loginAction">
+			<result name="index" type="redirectAction">${dest}</result>
+			<result name="loginJson" type="json"></result>
+			<result name="loginError">login.jsp</result>
+		</action>
+		<!-- 注册 -->
+		<action name="registAction" class="registAction">
+			<result name="index" type="redirectAction">index</result>
+			<result name="checkPhoneJson" type="json"></result>
+			<result name="checkEmailJson" type="json"></result>
+			<result name="checkUserNameJson" type="json"></result>
+			<result name="sendPhoneVerCodeJson" type="json"></result>
+			<result name="checkCountDownPhoneJson" type="json"></result>
+			<result name="registJson" type="json"></result>
+			<result name="registErrorJson" type="json"></result>
+			<result name="registError">regist.jsp</result>
+		</action>
+		<action name="registCodeCheck" class="registAction" method="registCodeCheck">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		<!-- 找回密码 -->
+		<action name="forgot" class="staticPageAction" method="toPage">
+			<result name="success">forgot/verificationMethod.jsp</result>
+		</action>
+		<!-- 联系人管理 -->
+		<action name="contacts_*" class="contactsManageAction" method="{1}">
+		    <param name="categoryName">个人资料管理</param>
+		    <param name="pageSize">6</param>
+			<result name="success">contacts/{1}.jsp</result>
+		</action>
+		<!-- 导出联系人 -->
+		<action name="export" class="contactsManageAction" method="export">
+		    <!-- <result name="success" type="json"></result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>  
+                <param name="inputName">excelStream</param>  
+                <param name="contentDisposition">filename=${fileName}</param>  
+                <param name="bufferSize">1024</param>  			    
+			</result> 
+		</action>
+		
+		<!-- 个人资料管理 -->
+		<action name="personalDataAction" class="personalDataAction">
+		    <param name="categoryName">个人资料管理</param>
+			<result name="index">userinfo/personalData.jsp</result>
+			<result name="updatePersonalData" type="redirectAction">
+			    <param name="actionName">personalDataAction!index.action</param>
+			    <param name="errorMsg">${errorMsg}</param>
+        		<param name="errorType">${errorType}</param>
+			</result>
+			<result name="checkError">login.jsp</result>
+			<result name="resetPassword">userinfo/resetPassword.jsp</result>
+		</action>
+		<!-- 忘记密码 -->
+		<!-- 新增联系人 -->
+		<action name="*Contacts" class="contactsManageAction" method="{1}">
+			<param name="pageSize">6</param>
+			<result type="json" name="success"/>
+			<result type="json" name="error"/>
+		</action> 
+		<!-- 订单类 -->
+		<action name="orderAction" class="orderAction">
+		    <param name="pageSize">10</param>
+		    <param name="categoryName">网上下单</param>
+			<result name="index">order/order.jsp</result>
+			<result name="saveDraft">order/order.jsp</result>
+			<result name="createOrder">order/order.jsp</result>
+			<result name="createQuickOrder" type="json"></result>
+			<result name="quickOrder">order/order.jsp</result>
+			<result name="error" type="json"></result>
+			<result name="queryPriceTime" type="json"></result>
+			<result name="queryQuickOrders" type="json"></result>
+			<result name="updateOrder" type="redirectAction">
+			    <param name="actionName">myOrdersAction!queryMyOrders.action</param>  
+			</result>
+			<result name="toIndex" type="redirectAction">
+				<param name="actionName">orderAction!index.action</param>  
+        		<param name="errorType">${errorType}</param>
+			</result>
+		</action>
+		<!-- 我的订单 -->
+		<action name="myOrdersAction" class="myOrdersAction">
+		    <param name="categoryName">所有订单</param>
+		    <param name="pageSize">15</param>
+		    <result name="success">order/myOrders.jsp</result>
+		    <result name="error">order/myOrders.jsp</result>
+		    <result name="modify">order/order.jsp</result>
+		    <result name="detailOrderJson" type="json"></result>
+		    <result name="printOrderJson" type="json"></result>
+		    <result name="deleteOrderJson" type="json"></result>
+		    <result name="cancelOrderJson" type="json"></result>
+		</action>
+		<!-- 导出订单 -->
+		<action name="exportOrders" class="myOrdersAction" method="export">
+			<result name="success" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>  
+                <param name="inputName">excelStream</param>  
+                <param name="contentDisposition">filename=${fileName}</param>  
+                <param name="bufferSize">1024</param>
+			</result> 
+		</action>
+		<!-- 批量下单 -->
+		<action name="batchOrderAction" class="batchOrderAction">
+		    <param name="categoryName">批量下单</param>
+			<result name="index">order/batchOrder.jsp</result>
+			<result name="checkError">order/batchOrder.jsp</result>
+			<result name="orderList">order/batchOrderList.jsp</result>
+			<result name="singleOrder" type="redirectAction">
+				<param name="actionName">batchOrderAction!pagingQuery.action</param>  
+        		<param name="errorMsg">${errorMsg}</param>
+        		<param name="errorType">${errorType}</param>
+			</result>
+			<result name="findOrderByIdJson" type="json"></result>
+			<result name="removeOrderJson" type="json"></result>
+		</action>
+		
+		<!-- 我的运单 -->
+		<action name="myWaybillsAction" class="myWaybillsAction">
+		    <param name="categoryName">我的运单</param>
+		    <param name="pageSize">15</param>
+		    <result name="success">waybill/myWaybills.jsp</result>
+		    <result name="error">waybill/myWaybills.jsp</result>
+		</action>
+	
+		
+		<action name="forgotAction" class="forgotAction">
+			<result name="index" type="redirectAction">index</result>
+			<result name="checkError">forgot/verificationMethod.jsp</result>
+			<result name="phoneRetrieve">forgot/authentication.jsp</result>
+			<result name="sendPhoneVerCodeJson" type="json"></result>
+			<result name="checkCountDownPhoneJson" type="json"></result>
+			<result name="sendEmailVerCodeJson" type="json"></result>
+			<result name="checkCountDownEmailJson" type="json"></result>
+			<result name="emailRetrieve">forgot/authentication.jsp</result>
+			<result name="toSetNewPwdByPhone">forgot/resetPassword.jsp</result>
+			<result name="toSetNewPwdByEmail">forgot/resetPassword.jsp</result>
+		</action>
+		<!-- 理赔 -->
+		<action name="*claim" class="claimAction" method="{1}">
+		    <param name="categoryName">我的理赔</param>
+		    <param name="pageSize">15</param>
+			<result name="success">claim/{1}.jsp</result>
+		</action>
+		<!-- add huyuzhou 20160115 短信理赔跳转 -->
+		<action name="confirmClaim" class="claimAction" method="toAmountConfirm">
+		    <result name="success">claim/claimSMS/claim.jsp</result>
+			<result name="timeOut">claim/claimSMS/claimTimeOut.jsp</result>
+			<result name="alreadConfirm">claim/claimSMS/claimAlreadyConfirm.jsp</result>
+			<result name="alreadRefuse">claim/claimSMS/claimAlreadRefuse.jsp</result>
+			<result name="error">claim/claimSMS/claimError.jsp</result>
+		</action>
+		<!-- 金额确认 -->
+		<action name="amountConfirmSMS" class="claimAction" method="amountConfirmSMS">
+		    <result name="success">claim/claimSMS/amountConfirmSMS.jsp</result>
+		</action>
+		<!-- 金额确认 -->
+		<action name="refuseClaimsAmount" class="claimAction" method="refuseClaimsAmount">
+		    <result name="success">claim/claimSMS/amountConfirmSMS.jsp</result>
+		</action>
+		<!-- end -->
+		
+		<!-- 修改 -->
+		<action name="updateClaim" class="claimAction" method="update">
+			<result name="success">claim/request.jsp</result>
+		</action>
+		
+		<action name="requestClaim" class="claimAction">
+				<result name="success" type="json"></result>
+		</action> 
+		
+		<action name="uploadClaim" class="claimAction" method="upload">
+				<result name="success" type="json">
+				    <!-- 解决ie10以下返回json解析 bug -->
+					<param name="contentType">text/html</param>
+				</result>
+		</action>
+
+		<!--&lt;!&ndash;过滤上传图片格式    肖聪&ndash;&gt;-->
+		<!--<action name="uploadClaim" class="claimAction" method="upload">-->
+			<!--<param name="uploadPath">/opt/how/claim.war/</param>-->
+			<!--<interceptor-ref name = "fileUpload">-->
+				<!--<param name="maximumSize">6000000</param>-->
+				<!--<param name="allowedExtensions">jpg,jpeg,png</param>-->
+				<!--<param name="allowedTypes">image/jpg,image/png,image/jpeg</param>-->
+			<!--</interceptor-ref>-->
+			<!--<interceptor-ref name="defaultStack" />-->
+			<!--<result name="success" type="json">-->
+				<!--&lt;!&ndash; 解决ie10以下返回json解析 bug &ndash;&gt;-->
+				<!--<param name="contentType">text/html</param>-->
+			<!--</result>-->
+		<!--</action>-->
+
+		<!-- 理赔综合查询 -->
+		<action name="queryClaim">
+				<result name="success">claim/claimQuery.jsp</result>
+		</action> 
+		
+		<!--银行卡所属银行查询  -->
+		<action name="queryBank" class="queryBankAction" method="query">
+		    <result type="json" name="success"/>
+			<result type="json" name="error"/>
+		</action> 
+		
+		<!-- 根据开户行名称模糊查询开户行完整名称 -->
+		<action name="queryBankInfoAction" class="claimAction" method="queryBankInfo">
+			<result type="json" name="success"/>
+		</action>
+		
+		<!-- 根据开户行名称模糊查询 -->
+		<action name="bankInfoAction" class="bankInfoAction">
+			<result type="json" name="queryBankInfoJson"/>
+		</action>
+		<!-- **********************网厅部分结束********************* -->
+	</package>
+</struts>

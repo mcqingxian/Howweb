@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <web-app version="2.4" 
+     xmlns="http://java.sun.com/xml/ns/j2ee" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+     http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<!-- <context-param> <param-name>contextClass</param-name> <param-value>org.jboss.spring.factory.VFSXmlWebApplicationContext</param-value> 
+		</context-param> -->
+	<!--config this web app name,it is use to get this web app all functions -->
+	<display-name>application</display-name>
+	<distributable />
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:com/hoau/**/server/META-INF/spring.xml,/WEB-INF/spring.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>staticServerAddress</param-name>
+		<param-value>http://10.39.251.124</param-value>
+	</context-param>
+	<!-- session超时为30分钟 -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<listener>
+		<listener-class>com.hoau.hbdp.framework.server.deploy.AppContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>framework</filter-name>
+		<filter-class>com.hoau.hbdp.framework.server.web.filter.FrameworkFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>com.hoau.how.module.bse.server.xss.MStrutsPrepareAndExecuteFilter</filter-class>
+		<init-param>
+			<param-name>configProviders</param-name>
+			<param-value>com.hoau.hbdp.framework.server.deploy.struts.ModuleConfigProvider</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>framework</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	
+	<resource-ref>
+		<res-ref-name>jdbc/howds</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/obhds</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+	<!-- Welcome file lists -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/pages/bse/error/404.jsp</location>
+	</error-page>
+</web-app>

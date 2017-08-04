@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.multipart.maxSize" value="100000000"/>
+    
+	<package name="bse" namespace="/bse" extends="how-default">
+	
+		<!--进入登录页面  -->
+	    <action name="login" class="loginAction" method="login">
+		    <result name="success">login.jsp</result>
+		    <result name="index" type="redirectAction">${dest}</result>
+		</action>
+		<!-- 生成验证码Action checkCode -->
+		<action name="genCheckCode" class="checkValidateCodeAction">
+			<param name="width">160</param>
+			<param name="height">40</param>
+			<param name="codeCount">4</param>
+			<param name="lineCount">15</param>
+			<result name="success" type="stream">
+				<param name="inputName">imageStream</param>
+			</result>
+		</action>
+		<!-- 校验验证码 -->
+		<action name="registCodeCheck" class="registAction" method="registCodeCheck">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		<!-- 进入注册页面 -->
+	    <action name="toRegist" class="registAction">
+		    <result name="success">regist.jsp</result>
+		</action>
+		<!-- 进入手机密码找回页面 -->
+		<action name="toRetrievePhonePd" class="registAction">
+		    <result name="success">retrievePhonePd.jsp</result>
+		</action>
+		<!-- 进入邮箱密码找回页面 -->
+		<action name="toRetrieveEmailPd" class="registAction">
+		    <result name="success">retrieveEmailPd.jsp</result>
+		</action>
+		<!-- 忘记密码修改密码 -->
+		<action name="forgotAction" class="forgotAction">
+			<result name="index" type="json"></result>
+			<result name="checkError" type="json"></result>
+			<result name="sendPhoneVerCodeJson" type="json"></result>
+			<result name="checkCountDownPhoneJson" type="json"></result>
+			<result name="sendEmailVerCodeJson" type="json"></result>
+			<result name="checkCountDownEmailJson" type="json"></result>
+		</action>
+		
+		<!-- 登录并进入对应页面 -->
+		<action name="loginAction" class="loginAction">
+			<result name="index" type="json"/>
+			<result name="loginError" type="json"/>
+			 <result name="exit" type="redirectAction">${dest}</result>
+		</action>
+		
+		
+		<action name="bseAction" class="bseAction">
+		    <result name="success" type="json"/>
+		    <result name="error" type="json"/>
+		</action>
+		
+		<!-- 首页  -->
+   		<action name="index" class="bseAction" method="index">
+		    <result name="success">index.jsp</result>
+		</action>
+		
+   		<action name="userCenterAction" class="userCenterAction">
+		   <result name="success" type="json"/>
+		   <result name="error" type="json"/>
+		</action>
+		
+   		<!--我的华宇  -->
+		<action name="myHoau" class="userCenterAction" method="myHoau">
+		    <result name="success">userCenter/myhoau.jsp</result>
+		</action>
+		
+		<!--我的账户  -->
+		<action name="myAccount" class="userCenterAction" method="myAccount">
+		    <result name="success">userCenter/myaccount.jsp</result>
+		</action>
+		
+		<!--修改手机  -->
+		<action name="updatePhone" class="userCenterAction" method="updatePhone">
+		    <result name="success">userCenter/updatephone.jsp</result>
+		</action>
+		
+		<!--修改密码  -->
+		<action name="updatePassword" class="userCenterAction" method="updatePassword">
+		    <result name="success">userCenter/updatepassword.jsp</result>
+		</action>
+		<!--订单管理  -->
+		<action name="myOrdersMgtAction" class="myOrdersMgtAction">
+		     <result name="success" type="json"/>
+		   <result name="error" type="json"/>
+		</action>
+		<!-- 下单,修改界面 -->
+		<action name="order" class="myOrdersMgtAction" method="order">
+			<result name="success">order/place_order.jsp</result>
+            <result name="exit" type="redirectAction">index.action</result>
+		</action>
+		<!--订单管理界面  -->
+		<action name="queryMyOrders" class="myOrdersMgtAction" method="queryMyOrdersList">
+			<result name="success">order/order_manager.jsp</result>
+			<result name="more" type="json"/>
+		</action>
+		<!--运单列表界面 -->
+		<action name="queryMyWaybills" class="myOrdersMgtAction" method="queryMyWaybills">
+			<result name="success">order/myWaybills.jsp</result>
+			<result name="more" type="json"/>
+		</action>
+		<!--查看运单  -->
+		<action name="wayBillDetail" class="myOrdersMgtAction" method="getWayBillDetail">
+			<result name="success">order/myWaybillsDetail.jsp</result>
+		</action>
+		
+		<!-- 注册 -->
+		<action name="registAction" class="registAction">
+			<result name="index" type="redirectAction">index</result>
+			<result name="checkPhoneJson" type="json"></result>
+			<result name="checkEmailJson" type="json"></result>
+			<result name="checkUserNameJson" type="json"></result>
+			<result name="sendPhoneVerCodeJson" type="json"></result>
+			<result name="checkCountDownPhoneJson" type="json"></result>
+			<result name="registJson" type="json"></result>
+			<result name="registErrorJson" type="json"></result>
+			<result name="registError">regist.jsp</result>
+		</action>
+		<!-- 修改手机号 -->
+		<action name="personalDataAction" class="personalDataAction">
+			<result name="success" type="json"/>
+		    <result name="error" type="json"/>
+		</action>
+		<!-- 个人资料管理 -->
+		<!-- <action name="personalDataAction" class="personalDataAction">
+			<result name="index">userCenter/updatephone.jsp</result>
+			<result name="updatePersonalData" type="redirectAction">
+			    <param name="actionName">personalDataAction!index.action</param>
+			    <param name="errorMsg">${errorMsg}</param>
+        		<param name="errorType">${errorType}</param>
+			</result>
+			<result name="checkError">login.jsp</result>
+			<result name="resetPassword">userinfo/resetPassword.jsp</result>
+		</action> -->
+		
+		<action name="resetPassword" class="userCenterAction" method="resetPassword">
+			  <!-- <interceptor-ref name="token">
+    			<param name="includeMethods">resetPassword</param>
+  			</interceptor-ref>
+   			<interceptor-ref name="defaultStack"/> -->
+   			<result name="resetPassword" type="redirectAction">myAccount</result>
+		    <result name="resetError">userCenter/updatepassword.jsp</result>
+		</action>
+		
+		<!-- 进入静态页面 -->
+		<action name="topage_*" class="bseAction" method="toPage">
+			<result name="success">../wechat/static-html/{1}.jsp</result>
+		</action>
+		<!-- 查看活动详情页面 -->
+		<!-- 新闻详细内容 -->
+		<action name="queryNewsDetail" class="newsAction" method="queryNewsDetail">
+			<result name="市场推广">marketDetail.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+	</package>
+</struts>

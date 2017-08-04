@@ -1,0 +1,121 @@
+/* CSS Document */
+body,table,div,tr,td,label{
+	margin:0;
+	padding:0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a{color:blue}
+a:hover{color:#039}
+/*调整协议层的位置*/
+.pop{position:relative;left:1%;right:20%;top:80%;width:500px;height:200px;background:#eee;border:1px solid #ccc}
+ .pop_head{position:relative;height:20px;background:#ccc}
+ .pop_head a{position:relative;right:8px;line-height:20px;color:#000;text-decoration:none}
+ .pop_head a:hover{position:relative;color:red;text-decoration:none}
+ .pop_body{position:relative;padding:8px}
+
+#place_order{height:30px; width:100px; background-color:red; }
+
+/*提示信息*/
+.label{
+	color:#aeaeae;
+	/*font-style:italic;*/
+	font-size:13px;
+}
+
+/*错误提示信息*/
+label.error_msg{
+	color:red;
+	font-size:13px;
+	/*border:1px solid red;*/
+
+}
+#service_info{
+  border: 1px solid #F00;
+  border-top:1px solid #F00;
+  border-bottom:1px solid #F00
+  border-left:1px solid #F00;
+  border-right:1px solid #F00;
+}
+
+body{
+	background-color:#CED6DE;
+	/* font-family:Georgia, "Times New Roman", Times, serif; */
+	font-family:微软雅黑, Arial, Helvetica, Sans-serif;
+	font-size:14px;
+}
+
+img{
+	border: none;
+}
+
+#content{
+	width:70%;
+	margin:auto;
+}
+
+select {
+	width:100px;
+}
+
+table{
+	width:100%;
+}
+/*改变行距*/
+table td{
+	padding:1px;
+}
+
+#shipper_info,#consignee_info,#goods_info,#result,#other{
+	padding:12px;
+	background-color:#FFFFFF;
+	/*调整div之间的间距*/
+	margin-bottom:3px;
+}
+
+
+#result{
+	margin-top:20px;
+}
+
+#header{
+	background-color:#1D242C;
+	width:70%;
+	margin:auto;
+}
+
+#submit{
+	text-align:center;
+}
+
+#from_province_city_pane{
+	position:absolute;
+	left:355px;
+	top:245px;
+	float:left;
+}
+
+.info{
+	font-size:15px;
+	font-weight:bold;
+}
+
+#code_img{text-align:right;font-size:12px;width:120px;height:148px;background:url(/wechat/images/hoau_icon.jpg) -4px -3px no-repeat;position:fixed;right:5px;bottom:-0px;_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+#code_img{background-position:0px 2px;bottom:0px;margin-bottom:0px;}
+#code_img a{
+	color:red;
+	padding-right:5px;
+}
+#code_img a:link{
+	text-decoration:none;
+}
+#code_img a:visited{
+	text-decoration:none;
+}
+#code_img a:hover{
+	text-decoration:none;
+}
+#code_img a:active{
+	text-decoration:none;
+}

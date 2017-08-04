@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hoau.mhow.module.bse.server.dao.DistrictMapper">
+
+	<resultMap type="com.hoau.mhow.module.bse.api.shared.domain.DistrictEntity" id="allProvinceResultMap">
+		<result column="ID" property="id" />
+		<result column="CREATE_TIME" property="createDate" />
+		<result column="CREATE_USER_CODE" property="createUser" />
+		<result column="MODIFY_TIME" property="modifyDate" />
+		<result column="MODIFY_USER_CODE" property="modifyUser" />
+		<result column="DISTRICT_CODE" property="districtCode" />
+		<result column="DISTRICT_NAME" property="districtName" />
+		<result column="DISTRICT_TYPE" property="districtType" />
+		<result column="PARENT_DISTRICT_CODE" property="parentDistrictCode" />
+		<result column="PINYIN" property="pinyin" />
+		<result column="VERSION_NO" property="versionNo" />
+		<collection property="childAreaList" column="{PARENT_DISTRICT_CODE = DISTRICT_CODE}" select="queryChildCitys"/>
+	</resultMap>
+	
+	<resultMap type="com.hoau.mhow.module.bse.api.shared.domain.DistrictEntity" id="allCitysResultMap">
+		<result column="ID" property="id" />
+		<result column="CREATE_TIME" property="createDate" />
+		<result column="CREATE_USER_CODE" property="createUser" />
+		<result column="MODIFY_TIME" property="modifyDate" />
+		<result column="MODIFY_USER_CODE" property="modifyUser" />
+		<result column="DISTRICT_CODE" property="districtCode" />
+		<result column="DISTRICT_NAME" property="districtName" />
+		<result column="DISTRICT_TYPE" property="districtType" />
+		<result column="PARENT_DISTRICT_CODE" property="parentDistrictCode" />
+		<result column="PINYIN" property="pinyin" />
+		<result column="VERSION_NO" property="versionNo" />
+		<collection property="childAreaList" column="{PARENT_DISTRICT_CODE = DISTRICT_CODE}" select="queryChildAreas"/>
+	</resultMap>
+	
+	<resultMap type="com.hoau.mhow.module.bse.api.shared.domain.DistrictEntity" id="allAreasResultMap">
+		<result column="ID" property="id" />
+		<result column="CREATE_TIME" property="createDate" />
+		<result column="CREATE_USER_CODE" property="createUser" />
+		<result column="MODIFY_TIME" property="modifyDate" />
+		<result column="MODIFY_USER_CODE" property="modifyUser" />
+		<result column="DISTRICT_CODE" property="districtCode" />
+		<result column="DISTRICT_NAME" property="districtName" />
+		<result column="DISTRICT_TYPE" property="districtType" />
+		<result column="PARENT_DISTRICT_CODE" property="parentDistrictCode" />
+		<result column="PINYIN" property="pinyin" />
+		<result column="VERSION_NO" property="versionNo" />
+	</resultMap>
+	
+	<sql id="base_query">
+		ID,CREATE_TIME,CREATE_USER_CODE,MODIFY_TIME,MODIFY_USER_CODE,DISTRICT_CODE,DISTRICT_NAME,
+		DISTRICT_TYPE,PARENT_DISTRICT_CODE,PINYIN,VERSION_NO
+	</sql>
+
+	<select id="queryAllAreas" resultMap="allProvinceResultMap" parameterType="String">
+	   select 
+	   <include refid="base_query"></include> 
+	   FROM T_BSE_DISTRICT where DISTRICT_TYPE=#{type}
+	</select>
+	
+	<select id="queryChildCitys" resultMap="allCitysResultMap" parameterType="map">
+	     select 
+	   <include refid="base_query"></include> 
+	   FROM T_BSE_DISTRICT where DISTRICT_TYPE = 'CITY' AND PARENT_DISTRICT_CODE = #{PARENT_DISTRICT_CODE}
+	</select>
+	
+	<select id="queryChildAreas" resultMap="allAreasResultMap" parameterType="map">
+	     select 
+	   <include refid="base_query"></include> 
+	   FROM T_BSE_DISTRICT where DISTRICT_TYPE = 'AREA' AND PARENT_DISTRICT_CODE = #{PARENT_DISTRICT_CODE}
+	</select>
+	
+	<select id="maxVersionNo" resultType="String">
+	    SELECT MAX(VERSION_NO) AS maxVersion FROM T_BSE_DISTRICT
+	</select>
+
+</mapper>

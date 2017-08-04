@@ -1,0 +1,282 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.top {
+    width: 100%;
+    height: 50px;
+}
+
+.container {
+    width: 100%;
+}
+
+.first,
+.second,
+.three {
+    width: 100%;
+}
+
+.img_box p {
+    position: absolute;
+    font-family: "SimHei";
+    font-size: 17px;
+    color: #fff;
+    
+    width: 42%;
+    height: 33px;
+    background-color: rgb(255, 161, 20);
+    border-radius: 5px;
+    line-height: 33px;
+    text-align: center;
+    bottom: 10%;
+    left: 29%;
+}
+
+.fontOne {
+    bottom: 19%;
+    left: 40.5%;
+}
+
+.fontTwo {
+    bottom: 17%;
+    left: 41%;
+}
+
+.fontThree {
+    bottom: 18%;
+    left: 39%;
+}
+
+.img_box {
+    position: relative;
+}
+
+.bg {
+    width: 100%;
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0px;
+    left: 5%;
+}
+
+.three .triangle {
+    bottom: -1px;
+}
+
+.txt {
+    background-color: #FFA114;
+    margin-top: -5px;
+}
+
+ul.detail{
+    color: #fff;
+    font-family: "SimHei";
+    font-size: 13px;
+    line-height: 30px;
+    padding: 6px 15%;
+    margin: 0;
+}
+
+.pic {
+    width: 59%;
+    padding: 10px;
+    margin-left: -7%;
+}
+
+.three ul {
+    float: left;
+}
+
+.btn_box {
+    width: 100%;
+    height: 110px;
+    margin: -19px 0;
+    background-color: #dfefff;
+    padding-top: 35px;
+}
+
+.btn_box p {
+    color: #969A9B;
+    font-size: 10px;
+    line-height: 25px;
+    text-align: right;
+    margin-right: 2%;
+    height: 20px;
+}
+
+.btn_box p span {
+    color: #FF8F14;
+}
+
+#btn {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    border: none;
+    outline: none;
+    line-height: 18px;
+    font-size: 16px;
+    color: #fff;
+    background: url("../../images/wechat/a.png") no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 12px;
+    box-sizing: border-box;
+}
+.footer{
+	display: none;
+}
+.four {
+    margin-top: 0.3%;
+    padding-bottom: 0.5%;
+    background-color: rgb(255, 161, 20);
+}
+
+h3 {
+    background-color: #fc7417;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    padding-left: 7%;
+    font-size: 14px;
+    font-family: "SimHei";
+    font-weight: normal;
+}
+
+h4 {
+    color: #fff;
+    padding-right: 4%;
+    padding-left: 9%;
+    font-size: 14px;
+    font-family: "SimHei";
+    margin-top: 1%;
+    margin-bottom: 0%;
+    font-weight: normal;
+}
+
+.four p {
+    font-size: 10px;
+    font-family: "SimHei";
+    color: #fff;
+    padding-left: 9%;
+    padding-right: 2%;
+}
+
+.first .bg_box {
+    width: 72%;
+    margin: 2% auto;
+}
+
+.second .bg_box {
+    width: 80%;
+    margin: 2% auto;
+}
+
+.third .bg_box,
+.third .award {
+    width: 80%;
+    margin: 2% auto;
+}
+
+.fourth .bg_box {
+    width: 80%;
+    margin: 2% auto;
+}
+
+.four img {
+    width: 100%;
+}
+
+.foot {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(24, 36, 40);
+}
+
+.foot p {
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+}
+/* ul, ol{
+	list-style:inherit !important
+} */
+@media screen and (max-width:414px) {
+    .fontOne {
+        bottom: 19%;
+        left: 41%;
+    }
+    .fontTwo {
+        bottom: 17%;
+        left: 41%;
+    }
+    .fontThree {
+        bottom: 18%;
+        left: 39.5%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .fontOne {
+        bottom: 18%;
+        left: 41%;
+    }
+    .fontTwo {
+        bottom: 16%;
+        left: 41%;
+    }
+    .fontThree {
+        bottom: 17%;
+        left: 39.5%;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .fontOne {
+        bottom: 18%;
+        left: 40%;
+    }
+    .fontTwo {
+        bottom: 16%;
+        left: 40%;
+    }
+    .fontThree {
+        bottom: 17%;
+        left: 36.5%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .fontOne {
+        bottom: 18%;
+        left: 40%;
+    }
+    .fontTwo {
+        bottom: 15%;
+        left: 40%;
+    }
+    .fontThree {
+        bottom: 16%;
+        left: 36.5%;
+    }
+    .txt {
+        height: 105px;
+    }
+    .pic {
+        width: 57%;
+    }
+}
+@media screen and (min-width:321px) {
+    .pic {
+       margin-bottom: 14px
+    }
+}

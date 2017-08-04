@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project basedir="." name="wechat" default="deploy"><!--name="login" 需要修改为自己的工程名称 -->
+	<property name="webapp" value="${basedir}/../mhow-web/src/main/webapp" />
+	<property name="todir-scripts" value="${webapp}/scripts/${ant.project.name}/" />
+	<property name="todir-pages" value="${webapp}/WEB-INF/pages/${ant.project.name}/" />
+	<property name="todir-images" value="${webapp}/images/${ant.project.name}/" />
+	<property name="todir-styles" value="${webapp}/styles/${ant.project.name}/" />
+	<property name="fromdir"
+		value="${basedir}/src/main/resources/com/hoau/mhow/module/wechat/server/META-INF" />
+	<property name="scripts" value="${fromdir}/scripts"/>
+    <property name="pages" value="${fromdir}/pages"/>
+    <property name="images" value="${fromdir}/images"/>
+    <property name="styles" value="${fromdir}/styles"/>
+	<target name="deploy">
+        <copy todir="${todir-scripts}" overwrite="true" verbose="true">
+            <fileset dir="${scripts}">
+                <include name="**" />
+            </fileset>
+        </copy>
+        <copy todir="${todir-pages}" overwrite="true" verbose="true">
+            <fileset dir="${pages}">
+                <include name="**" />
+            </fileset>
+        </copy>
+        <copy todir="${todir-images}" overwrite="true" verbose="true">
+            <fileset dir="${images}" >
+                <include name="**"/>
+            </fileset>
+        </copy>
+        <copy todir="${todir-styles}" overwrite="true" verbose="true">
+            <fileset dir="${styles}">
+                <include name="**" />
+            </fileset>
+        </copy>
+    </target>
+</project> 

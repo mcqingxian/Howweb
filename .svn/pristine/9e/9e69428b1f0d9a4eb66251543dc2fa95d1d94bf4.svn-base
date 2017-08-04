@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hoau.mhow.module.obh.server.dao.NetOrderDao" >
+  <resultMap id="BaseResultMap" type="com.hoau.mhow.module.bse.api.shared.domain.NetOrderEntity" >
+    <id column="eino_id" property="einoId" jdbcType="NUMERIC" />
+    <result column="row_num" property="number" jdbcType="NUMERIC"/>
+    <result column="eino_order_no" property="einoOrderNo" jdbcType="VARCHAR" />
+    <result column="eino_contract_no" property="einoContractNo" jdbcType="VARCHAR" />
+    <result column="eino_custom_ebcu_name_cn" property="einoCustomEbcuNameCn" jdbcType="VARCHAR" />
+    <result column="eino_consignee_branches_name" property="einoConsigneeBranchesName" jdbcType="VARCHAR" />
+    <result column="eino_ebcc_name" property="einoEbccName" jdbcType="VARCHAR" />
+    <result column="eino_order_date" property="einoOrderDate" jdbcType="TIMESTAMP" />
+    <result column="eino_status" property="einoStatus" jdbcType="VARCHAR" />
+    <result column="eino_shipper_ebsp_name_cn" property="einoShipperEbspNameCn" jdbcType="VARCHAR" />
+    <result column="eino_shipper_ebsa_contact" property="einoShipperEbsaContact" jdbcType="VARCHAR" />
+    <result column="eino_shipper_ebsa_tel" property="einoShipperEbsaTel" jdbcType="VARCHAR" />
+    <result column="eino_shipper_ebsa_address" property="einoShipperEbsaAddress" jdbcType="VARCHAR" />
+    <result column="eino_shipper_ebpl_id" property="einoShipperEbplId" jdbcType="NUMERIC" />
+    <result column="eino_shipper_ebpl_name_cn" property="einoShipperEbplNameCn" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebsp_name_cn" property="einoConsigneeEbspNameCn" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebsa_contact" property="einoConsigneeEbsaContact" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebsa_tel" property="einoConsigneeEbsaTel" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebsa_address" property="einoConsigneeEbsaAddress" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebrg_id" property="einoConsigneeEbrgId" jdbcType="NUMERIC" />
+    <result column="eino_consignee_ebrg_name_cn" property="einoConsigneeEbrgNameCn" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebpl_id" property="einoConsigneeEbplId" jdbcType="NUMERIC" />
+    <result column="eino_consignee_ebpl_name_cn" property="einoConsigneeEbplNameCn" jdbcType="VARCHAR" />
+    <result column="eino_remark" property="einoRemark" jdbcType="VARCHAR" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="eino_trans_no" property="einoTransNo" jdbcType="VARCHAR" />
+    <result column="eino_orign" property="einoOrign" jdbcType="VARCHAR" />
+    <result column="eino_product_type_name" property="einoProductTypeName" jdbcType="VARCHAR" />
+    <result column="eino_esco_second_code" property="einoEscoSecondCode" jdbcType="VARCHAR" />
+    <result column="eino_esco_second_name" property="einoEscoSecondName" jdbcType="VARCHAR" />
+    <result column="eino_shipper_ebpv_id" property="einoShipperEbpvId" jdbcType="NUMERIC" />
+    <result column="eino_shipper_ebpv_name" property="einoShipperEbpvName" jdbcType="VARCHAR" />
+    <result column="eino_shipper_ebsa_mobile" property="einoShipperEbsaMobile" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebpv_id" property="einoConsigneeEbpvId" jdbcType="NUMERIC" />
+    <result column="eino_consignee_ebpv_name" property="einoConsigneeEbpvName" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebsa_mobile" property="einoConsigneeEbsaMobile" jdbcType="VARCHAR" />
+    <result column="eino_exception_type" property="einoExceptionType" jdbcType="VARCHAR" />
+    <result column="eino_shipper_ebsa_area_code" property="einoShipperEbsaAreaCode" jdbcType="VARCHAR" />
+    <result column="eino_consignee_ebsa_area_code" property="einoConsigneeEbsaAreaCode" jdbcType="VARCHAR" />
+    <result column="eino_door_canvass" property="einoDoorCanvass" jdbcType="VARCHAR" />
+    <result column="eino_payment_method" property="einoPaymentMethod" jdbcType="VARCHAR" />
+    <result column="eino_shipper_method" property="einoShipperMethod" jdbcType="VARCHAR" />
+    <result column="eino_sign_back" property="einoSignBack" jdbcType="VARCHAR" />
+    <result column="eino_package" property="einoPackage" jdbcType="VARCHAR" />
+    <result column="eino_coll_delivery_amount" property="einoCollDeliveryAmount" jdbcType="NUMERIC" />
+    <result column="eino_coll_delivery_charge" property="einoCollDeliveryCharge" jdbcType="NUMERIC" />
+    <result column="eino_sms_notif" property="einoSmsNotif" jdbcType="VARCHAR" />
+    <result column="eino_insurance" property="einoInsurance" jdbcType="NUMERIC" />
+    <result column="eino_insurance_charge" property="einoInsuranceCharge" jdbcType="NUMERIC" />
+    <result column="eino_trans_charge" property="einoTransCharge" jdbcType="NUMERIC" />
+    <result column="eino_charge_total" property="einoChargeTotal" jdbcType="NUMERIC" />
+    <result column="eino_ebcc_id" property="einoEbccId" jdbcType="NUMERIC" />
+    <result column="eino_cargo_name" property="einoCargoName" jdbcType="VARCHAR" />
+    <result column="eino_total_volume" property="einoTotalVolume" jdbcType="NUMERIC" />
+    <result column="eino_number" property="einoNumber" jdbcType="NUMERIC" />
+    <result column="eino_total_weight" property="einoTotalWeight" jdbcType="NUMERIC" />
+    <result column="eino_is_import" property="einoIsImport" jdbcType="NUMERIC" />
+    <result column="eino_invited_status" property="einoInvitedStatus" jdbcType="NUMERIC" />
+    <result column="eino_shipping_date" property="einoShippingDate" jdbcType="TIMESTAMP" />
+    <result column="eino_shipper_area_id" property="einoShipperAreaId" jdbcType="NUMERIC" />
+    <result column="eino_shipper_area_name" property="einoShipperAreaName" jdbcType="VARCHAR" />
+    <result column="eino_batch_order" property="einoBatchOrder" jdbcType="NUMERIC" />
+    <result column="eino_second_district" property="einoSecondDistrict" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="base_query_all">
+      	eino_id as einoId,
+		eino_order_no as einoOrderNo,
+		eino_contract_no as einoContractNo,
+		
+		eino_custom_ebcu_name_cn as einoCustomEbcuNameCn,
+		eino_ebcc_name as einoEbccName,
+		eino_order_date as einoOrderDate,
+		eino_status as einoStatus,
+		
+		eino_shipper_ebsp_name_cn as einoShipperEbspNameCn,
+		eino_shipper_ebsa_contact as einoShipperEbsaContact,
+		eino_shipper_ebsa_tel as einoShipperEbsaTel,
+		eino_shipper_ebsa_address as einoShipperEbsaAddress,
+		eino_shipper_ebpl_id as einoShipperEbplId,
+		eino_shipper_ebpl_name_cn as einoShipperEbplNameCn,
+		eino_consignee_ebsp_name_cn as einoConsigneeEbspNameCn,
+		eino_consignee_ebsa_contact as einoConsigneeEbsaContact,
+		eino_consignee_ebsa_tel as einoConsigneeEbsaTel,
+		eino_consignee_ebsa_address as einoConsigneeEbsaAddress,
+		eino_consignee_ebrg_id as einoConsigneeEbrgId,
+		eino_consignee_ebrg_name_cn as einoConsigneeEbrgNameCn,
+		eino_consignee_ebpl_id as einoConsigneeEbplId,
+		eino_consignee_ebpl_name_cn as einoConsigneeEbplNameCn,
+		eino_remark as einoRemark,
+		creator as creator,
+		create_time as createTime,
+		modifier as modifier,
+		modify_time as modifyTime,
+		eino_trans_no as einoTransNo,
+		eino_orign as einoOrign,
+		eino_product_type_name as einoProductTypeName,
+		eino_esco_second_code as einoEscoSecondCode,
+		eino_esco_second_name as einoEscoSecondName,
+		eino_shipper_ebpv_id as einoShipperEbpvId,
+		eino_shipper_ebpv_name as einoShipperEbpvName,
+		eino_shipper_ebsa_mobile as einoShipperEbsaMobile,
+		eino_consignee_ebpv_id as einoConsigneeEbpvId,
+		eino_consignee_ebpv_name as einoConsigneeEbpvName,
+		eino_consignee_ebsa_mobile as einoConsigneeEbsaMobile,
+		eino_exception_type as einoExceptionType,
+		eino_shipper_ebsa_area_code as einoShipperEbsaAreaCode,
+		eino_consignee_ebsa_area_code as einoConsigneeEbsaAreaCode,
+		eino_door_canvass as einoDoorCanvass,
+		eino_payment_method as einoPaymentMethod,
+		eino_shipper_method as einoShipperMethod,
+		eino_sign_back as einoSignBack,
+		eino_package as einoPackage,
+		eino_coll_delivery_amount as einoCollDeliveryAmount,
+		eino_coll_delivery_charge as einoCollDeliveryCharge,
+		eino_sms_notif as einoSmsNotif,
+		eino_insurance as einoInsurance,
+		eino_insurance_charge as einoInsuranceCharge,
+		eino_trans_charge as einoTransCharge,
+		eino_charge_total as einoChargeTotal,
+		eino_ebcc_id as einoEbccId,
+		eino_cargo_name as einoCargoName,
+		eino_total_volume as einoTotalVolume,
+		eino_number as einoNumber,
+		eino_total_weight as einoTotalWeight,
+		eino_is_import as einoIsImport,
+		eino_invited_status as einoInvitedStatus,
+		eino_shipping_date as einoShippingDate,
+		eino_shipper_area_id as einoShipperAreaId,
+		eino_shipper_area_name as einoShipperAreaName,
+
+		eino_consignee_branches_name as einoConsigneeBranchesName,
+
+		eino_batch_order as einoBatchOrder,
+		eino_second_district as einoSecondDistrict
+  </sql>
+  
+  <sql id="query_myOrder_sql">
+    EINO_ID,
+	EINO_ORDER_NO,
+	EINO_TRANS_NO,
+	EINO_ORDER_DATE,
+	EINO_CONSIGNEE_EBSA_CONTACT,
+	EINO_CONSIGNEE_EBSA_TEL,
+	EINO_PAYMENT_METHOD,
+	EINO_CARGO_NAME,
+	EINO_NUMBER,
+	EINO_CHARGE_TOTAL,
+	EINO_STATUS,
+	EINO_ESCO_SECOND_NAME,
+	EINO_CONSIGNEE_BRANCHES_NAME,
+	EINO_CONSIGNEE_EBSA_ADDRESS,
+	EINO_CONSIGNEE_EBSA_MOBILE,
+	EINO_SHIPPER_METHOD,
+	EINO_PRODUCT_TYPE_NAME,
+	EINO_CONTRACT_NO
+  </sql>
+  
+  <sql id="query_quick_order_param">
+      <if test="einoEbccId != null">
+          AND EINO_EBCC_ID=#{einoEbccId,jdbcType=NUMERIC}
+      </if>
+      <if test="consignee != null and consignee != ''">
+          AND EINO_CONSIGNEE_EBSA_CONTACT LIKE '%' || #{consignee,jdbcType=VARCHAR} || '%'
+      </if>
+       <if test="consigner != null and consigner != ''">
+          AND EINO_SHIPPER_EBSA_CONTACT LIKE '%' || #{consigner,jdbcType=VARCHAR} || '%'
+      </if>
+  </sql>
+  
+  <sql id="query_myOrder_param">
+      <if test="customerId != null ">
+          AND EINO_EBCC_ID=#{customerId,jdbcType=NUMERIC}
+      </if>
+      <if test="orderNo != null and orderNo != ''">
+          AND EINO_CONTRACT_NO=#{orderNo,jdbcType=VARCHAR}
+      </if>
+	  <if test="consignee != null and consignee != ''">
+	      AND EINO_CONSIGNEE_EBSA_CONTACT LIKE '%' || #{consignee,jdbcType=VARCHAR} || '%'
+	  </if>
+	  <if test="goodsName != null and goodsName != ''">
+	      AND EINO_CARGO_NAME LIKE '%' || #{goodsName,jdbcType=VARCHAR} || '%'
+	  </if>
+	  <if test="paymentWay != null and paymentWay != ''">
+	      AND EINO_PAYMENT_METHOD=#{paymentWay,jdbcType=VARCHAR}
+	  </if>
+	  <if test="logisticsStatus != null and logisticsStatus != ''">
+	      AND EINO_STATUS=#{logisticsStatus,jdbcType=VARCHAR}
+	  </if>
+	  <if test="startQueryTime != null and startQueryTime != '' and endQueryTime != null and endQueryTime != ''">
+	      AND CREATE_TIME BETWEEN STR_TO_DATE(#{startQueryTime,jdbcType=VARCHAR},'%Y-%m-%d %H:%i:%s')
+	      AND DATE_ADD(STR_TO_DATE(#{endQueryTime,jdbcType=VARCHAR},'%Y-%m-%d %H:%i:%s'),INTERVAL +1 day)
+	  </if>
+	  <if test="startQueryTime != null and startQueryTime != '' and endQueryTime == null">
+	      <![CDATA[
+	      	AND CREATE_TIME > STR_TO_DATE(#{startQueryTime,jdbcType=VARCHAR},'%Y-%m-%d %H:%i:%s')
+		  ]]>
+	  </if>
+	  <if test="startQueryTime == null and endQueryTime != null and endQueryTime != ''">
+	      <![CDATA[
+	      	AND CREATE_TIME > DATE_ADD(DATE_ADD(STR_TO_DATE(#{startQueryTime,jdbcType=VARCHAR},'%Y-%m-%d %H:%i:%s'),INTERVAL -1 MONTH),INTERVAL +1 DAY)
+		  ]]>
+	  </if>
+	  <if test="orderNo == null and consignee == null and goodsName == null and paymentWay == null 
+	      and logisticsStatus == null and startQueryTime == null and endQueryTime == null ">
+	      <![CDATA[
+	      	AND (CREATE_TIME>DATE_ADD(STR_TO_DATE(DATE_FORMAT(NOW(),'%Y-%m-%d %H:%i:%s'),'%Y-%m-%d %H:%i:%s'),INTERVAL -1 MONTH))
+		  ]]>
+	  </if>
+	   <if test="orderNo == '' and consignee == '' and goodsName == '' and paymentWay == '' 
+	      and logisticsStatus == '' and startQueryTime == '' and endQueryTime == ''">
+	      <![CDATA[
+	      	AND (EINO_ORDER_DATE>DATE_ADD(STR_TO_DATE(DATE_FORMAT(NOW(),'%Y-%m-%d %H:%i:%s'),'%Y-%m-%d %H:%i:%s'),INTERVAL -1 MONTH))
+		  ]]>
+	  </if>
+	  <if test="doneType!=null and doneType =='done'">
+	      AND (EINO_STATUS='VOID' OR EINO_STATUS='DELIVER')
+	  </if>
+	  <if test="doneType!=null and doneType =='undone'">
+	     AND (EINO_STATUS='DRAFT' OR EINO_STATUS='ADD' OR EINO_STATUS='SUBMIT' OR EINO_STATUS='ACCEPT' OR EINO_STATUS='CANVASSING')
+	  </if>
+  </sql>
+  <insert id="saveOrder" useGeneratedKeys="true" keyProperty="einoId" parameterType="com.hoau.mhow.module.bse.api.shared.domain.NetOrderEntity">
+      insert into ei_net_order (eino_order_no, eino_contract_no, 
+      eino_customer_code, eino_custom_ebcu_name_cn, 
+      eino_consignee_branches_name, eino_ebcc_name, 
+      eino_order_date, eino_status, eino_shipper_ebsp_name_cn, 
+      eino_shipper_ebsa_contact, eino_shipper_ebsa_tel, 
+      eino_shipper_ebsa_address, eino_shipper_ebpl_id, 
+      eino_shipper_ebpl_name_cn, eino_consignee_ebsp_name_cn, 
+      eino_consignee_ebsa_contact, eino_consignee_ebsa_tel, 
+      eino_consignee_ebsa_address, eino_consignee_ebrg_id, 
+      eino_consignee_ebrg_name_cn, eino_consignee_ebpl_id, 
+      eino_consignee_ebpl_name_cn, eino_remark, creator, 
+      create_time, modifier, modify_time, 
+      eino_trans_no, eino_orign, eino_product_type_name, 
+      eino_esco_second_code, eino_esco_second_name, 
+      eino_shipper_ebpv_id, eino_shipper_ebpv_name, 
+      eino_shipper_ebsa_mobile, eino_consignee_ebpv_id, 
+      eino_consignee_ebpv_name, eino_consignee_ebsa_mobile, 
+      eino_exception_type, eino_shipper_ebsa_area_code, 
+      eino_consignee_ebsa_area_code, eino_door_canvass, 
+      eino_payment_method, eino_shipper_method, eino_sign_back, 
+      eino_package, eino_coll_delivery_amount, eino_coll_delivery_charge, 
+      eino_sms_notif, eino_insurance, eino_insurance_charge, 
+      eino_trans_charge, eino_charge_total, eino_ebcc_id, 
+      eino_cargo_name, eino_total_volume, eino_number, 
+      eino_total_weight, eino_is_import, eino_invited_status, 
+      eino_shipping_date, eino_shipper_area_id, 
+      eino_shipper_area_name, eino_batch_order, eino_second_district
+      )
+    values (#{einoOrderNo,jdbcType=VARCHAR}, #{einoContractNo,jdbcType=VARCHAR}, 
+      #{einoCustomerCode,jdbcType=VARCHAR}, #{einoCustomEbcuNameCn,jdbcType=VARCHAR}, 
+      #{einoConsigneeBranchesName,jdbcType=VARCHAR}, #{einoEbccName,jdbcType=VARCHAR}, 
+      #{einoOrderDate,jdbcType=TIMESTAMP}, #{einoStatus,jdbcType=VARCHAR}, #{einoShipperEbspNameCn,jdbcType=VARCHAR}, 
+      #{einoShipperEbsaContact,jdbcType=VARCHAR}, #{einoShipperEbsaTel,jdbcType=VARCHAR}, 
+      #{einoShipperEbsaAddress,jdbcType=VARCHAR}, #{einoShipperEbplId,jdbcType=DECIMAL}, 
+      #{einoShipperEbplNameCn,jdbcType=VARCHAR}, #{einoConsigneeEbspNameCn,jdbcType=VARCHAR}, 
+      #{einoConsigneeEbsaContact,jdbcType=VARCHAR}, #{einoConsigneeEbsaTel,jdbcType=VARCHAR}, 
+      #{einoConsigneeEbsaAddress,jdbcType=VARCHAR}, #{einoConsigneeEbrgId,jdbcType=DECIMAL}, 
+      #{einoConsigneeEbrgNameCn,jdbcType=VARCHAR}, #{einoConsigneeEbplId,jdbcType=DECIMAL}, 
+      #{einoConsigneeEbplNameCn,jdbcType=VARCHAR}, #{einoRemark,jdbcType=VARCHAR}, 
+      'admin', now(), 
+      'admin', now(),
+      #{einoTransNo,jdbcType=VARCHAR}, 
+      #{einoOrign,jdbcType=VARCHAR}, 
+      #{einoProductTypeName,jdbcType=VARCHAR}, 
+      #{einoEscoSecondCode,jdbcType=VARCHAR}, #{einoEscoSecondName,jdbcType=VARCHAR}, 
+      #{einoShipperEbpvId,jdbcType=DECIMAL}, #{einoShipperEbpvName,jdbcType=VARCHAR}, 
+      #{einoShipperEbsaMobile,jdbcType=VARCHAR}, #{einoConsigneeEbpvId,jdbcType=DECIMAL}, 
+      #{einoConsigneeEbpvName,jdbcType=VARCHAR}, #{einoConsigneeEbsaMobile,jdbcType=VARCHAR}, 
+      'NORMAL', 
+      #{einoShipperEbsaAreaCode,jdbcType=VARCHAR}, 
+      #{einoConsigneeEbsaAreaCode,jdbcType=VARCHAR}, #{einoDoorCanvass,jdbcType=VARCHAR}, 
+      #{einoPaymentMethod,jdbcType=VARCHAR}, #{einoShipperMethod,jdbcType=VARCHAR}, #{einoSignBack,jdbcType=VARCHAR}, 
+      #{einoPackage,jdbcType=VARCHAR}, #{einoCollDeliveryAmount,jdbcType=DECIMAL}, #{einoCollDeliveryCharge,jdbcType=DECIMAL}, 
+      'YES', 
+      #{einoInsurance,jdbcType=DECIMAL}, #{einoInsuranceCharge,jdbcType=DECIMAL}, 
+      #{einoTransCharge,jdbcType=DECIMAL}, #{einoChargeTotal,jdbcType=DECIMAL}, #{einoEbccId,jdbcType=DECIMAL}, 
+      #{einoCargoName,jdbcType=VARCHAR}, #{einoTotalVolume,jdbcType=DECIMAL}, #{einoNumber,jdbcType=DECIMAL}, 
+      #{einoTotalWeight,jdbcType=DECIMAL}, #{einoIsImport,jdbcType=DECIMAL}, #{einoInvitedStatus,jdbcType=DECIMAL}, 
+      #{einoShippingDate,jdbcType=TIMESTAMP}, #{einoShipperAreaId,jdbcType=DECIMAL}, 
+      #{einoShipperAreaName,jdbcType=VARCHAR}, #{einoBatchOrder,jdbcType=DECIMAL}, #{einoSecondDistrict,jdbcType=VARCHAR}
+      )
+      
+      
+      
+      
+  </insert>
+  <update id="updateOrder" parameterType="com.hoau.mhow.module.bse.api.shared.domain.NetOrderEntity">
+    update ei_net_order
+    <set >
+      <if test="einoOrderNo != null" >
+        eino_order_no = #{einoOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="einoContractNo != null" >
+        eino_contract_no = #{einoContractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="einoCustomEbcuNameCn != null" >
+        eino_custom_ebcu_name_cn = #{einoCustomEbcuNameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="einoEbccName != null" >
+        eino_ebcc_name = #{einoEbccName,jdbcType=VARCHAR},
+      </if>
+      <if test="einoOrderDate != null" >
+        eino_order_date = #{einoOrderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="einoStatus != null" >
+        eino_status = #{einoStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperEbspNameCn != null" >
+        eino_shipper_ebsp_name_cn = #{einoShipperEbspNameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperEbsaContact != null" >
+        eino_shipper_ebsa_contact = #{einoShipperEbsaContact,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperEbsaTel != null" >
+        eino_shipper_ebsa_tel = #{einoShipperEbsaTel,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperEbsaAddress != null" >
+        eino_shipper_ebsa_address = #{einoShipperEbsaAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperEbplId != null" >
+        eino_shipper_ebpl_id = #{einoShipperEbplId,jdbcType=NUMERIC},
+      </if>
+      <if test="einoShipperEbplNameCn != null" >
+        eino_shipper_ebpl_name_cn = #{einoShipperEbplNameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbspNameCn != null" >
+        eino_consignee_ebsp_name_cn = #{einoConsigneeEbspNameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbsaContact != null" >
+        eino_consignee_ebsa_contact = #{einoConsigneeEbsaContact,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbsaTel != null" >
+        eino_consignee_ebsa_tel = #{einoConsigneeEbsaTel,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbsaAddress != null" >
+        eino_consignee_ebsa_address = #{einoConsigneeEbsaAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbrgId != null" >
+        eino_consignee_ebrg_id = #{einoConsigneeEbrgId,jdbcType=NUMERIC},
+      </if>
+      <if test="einoConsigneeEbrgNameCn != null" >
+        eino_consignee_ebrg_name_cn = #{einoConsigneeEbrgNameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbplId != null" >
+        eino_consignee_ebpl_id = #{einoConsigneeEbplId,jdbcType=NUMERIC},
+      </if>
+      <if test="einoConsigneeEbplNameCn != null" >
+        eino_consignee_ebpl_name_cn = #{einoConsigneeEbplNameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="einoRemark != null" >
+        eino_remark = #{einoRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="einoTransNo != null" >
+        eino_trans_no = #{einoTransNo,jdbcType=VARCHAR},
+      </if>
+      <if test="einoOrign != null" >
+        eino_orign = #{einoOrign,jdbcType=VARCHAR},
+      </if>
+      <if test="einoProductTypeName != null" >
+        eino_product_type_name = #{einoProductTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="einoEscoSecondCode != null" >
+        eino_esco_second_code = #{einoEscoSecondCode,jdbcType=VARCHAR},
+      </if>
+      <if test="einoEscoSecondName != null" >
+        eino_esco_second_name = #{einoEscoSecondName,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperEbpvId != null" >
+        eino_shipper_ebpv_id = #{einoShipperEbpvId,jdbcType=NUMERIC},
+      </if>
+      <if test="einoShipperEbpvName != null" >
+        eino_shipper_ebpv_name = #{einoShipperEbpvName,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperEbsaMobile != null" >
+        eino_shipper_ebsa_mobile = #{einoShipperEbsaMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbpvId != null" >
+        eino_consignee_ebpv_id = #{einoConsigneeEbpvId,jdbcType=NUMERIC},
+      </if>
+      <if test="einoConsigneeEbpvName != null" >
+        eino_consignee_ebpv_name = #{einoConsigneeEbpvName,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbsaMobile != null" >
+        eino_consignee_ebsa_mobile = #{einoConsigneeEbsaMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="einoExceptionType != null" >
+        eino_exception_type = #{einoExceptionType,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperEbsaAreaCode != null" >
+        eino_shipper_ebsa_area_code = #{einoShipperEbsaAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeEbsaAreaCode != null" >
+        eino_consignee_ebsa_area_code = #{einoConsigneeEbsaAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="einoDoorCanvass != null" >
+        eino_door_canvass = #{einoDoorCanvass,jdbcType=VARCHAR},
+      </if>
+      <if test="einoPaymentMethod != null" >
+        eino_payment_method = #{einoPaymentMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="einoShipperMethod != null" >
+        eino_shipper_method = #{einoShipperMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="einoSignBack != null" >
+        eino_sign_back = #{einoSignBack,jdbcType=VARCHAR},
+      </if>
+      <if test="einoPackage != null" >
+        eino_package = #{einoPackage,jdbcType=VARCHAR},
+      </if>
+      <if test="einoCollDeliveryAmount != null" >
+        eino_coll_delivery_amount = #{einoCollDeliveryAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="einoCollDeliveryCharge != null" >
+        eino_coll_delivery_charge = #{einoCollDeliveryCharge,jdbcType=NUMERIC},
+      </if>
+      <if test="einoSmsNotif != null" >
+        eino_sms_notif = #{einoSmsNotif,jdbcType=VARCHAR},
+      </if>
+      <if test="einoInsurance != null" >
+        eino_insurance = #{einoInsurance,jdbcType=NUMERIC},
+      </if>
+      <if test="einoInsuranceCharge != null" >
+        eino_insurance_charge = #{einoInsuranceCharge,jdbcType=NUMERIC},
+      </if>
+      <if test="einoTransCharge != null" >
+        eino_trans_charge = #{einoTransCharge,jdbcType=NUMERIC},
+      </if>
+      <if test="einoChargeTotal != null" >
+        eino_charge_total = #{einoChargeTotal,jdbcType=NUMERIC},
+      </if>
+      <if test="einoEbccId != null" >
+        eino_ebcc_id = #{einoEbccId,jdbcType=NUMERIC},
+      </if>
+      <if test="einoCargoName != null" >
+        eino_cargo_name = #{einoCargoName,jdbcType=VARCHAR},
+      </if>
+      <if test="einoTotalVolume != null" >
+        eino_total_volume = #{einoTotalVolume,jdbcType=NUMERIC},
+      </if>
+      <if test="einoNumber != null" >
+        eino_number = #{einoNumber,jdbcType=NUMERIC},
+      </if>
+      <if test="einoTotalWeight != null" >
+        eino_total_weight = #{einoTotalWeight,jdbcType=NUMERIC},
+      </if>
+      <if test="einoIsImport != null" >
+        eino_is_import = #{einoIsImport,jdbcType=NUMERIC},
+      </if>
+      <if test="einoInvitedStatus != null" >
+        eino_invited_status = #{einoInvitedStatus,jdbcType=NUMERIC},
+      </if>
+      <if test="einoShippingDate != null" >
+        eino_shipping_date = #{einoShippingDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="einoShipperAreaId != null" >
+        eino_shipper_area_id = #{einoShipperAreaId,jdbcType=NUMERIC},
+      </if>
+      <if test="einoShipperAreaName != null" >
+        eino_shipper_area_name = #{einoShipperAreaName,jdbcType=VARCHAR},
+      </if>
+      <if test="einoConsigneeBranchesName != null" >
+        eino_consignee_branches_name = #{einoConsigneeBranchesName,jdbcType=VARCHAR},
+      </if>
+      <if test="einoBatchOrder != null" >
+        eino_batch_order = #{einoBatchOrder,jdbcType=NUMERIC},
+      </if>
+      <if test="einoSecondDistrict != null" >
+        eino_second_district = #{einoSecondDistrict,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where eino_id = #{einoId,jdbcType=NUMERIC}
+    AND eino_ebcc_id = #{einoEbccId,jdbcType=NUMERIC}
+  </update>
+  <!-- 查询订单列表 -->
+  <select id="queryOrderList" parameterType="com.hoau.mhow.module.bse.api.shared.vo.QueryOrderVo" resultMap="BaseResultMap">
+      SELECT 
+      <include refid="base_query_all"></include>
+      FROM EI_NET_ORDER
+      <trim prefix="WHERE" prefixOverrides="AND | OR">
+          <include refid="query_myOrder_param"></include>
+      </trim>
+      ORDER BY CREATE_TIME DESC
+      <if test="pageSize != null and offset != null">
+      	LIMIT #{pageSize,jdbcType=NUMERIC} OFFSET #{offset,jdbcType=NUMERIC}
+      </if>
+  </select>
+   <!-- 查询订单数量 -->
+  <select id="queryOrderCount" parameterType="com.hoau.mhow.module.bse.api.shared.vo.QueryOrderVo" resultType="Long">
+      SELECT COUNT(*)
+      FROM EI_NET_ORDER
+      <trim prefix="WHERE" prefixOverrides="AND | OR">
+          <include refid="query_myOrder_param"></include>
+      </trim>
+  </select>
+  
+  <select id="queryOrderDetail" parameterType="Integer"
+      resultType="com.hoau.mhow.module.bse.api.shared.domain.NetOrderEntity">
+      SELECT 
+      <include refid="base_query_all"></include>
+      FROM EI_NET_ORDER
+      WHERE eino_id=#{orderId}
+  </select>
+  
+  <delete id="deleteOrder" parameterType="Integer">
+      DELETE FROM EI_NET_ORDER WHERE EINO_ID=#{orderId}
+  </delete>
+  
+  <select id="queryQuickOrder" parameterType="com.hoau.mhow.module.bse.api.shared.domain.QuickOrderEntity"
+      resultMap="BaseResultMap">
+      SELECT
+      	DISTINCT ON (EINO_SHIPPER_EBSA_CONTACT || EINO_CONSIGNEE_EBSA_CONTACT || EINO_PRODUCT_TYPE_NAME) 
+        EINO_ID,
+		EINO_ORDER_NO,
+		EINO_TRANS_NO,
+		EINO_ORDER_DATE,
+		EINO_CONSIGNEE_EBSA_CONTACT,
+		EINO_CONSIGNEE_EBSA_TEL,
+		EINO_PAYMENT_METHOD,
+		EINO_CARGO_NAME,
+		EINO_NUMBER,
+		EINO_CHARGE_TOTAL,
+		EINO_STATUS,
+		EINO_ESCO_SECOND_NAME,
+		EINO_CONSIGNEE_BRANCHES_NAME,
+		EINO_CONSIGNEE_EBSA_ADDRESS,
+		EINO_CONSIGNEE_EBSA_MOBILE,
+		EINO_SHIPPER_METHOD,
+		EINO_PRODUCT_TYPE_NAME,
+		EINO_CONTRACT_NO,
+		EINO_SHIPPER_EBSA_CONTACT,
+		EINO_CONSIGNEE_EBPL_NAME_CN,
+		EINO_CONSIGNEE_EBPV_NAME,
+		ROW_NUMBER() OVER(ORDER BY CREATE_TIME DESC) AS ROW_NUM
+	FROM EI_NET_ORDER
+	<trim prefix="WHERE" prefixOverrides="AND | OR">
+	    <include refid="query_quick_order_param"></include>
+	</trim>
+	<if test="pageSize != null and offset != null">
+	    LIMIT #{pageSize,jdbcType=NUMERIC} OFFSET #{offset,jdbcType=NUMERIC}
+	</if>
+  </select>
+  
+  <select id="countQuickOrder" parameterType="com.hoau.mhow.module.bse.api.shared.domain.QuickOrderEntity" resultType="Integer" >
+    SELECT COUNT(*)	FROM
+	(SELECT DISTINCT ON (EINO_SHIPPER_EBSA_CONTACT, EINO_CONSIGNEE_EBSA_CONTACT, EINO_PRODUCT_TYPE_NAME)
+	EINO_SHIPPER_EBSA_CONTACT FROM EI_NET_ORDER 
+	<trim prefix="WHERE" prefixOverrides="AND | OR">
+	    <include refid="query_quick_order_param"></include>
+	</trim>
+	) AS TAB
+  </select>
+</mapper>

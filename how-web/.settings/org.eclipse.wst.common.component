@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="how-web">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <dependent-module archiveName="framework-shared-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/framework-shared/framework-shared">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="framework-server-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/framework-server/framework-server">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="how-web"/>
+        <property name="java-output-path" value="/how-web/target/classes"/>
+    </wb-module>
+</project-modules>

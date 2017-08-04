@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoau.how.module.itf.server.dao.deptquery.DistrictDao">
+	<select id="queryLastVersionNo" resultType="long">
+	    SELECT MAX(VERSION_NO) FROM T_BSE_DISTRICT
+	</select>
+	<select id="queryAllDistricts" resultType="com.hoau.how.module.itf.shared.domain.DistrictEntity">
+	    SELECT 
+	    	ID AS id,
+	    	DISTRICT_CODE AS districtCode,
+	    	DISTRICT_NAME AS districtName,
+	    	DISTRICT_TYPE AS districtType,
+	    	PINYIN AS pinyin,
+	    	PARENT_DISTRICT_CODE AS parentDistrictCode,
+	    	VERSION_NO AS versionNo
+	    FROM 
+	    T_BSE_DISTRICT
+	</select>
+	
+	<!-- 批量插入省市区县-->
+	<insert id="addDistricts" parameterType="com.hoau.how.module.itf.shared.domain.DistrictEntity">
+		INSERT INTO T_BSE_DISTRICT
+		(
+			ID,
+			DISTRICT_CODE,
+			DISTRICT_NAME,
+			DISTRICT_TYPE,
+			PINYIN,
+			PARENT_DISTRICT_CODE,
+			VERSION_NO,
+			CREATE_USER_CODE,
+			CREATE_TIME
+		)
+		VALUES
+        (
+        	#{id,jdbcType=VARCHAR},
+			#{districtCode,jdbcType=VARCHAR},
+			#{districtName,jdbcType=VARCHAR},
+			#{districtType,jdbcType=VARCHAR},
+			#{pinyin,jdbcType=VARCHAR},
+			#{parentDistrictCode,jdbcType=NUMERIC},
+			#{versionNo,jdbcType=VARCHAR},
+			'admin',
+			getdate()
+        )  
+		
+	</insert>
+	
+	<delete id="deleteAllDistrict">  
+        delete from T_BSE_DISTRICT
+    </delete>  
+	
+	<select id="getLastVersionNo" resultType="long">
+	    SELECT 
+	    	isnull(max(VERSION_NO),0) as version_no
+	    FROM 
+	    T_BSE_DISTRICT
+	</select>
+	
+	<select id="queryDistrictByCode" parameterType="string" resultType="com.hoau.how.module.itf.shared.domain.DistrictEntity">
+	    SELECT 
+	    	ID AS id,
+	    	DISTRICT_CODE AS districtCode,
+	    	DISTRICT_NAME AS districtName,
+	    	DISTRICT_TYPE AS districtType,
+	    	PINYIN AS pinyin,
+	    	PARENT_DISTRICT_CODE AS parentDistrictCode,
+	    	VERSION_NO AS versionNo
+	    FROM 
+	    T_BSE_DISTRICT
+	    WHERE DISTRICT_CODE = #{districtCode}
+	</select>
+	
+	<update id="updateDistrict" parameterType="com.hoau.how.module.itf.shared.domain.DistrictEntity">  
+        update T_BSE_DISTRICT
+        <set>
+        	MODIFY_USER_CODE = 'admin',
+        	MODIFY_TIME = getdate(),
+	        <if test="districtName != null">  
+	            DISTRICT_NAME = #{districtName},  
+	        </if>  
+	        <if test="districtType != null">  
+	            DISTRICT_TYPE = #{districtType},  
+	        </if>  
+	        <if test="pinyin != null">  
+	            PINYIN = #{pinyin},  
+	        </if>
+	        <if test="parentDistrictCode != null">  
+	            PARENT_DISTRICT_CODE = #{parentDistrictCode},  
+	        </if>
+	        <if test="versionNo != null">  
+	            VERSION_NO = #{versionNo}
+	        </if>
+    	</set>
+        where DISTRICT_CODE = #{districtCode}  
+    </update>
+	<update id="updateHotCityNum" parameterType="java.util.Map">
+	    UPDATE T_BSE_DISTRICT
+		 <set>
+		 	MODIFY_USER_CODE = 'admin',
+			MODIFY_TIME = getdate(),
+		    HOT_CITY_NUM = HOT_CITY_NUM + #{hotCityNum,jdbcType=INTEGER}
+		 </set>
+		 where DISTRICT_CODE = #{districtCode,jdbcType=VARCHAR}
+	</update>
+</mapper>

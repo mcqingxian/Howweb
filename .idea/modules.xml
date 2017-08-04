@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/how.iml" filepath="$PROJECT_DIR$/.idea/how.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-bse/how-bse.iml" filepath="$PROJECT_DIR$/how-bse/how-bse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-bse-api/how-bse-api.iml" filepath="$PROJECT_DIR$/how-bse-api/how-bse-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-common/how-common.iml" filepath="$PROJECT_DIR$/how-common/how-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-config/how-config.iml" filepath="$PROJECT_DIR$/how-config/how-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-itf/how-itf.iml" filepath="$PROJECT_DIR$/how-itf/how-itf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-job/how-job.iml" filepath="$PROJECT_DIR$/how-job/how-job.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-obh/how-obh.iml" filepath="$PROJECT_DIR$/how-obh/how-obh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-util/how-util.iml" filepath="$PROJECT_DIR$/how-util/how-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/how-web/how-web.iml" filepath="$PROJECT_DIR$/how-web/how-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mhow-bse/mhow-bse.iml" filepath="$PROJECT_DIR$/mhow-bse/mhow-bse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mhow-bse-api/mhow-bse-api.iml" filepath="$PROJECT_DIR$/mhow-bse-api/mhow-bse-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mhow-common/mhow-common.iml" filepath="$PROJECT_DIR$/mhow-common/mhow-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mhow-invokews/mhow-invokews.iml" filepath="$PROJECT_DIR$/mhow-invokews/mhow-invokews.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mhow-web/mhow-web.iml" filepath="$PROJECT_DIR$/mhow-web/mhow-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mhow-wechat/mhow-wechat.iml" filepath="$PROJECT_DIR$/mhow-wechat/mhow-wechat.iml" />
+    </modules>
+  </component>
+</project>

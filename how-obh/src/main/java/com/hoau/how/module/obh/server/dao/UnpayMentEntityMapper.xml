@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hoau.how.module.obh.server.dao.UnpayMentEntityMapper">
+    <!--新增待收货款信息  -->
+    <insert id="saveUnpayMent" useGeneratedKeys="true" keyProperty="ebuEbsaId"
+        parameterType="com.hoau.how.module.obh.shared.domain.UnpayMentEntity">
+		insert into eb_shipper_unpay (
+			payee_name,
+			payee_account,
+			bank,
+			branch_message_code,
+			branch_message_name,
+			province,
+			city,
+			district,
+			ebu_ebsa_id,
+			ebu_is_default,
+			creator,
+			create_time
+		)values(
+			#{payeeName,jdbcType=VARCHAR},
+			#{payeeAccount,jdbcType=VARCHAR},
+			#{bank,jdbcType=VARCHAR},
+			#{branchMessageCode,jdbcType=VARCHAR},
+			#{branchMessageName,jdbcType=VARCHAR},
+			#{province,jdbcType=VARCHAR},
+			#{city,jdbcType=VARCHAR},
+			#{district,jdbcType=VARCHAR},
+			#{ebuEbsaId,jdbcType=VARCHAR},
+			'Y',
+			'admin',
+			now()
+		)
+	</insert>
+    <!--根据外键删除待收货款信息  -->
+    <update id="deleteByForeignKey" parameterType="String">
+	    update eb_shipper_unpay
+	          set ebu_is_default= 'N'
+	          where ebu_ebsa_id = #{Id,jdbcType=VARCHAR}
+    </update>
+    <!--根据外键查找主键  -->
+    <select id="selectEsuId" parameterType="String" resultType="String">
+       select esu_id from  eb_shipper_unpay 
+             where ebu_ebsa_id = #{id,jdbcType=VARCHAR} 
+             AND ebu_is_default !='N'
+    </select>
+    <!--根据外键查找实体信息 -->
+    <select id="queryUnpayMentByFid" parameterType="String" resultType="com.hoau.how.module.obh.shared.domain.UnpayMentEntity">
+        select 
+        	esu_id ebuEbsaId, 
+        	payee_name payeeName,
+        	payee_account payeeAccount,
+        	bank,
+        	branch_message_code branchMessageCode,
+        	branch_message_name branchMessageName,
+        	district
+        from  eb_shipper_unpay 
+        where ebu_ebsa_id = #{contactsIds,jdbcType=VARCHAR} 
+        AND ebu_is_default !='N'
+        
+    </select>
+    <!--根据主键修改信息  -->
+    <update id="updateByPrimaryKey" parameterType="com.hoau.how.module.obh.shared.domain.UnpayMentEntity" >
+    update eb_shipper_unpay
+    <set> 
+		<if test="payeeName != null">  
+			payee_Name = #{payeeName,jdbcType=VARCHAR},
+		</if>
+		<if test="payeeAccount != null">  
+			payee_Account = #{payeeAccount,jdbcType=VARCHAR},
+		</if>
+		<if test="bank != null">  
+			bank = #{bank,jdbcType=VARCHAR},
+		</if>
+		<if test="branchMessageCode != null">  
+			branch_message_code = #{branchMessageCode,jdbcType=VARCHAR},
+		</if>
+		<if test="branchMessageName != null">  
+			branch_message_name = #{branchMessageName,jdbcType=VARCHAR},
+		</if>
+		<if test="province != null">  
+			province = #{province,jdbcType=VARCHAR},
+		</if>
+		<if test="city != null">  
+			city = #{city,jdbcType=VARCHAR},
+		</if>
+		<if test="district != null">  
+			district = #{district,jdbcType=VARCHAR},
+		</if>
+      </set> 
+    where esu_id = #{ebuEbsaId,jdbcType=NUMERIC}
+  </update>
+</mapper>

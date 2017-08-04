@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Resource name="jdbc/howds" auth="Container" type="javax.sql.DataSource"
+			  username="hoau_web" password="hoautest" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+			  url="jdbc:sqlserver://10.39.251.154:1433;DatabaseName=HOAUTEST"
+			  maxActive="8" maxIdle="4" />
+
+	<Resource name="jdbc/obhds" auth="Container" type="javax.sql.DataSource"
+			  username="obh" password="a123456#" driverClassName="com.mysql.jdbc.Driver"
+			  url="jdbc:mysql://10.39.251.178:3306/nobh"
+			  maxActive="8" maxIdle="4" />
+</Context>
